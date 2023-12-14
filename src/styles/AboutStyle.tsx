@@ -10,5 +10,5 @@ export const NameContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-family: 'gmarket';
+  font-family: 'GmarketSans';
 `

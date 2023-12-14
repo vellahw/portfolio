@@ -10,7 +10,7 @@ export const Navigation = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 50px;
-  font-family: 'gmarket';
+  font-family: 'GmarketSans';
 `
 export const Title = styled.div`
   background-color: aliceblue;

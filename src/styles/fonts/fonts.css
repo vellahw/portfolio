@@ -1,0 +1,26 @@
+@font-face {
+  font-family : 'Pretendard';
+  font-weight: 400;
+  src : url(Pretendard-Regular.otf) format('opentype');
+}
+  
+@font-face {
+  font-family : 'GmarketSans';
+  font-weight: 300;
+  font-style: normal;
+  src : url(GmarketSansLight.otf) format('opentype');
+}
+
+@font-face {
+  font-family : 'GmarketSans';
+  font-weight: 500;
+  font-style: normal;
+  src : url(GmarketSansMedium.otf) format('opentype');
+}
+
+@font-face {
+  font-family : 'GmarketSans';
+  font-weight: 700;
+  font-style: normal;
+  src : url(GmarketSansBold.otf) format('opentype');
+}
