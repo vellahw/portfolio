@@ -1,7 +1,8 @@
 import React from 'react';
 import * as s from '../styles/HeaderStyle';
 
-const Header = () => {
+const Navbar = () => {
+
   return (
     <s.Navigation>
       <s.Title>HANWON JANG’s  WEB PORTFOLIO</s.Title>
@@ -20,4 +21,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

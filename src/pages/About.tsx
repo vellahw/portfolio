@@ -1,14 +1,14 @@
 import React from 'react';
-import * as s from '../styles/AboutStyle';
+import  * as s from 'styles/AboutStyles';
 
-const About = () => {
-  return (
+function About() {
+    return (
     <s.AboutSection>
       <s.NameContainer>
-        장 한 원
+        안녕하세요!
       </s.NameContainer>
     </s.AboutSection>
-  );
-};
+    );
+}
 
 export default About;

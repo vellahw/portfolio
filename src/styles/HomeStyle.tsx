@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AboutSection = styled.section`
+export const HomeSection = styled.section`
   height: 100vh;
   font-size: 200px;
 `
