@@ -1,0 +1,41 @@
+@layer reset, base, tokens, recipes, utilities;
+
+html {
+  font-family: 'pretendard';
+  font-size: 62.5%;
+  color: #e1ddd5;
+  background-color: #0e100f;
+}
+
+@media all and (max-width: 767px) {
+  html {
+    font-size: 40%;
+    /* font-size: 6.4px */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 50%;
+    /* font-size: 8px; */
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  line-height: 1;
+}
