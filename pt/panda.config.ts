@@ -30,10 +30,25 @@ export default defineConfig({
         fontDisplay: 'swap',
       },
     ],
+    Darker: [
+      {
+        src: 'url(/fonts/DarkerGrotesque-Regular.ttf) format("trutype")',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        fontDisplay: 'swap',
+      },
+      {
+        src: 'url(/fonts/DarkerGrotesque-Medium.ttf) format("trutype")',
+        fontWeight: 500,
+        fontStyle: 'normal',
+        fontDisplay: 'swap',
+      },
+    ],
   },
 
   globalVars: {
     '--font-pretendard': 'Pretendard',
+    '--font-darker': 'Darker',
   },
 
   // Files to exclude
@@ -47,7 +62,10 @@ export default defineConfig({
         pretendard: { value: 'var(--font-pretendard)' },
       },
       colors: {
-        primary: { value: '#e1ddd5' },
+        primary: { value: '#F0EEED' },
+        black: { value: '#0A090F' },
+        gray100: { value: '#E6E6E6' },
+        gray500: { value: '#575757' },
       },
     },
     breakpoints: {

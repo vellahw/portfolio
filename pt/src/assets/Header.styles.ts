@@ -2,31 +2,42 @@ import { css } from "../../styled-system/css";
 
 export const header = css({
   pos: 'fixed',
-  top: 0,
-  left: 0,
-  w: '100%',
-  h: '10rem',
+  top: '2.9rem',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  w: '43.8rem',
+  h: '6.4rem',
+  zIndex: 999,
+  background: '#0a090e6c',
+  backdropFilter: 'blur(4px)',
+  rounded: '55555px',
+  border: '1px solid',
+  borderColor: '#82828290'
+  
+  // sm: {
+  //   h: '8rem',
+  // },
 });
 
 export const container = css({
   display: 'flex',
-  m: '0 4.8rem',
   h: '100%',
   borderBottom: '1px solid',
   borderColor: 'primary',
+  alignItems: 'center',
 
   sm: {
     flexDirection: 'column',
     justifyContent: 'center',
     gap: '5px',
-    alignItems: 'flex-end',
+    m: '0 2.8rem',
   },
 
   md: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
     gap: 0,
+    m: '0 4.8rem',
   },
 });
 
@@ -39,17 +50,11 @@ export const logo = css({
   },
 
   sm: {
-    display: 'flex',
-    gap: '6px',
-    alignItems: 'center',
-
-    '& .small': {
-      display: 'none',
-    },
+    display: 'none',
   },
   md: {
-    display: 'unset',
     gap: '0',
+    display: 'block',
 
     '& .small': {
       display: 'block',
@@ -61,7 +66,11 @@ export const logo = css({
 
 export const navigator = css({
   display: 'flex',
-  gap: '6rem',
+  alignItems: 'center',
+  justifyContent: 'center',
+  w: '100%',
+  h: '100%',
+  gap: '5.7rem',
   fontSize: '1.8rem',
 });
 
