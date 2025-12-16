@@ -41,3 +41,20 @@ export const worksData = [
     href: 'https://bbc-omote.com/',
   },
 ];
+
+export const projectData = [
+  {
+    name: 'gather 게더',
+    what: '모임 커뮤니티 사이트',
+    tech: ['JavaScript', 'Java', 'Spring Framework'],
+    src: ['js', 'java', 'spring'],
+    href: 'https://github.com/vellahw/gather',
+  },
+  {
+    name: 'BLEND',
+    what: '통합 마일리지 서비스(Web3)',
+    tech: ['React'],
+    src: ['react'],
+    href: 'https://github.com/vellahw/BLEND',
+  },
+];
