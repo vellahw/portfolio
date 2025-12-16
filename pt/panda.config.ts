@@ -1,13 +1,44 @@
-import { defineConfig } from "@pandacss/dev";
+import { defineConfig, defineGlobalStyles } from "@pandacss/dev";
+
+const globalCss = defineGlobalStyles({
+  'html, body': {
+    fontFamily: 'pretendard',
+    fontSize: '62.5%',
+    color: 'primary',
+    backgroundColor: 'black',
+
+    '& @media all and (max-width: 1024px)': {
+      fontSize: '50%',
+    },
+  },
+  button: {
+    cursor: 'pointer',
+
+    _active: {
+      outline: 'none',
+    },
+  },
+
+  'h1, h2, h3, h4, h5, h6, span, p': {
+    lineHeight: 1,
+  },
+
+  'h1, h2, h3, h4, h5, h6': {
+    fontWeight: 700
+  }
+});
+
 
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
 
-  presets: ['@pandacss/preset-base', '@pandacss/preset-panda'],
+  presets: [],
 
   // Where to look for your css declarations
   include: ['./src/**/*.{ts,tsx,js,jsx}'],
+
+  globalCss,
 
   globalFontface: {
     Pretendard: [
@@ -32,14 +63,20 @@ export default defineConfig({
     ],
     Darker: [
       {
-        src: 'url(/fonts/DarkerGrotesque-Regular.ttf) format("trutype")',
+        src: 'url(/fonts/DarkerGrotesque-Regular.ttf) format("truetype")',
         fontWeight: 400,
         fontStyle: 'normal',
         fontDisplay: 'swap',
       },
       {
-        src: 'url(/fonts/DarkerGrotesque-Medium.ttf) format("trutype")',
+        src: 'url(/fonts/DarkerGrotesque-Medium.ttf) format("truetype")',
         fontWeight: 500,
+        fontStyle: 'normal',
+        fontDisplay: 'swap',
+      },
+      {
+        src: 'url(/fonts/DarkerGrotesque-Bold.ttf) format("truetype")',
+        fontWeight: 700,
         fontStyle: 'normal',
         fontDisplay: 'swap',
       },
@@ -60,10 +97,14 @@ export default defineConfig({
     tokens: {
       fonts: {
         pretendard: { value: 'var(--font-pretendard)' },
+        darker: { value: 'var(--font-darker)' },
       },
       colors: {
-        primary: { value: '#F0EEED' },
-        black: { value: '#0A090F' },
+        // primary: { value: '#F0EEED' },
+        // border: { value: '#f0eeed4f' },
+        primary: { value: '#f9f9f8' },
+        border: { value: '#e4eaee4d' },
+        black: { value: '#15151A' },
         gray100: { value: '#E6E6E6' },
         gray500: { value: '#575757' },
       },
