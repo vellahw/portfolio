@@ -9,7 +9,7 @@ export const header = css({
   h: '6.4rem',
   zIndex: 999,
   background: '#0a090e6c',
-  backdropFilter: 'blur(4px)',
+  backdropFilter: 'blur(14px)',
   rounded: '55555px',
   border: '1px solid',
   borderColor: '#82828290'
