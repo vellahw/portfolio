@@ -16,16 +16,15 @@ function App() {
       // 이름 등장
       tl.fromTo(
         nameRef.current,
-        { opacity: 0, y: 80 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+        { opacity: 0, y: 90 },
+        { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }
       );
   
       // 헤더 등장
       tl.fromTo(
         headerRef.current,
         { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
-        '+=0.1'
+        { opacity: 1, y: 0, duration: .6, ease: 'power3.out' },
       );
 
     })
@@ -51,9 +50,15 @@ function App() {
       </header>
       <main className={s.main}>
         <section className={s.bannerSection}>
+          <div className={cx(s.bannerTxtSquare, s.sloganTxt)}>
+            <span>책임감 있는 자세로 결과를 만드는</span>
+          </div>
           <h1 ref={nameRef} className={s.myName}>
             Hanwon Jang
           </h1>
+          <div className={cx(s.bannerTxtSquare, s.positionTxt)}>
+            <span>웹 프론트엔드 개발자</span>
+          </div>
         </section>
 
         <section id="#1"></section>

@@ -13,6 +13,45 @@ export const bannerSection = css({
   pos: 'relative'
 });
 
+export const bannerTxtSquare = css({
+  rounded: '5555555px',
+  border: '1px solid',
+  borderColor: 'border',
+  bg: '#f9f9f821',
+  textAlign: 'center',
+  w: 'auto',
+  height: '6.2rem',
+  p: '0 3.4rem',
+  fontSize: '2.6rem', 
+  fontWeight: 500,
+  pos: 'absolute',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+})
+
+export const sloganTxt = css({
+  left: 0,
+  top: '26rem'
+});
+
+export const positionTxt = css({
+  left: '50%',
+  transform: 'translateX(-50%)',
+  bottom: '16rem',
+
+  _after: {
+    content: '""',
+    pos: 'absolute',
+    bottom: 'calc(-22rem - 1px)',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    w: '1px',
+    h: '22rem',
+    bg: 'border'
+  },
+});
+
 export const myName = css({
   fontSize: '29.8rem',
   fontFamily: 'darker',
