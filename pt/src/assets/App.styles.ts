@@ -1,5 +1,13 @@
 import { css } from '../../styled-system/css';
 
+// 공용
+export const sectionTitle = css({
+  fontFamily: 'darker',
+  fontSize: '9.8rem',
+  letterSpacing: '-.27rem',
+  ml: '2rem',
+});
+
 export const main = css({
   maxWidth: '1404px',
   w: '100%',
@@ -43,11 +51,11 @@ export const positionTxt = css({
   _after: {
     content: '""',
     pos: 'absolute',
-    bottom: 'calc(-22rem - 1px)',
+    bottom: 'calc(-20rem - 1px)',
     left: '50%',
     transform: 'translateX(-50%)',
     w: '1px',
-    h: '22rem',
+    h: '20rem',
     bg: 'border'
   },
 });
@@ -65,13 +73,47 @@ export const myName = css({
   lineHeight: '1',
 });
 
-export const sectionTitle = css({
-  fontFamily: 'darker',
-  fontSize: '9.8rem',
-  letterSpacing: '-.27rem',
-  ml: '2rem'
+// 프로필 영역
+export const profileSection = css({
+  border: '1px solid',
+  borderColor: 'border',
+  p: '5.8rem 5.5rem',
+  mt: '4rem'
+})
+
+export const profileSectionTitleContainer = css({
+  display: 'flex',
+  justifyContent: 'space-between',
 });
 
+export const profileTitle = css({
+  fontFamily: 'darker',
+  fontSize: '4rem',
+  fontWeight: '700',
+  letterSpacing: '-0.12rem',
+})
+
+export const profileHelloTitleContainer = css({
+  fontSize: '5.8rem',
+  fontWeight: '600',
+  w: '50%'
+});
+
+export const helloFirst = css({
+  pl: '3.8rem',
+})
+
+export const helloLast = css({
+  pl: '24.7rem',
+})
+
+export const myProfileImg = css({
+  w: '60.9rem',
+  h: '70.2rem',
+  bg: 'border',
+})
+
+// 이력 영역
 export const workSection = css({
   w: '100%',
   pt: '10rem',

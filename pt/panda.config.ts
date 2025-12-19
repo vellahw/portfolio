@@ -100,8 +100,6 @@ export default defineConfig({
         darker: { value: 'var(--font-darker)' },
       },
       colors: {
-        // primary: { value: '#F0EEED' },
-        // border: { value: '#f0eeed4f' },
         primary: { value: '#f9f9f8' },
         border: { value: '#e4eaee4d' },
         black: { value: '#15151A' },

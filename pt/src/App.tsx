@@ -4,6 +4,7 @@ import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { cx } from '../styled-system/css';
 import gsap from 'gsap';
+import { stack } from '../styled-system/patterns';
 
 function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
@@ -49,6 +50,7 @@ function App() {
         {/* </div> */}
       </header>
       <main className={s.main}>
+        {/* 배너 */}
         <section className={s.bannerSection}>
           <div className={cx(s.bannerTxtSquare, s.sloganTxt)}>
             <span>책임감 있는 자세로 결과를 만드는</span>
@@ -61,7 +63,28 @@ function App() {
           </div>
         </section>
 
-        <section id="#1"></section>
+        {/* 프로필 */}
+        <section className={s.profileSection} id="1">
+          <div className={s.profileSectionTitleContainer}>
+            <h1 className={s.profileTitle}>PROFILE</h1>
+            <div className={cx(stack(), s.profileHelloTitleContainer)}>
+              <h1 className={s.helloFirst}>안녕하세요!</h1>
+              <h1>2년차 프론트엔드 개발자</h1>
+              <h1 className={s.helloLast}>장한원입니다</h1>
+            </div>
+          </div>
+
+          <div>
+            <div className={s.myProfileImg}>
+              <img src="" alt="" />
+            </div>
+
+            <div>
+
+              
+            </div>
+          </div>
+        </section>
 
         <section className={s.workSection} id="2">
           <div>
