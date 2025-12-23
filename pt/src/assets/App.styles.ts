@@ -73,17 +73,19 @@ export const myName = css({
   lineHeight: '1',
 });
 
-// 프로필 영역
+// 프로필 영역 =======================================
 export const profileSection = css({
   border: '1px solid',
   borderColor: 'border',
-  p: '5.8rem 5.5rem',
+  p: '5.8rem 5.5rem 0 5.5rem',
   mt: '4rem'
 })
 
-export const profileSectionTitleContainer = css({
+export const profileTitleContainer = css({
   display: 'flex',
   justifyContent: 'space-between',
+  pos: 'relative',
+  zIndex: '2'
 });
 
 export const profileTitle = css({
@@ -111,9 +113,95 @@ export const myProfileImg = css({
   w: '60.9rem',
   h: '70.2rem',
   bg: 'border',
+  mr: '3.8rem'
 })
 
-// 이력 영역
+export const profileBodyContainer = css({
+  w: '50%',
+  mt: '5.1rem',
+  p: '5.8rem 0 0 3.8rem',
+  pos: 'relative',
+
+  _before: {
+    content: '""',
+    w: '1px',
+    h: '95%',
+    bg: 'border',
+    display: 'block',
+    pos: 'absolute',
+    bottom: '0',
+    left: '0',
+  },
+
+  _after: {
+    content: '""',
+    w: '95%',
+    h: '1px',
+    bg: 'border',
+    display: 'block',
+    pos: 'absolute',
+    top: '0',
+    right: '0',
+  },
+});
+
+export const mark = css({
+  lineHeight: 1,
+  fontSize: '6.9rem',
+  fontFamily: 'darker',
+  pos: 'relative',
+  top: '-9.1rem',
+  left: '-5.05rem'
+});
+
+export const profileBody = css({
+  lineHeight: '1.9',
+  fontSize: '1.8rem',
+  whiteSpace: 'pre-wrap',
+  mb: '5.3rem',
+  mt: '-7.8rem'
+})
+
+export const profileLink = css({
+  rounded: '55555px',
+  fontSize: '1.8rem',
+  w: '16rem',
+  h: '4.2rem',
+});
+
+export const showResume = css({
+  bg: 'primary',
+  color: 'black',
+});
+
+export const goGithub = css({
+  bg: '#f0eeed1f',
+  color: 'primary',
+  border: '1px solid',
+  borderColor: 'primary',
+});
+
+export const history = css({
+  fontSize: '1.8rem',
+  gap: '3.6rem',
+  m: '5.3rem 0',
+  
+  '& p': {
+    lineHeight: '1.8'
+  },
+
+  '& span': {
+    fontSize: '1.4rem'
+  }
+
+});
+
+export const historyTitle = css({
+  fontWeight: 600,
+  mb: '.5rem'
+})
+
+// 이력 영역 =======================================
 export const workSection = css({
   w: '100%',
   pt: '10rem',

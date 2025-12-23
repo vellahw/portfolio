@@ -4,7 +4,7 @@ import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { cx } from '../styled-system/css';
 import gsap from 'gsap';
-import { stack } from '../styled-system/patterns';
+import { center, flex, stack } from '../styled-system/patterns';
 
 function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
@@ -65,7 +65,7 @@ function App() {
 
         {/* 프로필 */}
         <section className={s.profileSection} id="1">
-          <div className={s.profileSectionTitleContainer}>
+          <div className={s.profileTitleContainer}>
             <h1 className={s.profileTitle}>PROFILE</h1>
             <div className={cx(stack(), s.profileHelloTitleContainer)}>
               <h1 className={s.helloFirst}>안녕하세요!</h1>
@@ -74,14 +74,56 @@ function App() {
             </div>
           </div>
 
-          <div>
+          <div className={flex()}>
             <div className={s.myProfileImg}>
               <img src="" alt="" />
             </div>
 
-            <div>
+            <div className={s.profileBodyContainer}>
+              <span className={s.mark}>*</span>
+              <p className={s.profileBody}>
+                {`HTML·CSS·JavaScript 기반의 퍼블리싱에 능숙하며,
+React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
+반응형 웹, 웹 표준, 웹 접근성을 고려한 사용자 경험을 중요하게 생각합니다. 
+개발뿐만 아니라 간단한 UI 디자인에도 참여하며
+기획과 디자인의 의도를 이해하고 구현하는 경험을 쌓아왔습니다.
+디자이너를 곧 클라이언트라고 생각하며
+원활한 소통을 통해 더 나은 결과를 만드는 협업에 즐거움을 느낍니다.`}
+              </p>
+              <div className={stack({ gap: '2.6rem' })}>
+                <div className={flex({ gap: '1.6rem' })}>
+                  <a href="" className={cx(s.profileLink, s.showResume, center())}>
+                    <span>노션 이력서 보기</span>
+                  </a>
+                  <a href="" className={cx(s.profileLink, s.showResume, center())}>
+                    <span>PDF 이력서 보기</span>
+                  </a>
+                </div>
+                <a href="https://github.com/vellahw" className={cx(s.profileLink, s.goGithub, center())}>
+                  <span>Github</span>
+                </a>
+              </div>
 
-              
+              {/* 경력 */}
+              <div className={cx(s.history, stack())}>
+                <div>
+                  <h1 className={s.historyTitle}>경력</h1>
+                  <p>(주)엔셀텍바이오랩스 2024.04 ~ 2025.12</p>
+                </div>
+                <div>
+                  <h1 className={s.historyTitle}>학력 및 교육이수</h1>
+                  <p>2024.03 ~ 재학중 한국방송통신대학교 컴퓨터과학과</p>
+                  <p>2023.05 ~ 2023.07 블록체인 기반의 기술 사업화 전문 인력 양성 과정 이수</p>
+                  <p>
+                    2022.07 ~ 2023.03 이젠컴퓨터아카데미 <span>(AWS클라우드 기반 JAVA 개발자 과정 이수)</span>
+                  </p>
+                  <p>2014.03 ~ 2017.02 성동글로벌경영고등학교 패션디자인학과</p>
+                </div>
+                <div>
+                  <h1 className={s.historyTitle}>자격증</h1>
+                  <p>정보처리기능사</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -149,7 +191,7 @@ function App() {
           </div>
         </section>
 
-        <section id="3">
+        <section>
           <h1 className={s.sectionTitle}>PROJECTS</h1>
 
           <div className={s.gridArea}>
@@ -193,6 +235,8 @@ function App() {
             })}
           </div>
         </section>
+
+        <section id="3"></section>
       </main>
     </>
   );
