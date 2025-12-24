@@ -187,7 +187,7 @@ export const history = css({
   m: '5.3rem 0',
   
   '& p': {
-    lineHeight: '1.8'
+    lineHeight: '2'
   },
 
   '& span': {
@@ -198,20 +198,20 @@ export const history = css({
 
 export const historyTitle = css({
   fontWeight: 600,
-  mb: '.5rem'
+  mb: '.8rem'
 })
 
 // 이력 영역 =======================================
 export const workSection = css({
   w: '100%',
-  pt: '10rem',
   m: '0 auto',
 });
 
 export const workSectionTitleContainer = css({
   borderRight: '1px solid',
   borderRightColor: 'border',
-  pb: '6rem',
+  pt: '13rem',
+  pb:'4.5rem'
 });
 
 export const workSectionTitle2 = css({

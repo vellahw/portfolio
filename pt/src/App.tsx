@@ -99,7 +99,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                     <span>PDF 이력서 보기</span>
                   </a>
                 </div>
-                <a href="https://github.com/vellahw" className={cx(s.profileLink, s.goGithub, center())}>
+                <a href="https://github.com/vellahw" target='_blank' className={cx(s.profileLink, s.goGithub, center())}>
                   <span>Github</span>
                 </a>
               </div>
@@ -111,13 +111,14 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                   <p>(주)엔셀텍바이오랩스 2024.04 ~ 2025.12</p>
                 </div>
                 <div>
-                  <h1 className={s.historyTitle}>학력 및 교육이수</h1>
-                  <p>2024.03 ~ 재학중 한국방송통신대학교 컴퓨터과학과</p>
-                  <p>2023.05 ~ 2023.07 블록체인 기반의 기술 사업화 전문 인력 양성 과정 이수</p>
+                  <h1 className={s.historyTitle}>학력</h1>
+                  <p>2024.03 ~ 재학중&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;한국방송통신대학교 컴퓨터과학과</p>
+                  {/* <p>2023.05 ~ 2023.07&nbsp;&nbsp;블록체인 기반의 기술 사업화 전문 인력 양성 과정 이수</p>
                   <p>
-                    2022.07 ~ 2023.03 이젠컴퓨터아카데미 <span>(AWS클라우드 기반 JAVA 개발자 과정 이수)</span>
-                  </p>
-                  <p>2014.03 ~ 2017.02 성동글로벌경영고등학교 패션디자인학과</p>
+                    2022.07 ~ 2023.03&nbsp;&nbsp;&nbsp;&nbsp;이젠컴퓨터아카데미
+                    <span>&nbsp;(AWS클라우드 기반 JAVA 개발자 과정 이수)</span>
+                  </p> */}
+                  <p>2014.03 ~ 2017.02&nbsp;&nbsp;&nbsp;&nbsp;성동글로벌경영고등학교</p>
                 </div>
                 <div>
                   <h1 className={s.historyTitle}>자격증</h1>
@@ -129,7 +130,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
         </section>
 
         <section className={s.workSection} id="2">
-          <div>
+          <div className={s.workSectionTitleContainer}>
             <h1 className={s.sectionTitle}>WORK</h1>
             <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>EXPERIENCES</h1>
           </div>
