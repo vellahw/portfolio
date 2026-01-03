@@ -12,6 +12,7 @@ export const main = css({
   maxWidth: '1404px',
   w: '100%',
   m: '0 auto',
+  pb: '19rem'
 });
 
 export const bannerSection = css({
@@ -208,8 +209,8 @@ export const workSection = css({
 });
 
 export const workSectionTitleContainer = css({
-  borderRight: '1px solid',
-  borderRightColor: 'border',
+  // borderRight: '1px solid',
+  // borderRightColor: 'border',
   pt: '13rem',
   pb:'4.5rem'
 });
@@ -266,6 +267,15 @@ export const number = css({
   fontWeight: 500,
   pl: '1.2rem',
   mb: '1.2rem',
+})
+
+// 프로젝트 영역 =======================================
+export const projectSectionTitle = css({
+  pt: '13rem',
+  pb: '4.5rem',
+  // borderLeft: '1px solid',
+  // borderLeftColor: 'border',
+  ml: 0,
 })
 
 export const projectTitleContainer = css({

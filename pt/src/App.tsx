@@ -143,7 +143,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                   <div className={s.workImgContainer}>
                     <img src={`/img/work${index + 1}.png`} alt={item.name} />
                     {item.href && (
-                      <a href={item.href} className={cx(s.goBtn, s.workGoBtn)}>
+                      <a href={item.href} target='_blank' className={cx(s.goBtn, s.workGoBtn)}>
                         <span>사이트 바로가기</span>
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -173,15 +173,15 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                     </div>
                     <div className={s.techList}>
                       <div className={s.eachTech}>
-                        <img src={'/img/techIcon-php.svg'} alt="tech icon" />
+                        {/* <img src={'/img/techIcon-php.svg'} alt="tech icon" /> */}
                         {item.tech}
                       </div>
                       <div className={s.eachTech}>
-                        <img src={'/img/techIcon-html.svg'} alt="tech icon" />
+                        {/* <img src={'/img/techIcon-html.svg'} alt="tech icon" /> */}
                         HTML/CSS
                       </div>
                       <div className={s.eachTech}>
-                        <img src={'/img/techIcon-js.svg'} alt="tech icon" />
+                        {/* <img src={'/i/mg/techIcon-js.svg'} alt="tech icon" /> */}
                         JavaScript
                       </div>
                     </div>
@@ -193,7 +193,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
         </section>
 
         <section>
-          <h1 className={s.sectionTitle}>PROJECTS</h1>
+          <h1 className={cx(s.sectionTitle, s.projectSectionTitle)}>PROJECTS</h1>
 
           <div className={s.gridArea}>
             {projectData.map((item, index) => {
@@ -223,9 +223,9 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                       <span className={s.projectBody}>{item.what}</span>
                     </div>
                     <div className={s.techList}>
-                      {item.tech.map((tech, idx) => (
+                      {item.tech.map((tech) => (
                         <div className={s.eachTech} key={tech}>
-                          <img src={`/img/techIcon-${item.src[idx]}.svg`} alt="tech icon" />
+                          {/* <img src={`/img/techIcon-${item.src[idx]}.svg`} alt="tech icon" /> */}
                           {tech}
                         </div>
                       ))}
