@@ -38,9 +38,10 @@ function App() {
           iamhanwon@gmail.com
         </a>
         <nav className={navigator}>
-          <a href="#1">#프로필</a>
-          <a href="#2">#이력</a>
-          <a href="#3">#경험</a>
+          <a href="#1">프로필</a>
+          <a href="#2">이력</a>
+          <a href="#3">경험</a>
+          <a href="#4">연락하기</a>
         </nav>
       </header>
       <main className={s.main}>
@@ -196,7 +197,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
           </div>
         </section>
 
-        <section>
+        <section id="3">
           <div className={cx(s.projectSectionTitle)}>
             <h1 className={cx(s.sectionTitle, )}>PROJECTS</h1>
             <h1 className={s.smallSectionTitle}>// 프로젝트 경험</h1>
@@ -262,7 +263,22 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
           </div>
         </section>
 
-        <section id="3">
+        <section className={s.contactSection} id="4">
+          <div className={s.contactTitleContainer}>
+            <h1 className={s.contactTitle}>
+              CONTACT
+            </h1>
+            <h1 className={s.rightContactTitle}>함께 일하고 싶어요!</h1>
+          </div>
+          <div className={s.mailContainer}>
+            {/* <div className={cx(s.eachRoundEl, s.myType, '_1')}>책임감있는🙋‍♀️</div>
+            <div className={cx(s.eachRoundEl, s.myType, '_2')}>끈기있는💪</div>
+            <div className={cx(s.eachRoundEl, s.myType, '_3')}>몰두하는🧐</div> */}
+            <a href="mailto:iamhanwon@gmail.com" className={s.contactMail}>iamhanwon@gmail.com</a>
+            {/* <div className={cx(s.eachRoundEl, s.myType, '_4')}>외향적인😁</div>
+            <div className={cx(s.eachRoundEl, s.myType, '_5')}>긍정적인🎶</div> */}
+          </div>
+          <p className={s.footerTxt}>© 2026 장한원. All rights reserved.</p>
         </section>
       </main>
     </>

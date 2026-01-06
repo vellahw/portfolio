@@ -23,7 +23,7 @@ export const roundElList = css({
 export const main = css({
   maxWidth: '1404px',
   w: '100%',
-  m: '0 auto 10rem auto',
+  m: '0 auto',
 });
 
 export const eachRoundEl = css({
@@ -396,4 +396,113 @@ export const projectRole = css({
   fontSize: '1.6rem !',
   w:'fit-content',
   bg: '#1d1d23ff'
+})
+
+// 컨택트 영역 =======================================
+export const contactSection = css({
+  pt: '20rem',
+  pb: '5rem',
+  borderRight: '1px solid',
+  borderLeft: '1px solid',
+  borderLeftColor: 'border',
+  borderRightColor: 'border',
+})
+
+export const contactTitleContainer = css({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  pos: 'relative',
+  borderBottom: '1px solid',
+  borderBottomColor: 'border',
+  pb: '2.5rem',
+  m: '0 2.5rem',
+
+  // _after: {
+  //   content: '""',
+  //   w: '82%',
+  //   h: '1px',
+  //   bg: 'border',
+  //   pos: 'absolute',
+  //   right: '0',
+  //   top: '50%',
+  //   transform: 'translateY(-50%)'
+  // }
+})
+
+export const contactTitle = css({
+  fontFamily: 'darker',
+  fontSize: '4rem',
+  fontWeight: '700',
+  letterSpacing: '-0.12rem',
+})
+
+export const rightContactTitle = css({
+  fontSize: '3rem',
+  fontFamily: 'pretendard',
+  fontWeight: '700',
+})
+
+export const contactMark = css({
+  lineHeight: 1,
+  fontSize: '6.9rem',
+  fontFamily: 'darker',
+  pos: 'absolute',
+  top: '-.9rem',
+  left: '20rem'
+})
+
+export const mailContainer = css({
+  pos: 'relative',
+  m: '14rem 0',
+})
+
+export const myType = css({
+  w: 'fit-content',
+  fontSize: '1.8rem',
+  pos: 'absolute',
+
+  '&._1': {
+    top: '-12rem',
+    right: '8%'
+  },
+
+  '&._2': {
+    top: '-10rem',
+    left: '5%'
+
+  },
+  '&._3': {
+    top: '-9rem',
+    left: '50%'
+  },
+
+  '&._4': {
+    bottom: '-9rem',
+    left: '20%'
+  },
+
+  '&._5': {
+    bottom: '-10rem',
+    right: '25%'
+  },
+})
+
+export const contactMail = css({
+  fontSize: '9rem',
+  fontFamily: 'montserrat',
+  fontWeight: 700,
+  w: 'fit-content',
+  ml: 0,
+  display: 'block',
+  pos: 'relative',
+  left: '50%',
+  transform: 'translate3d(-50%, 0, 0)'
+})
+
+export const footerTxt = css({
+  fontSize: '1.4rem',
+  opacity: .8,
+  w: '100%',
+  textAlign: 'center'
 })
