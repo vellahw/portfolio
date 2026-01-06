@@ -233,7 +233,7 @@ export const gridItem = css({
   rounded: '1.5rem',
   border: '1px solid',
   borderColor: 'border',
-  bgColor: '#1d1d23ff',
+  bg: '#1d1d23ff',
 });
 
 export const workImgContainer = css({
@@ -285,25 +285,44 @@ export const projectTitleContainer = css({
 });
 
 export const projectName = css({
-  fontSize: '2.8rem',
+  fontSize: '2.2rem',
   fontWeight: 500,
-  m: '1.6rem 0',
+  m: '1.8rem 0',
 })
 
 export const projectBody = css({
-  fontSize: '1.5rem',
+  fontSize: '2rem',
 })
 
-export const techList = css({
+export const projectBodyMore = css({
+  whiteSpace: 'pre-line',
+  fontSize: '1.6rem',
+  color: '#dbdbdbff',
+  m: '0 0 1.6rem 0',
+})
+
+export const projectDes = css({
+  lineHeight: '1.8',
+  minH: '11.6rem'
+})
+
+export const projectRoleList = css({
+  flexDirection: 'column',
+  mb: '1rem'
+})
+
+export const projectGitBtn = css({
+  w: '10.8rem',
+})
+
+export const roundElList = css({
   display: 'flex',
   gap: '.8rem'
 })
 
-export const eachTech = css({
+export const eachRoundEl = css({
   p: '0 1.7rem',
   rounded: '5555555px',
-  border: '1px solid',
-  borderColor: 'border',
   textAlign: 'center',
   height: '3.8rem',
   fontSize: '1.5rem',
@@ -311,5 +330,10 @@ export const eachTech = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '.5rem'
+  gap: '.5rem',
+
+  bg: '#f0eeed1f',
+  color: 'primary',
+  border: '1px solid',
+  borderColor: '#ffffff72',
 });

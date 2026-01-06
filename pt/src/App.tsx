@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { header, navigator } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
-import { cx } from '../styled-system/css';
+import { css, cx } from '../styled-system/css';
 import gsap from 'gsap';
 import { center, flex, stack } from '../styled-system/patterns';
 
@@ -108,7 +108,8 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
               <div className={cx(s.history, stack())}>
                 <div>
                   <h1 className={s.historyTitle}>경력</h1>
-                  <p>(주)엔셀텍바이오랩스 2024.04 ~ 2025.12</p>
+                  <p>(주)엔셀텍바이오랩스&nbsp;&nbsp;&nbsp;&nbsp;2024.04 ~ 2025.12</p>
+                  <p>해커스홀딩스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2023.08 ~ 2023.09</p>
                 </div>
                 <div>
                   <h1 className={s.historyTitle}>학력</h1>
@@ -131,8 +132,11 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
 
         <section className={s.workSection} id="2">
           <div className={s.workSectionTitleContainer}>
-            <h1 className={s.sectionTitle}>WORK</h1>
-            <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>EXPERIENCES</h1>
+            <div>
+              <h1 className={s.sectionTitle}>WORK</h1>
+              <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>EXPERIENCES</h1>
+            </div>
+            <h1>이력</h1>
           </div>
 
           <div className={s.gridArea}>
@@ -141,7 +145,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                 <div className={s.gridItem} key={index}>
                   <p className={s.number}>[0{index + 1}]</p>
                   <div className={s.workImgContainer}>
-                    <img src={`/img/work${index + 1}.png`} alt={item.name} />
+                    <img src={`/img/work-${item.src}.png`} alt={item.name} />
                     {item.href && (
                       <a href={item.href} target='_blank' className={cx(s.goBtn, s.workGoBtn)}>
                         <span>사이트 바로가기</span>
@@ -169,19 +173,20 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                   <div>
                     <div className={s.projectTitleContainer}>
                       <h1 className={s.projectName}>{item.name}</h1>
-                      <span className={s.projectBody}>{item.what}</span>
+                      <span>|</span>
+                      <span className={s.projectBody}>{item.what ? item.what : '홈페이지 전체 퍼블리싱'}</span>
                     </div>
-                    <div className={s.techList}>
-                      <div className={s.eachTech}>
-                        {/* <img src={'/img/techIcon-php.svg'} alt="tech icon" /> */}
+                    {item.more && (
+                      <p className={s.projectBodyMore}>{`${item.more}`}</p>
+                    )}
+                    <div className={s.roundElList}>
+                      <div className={s.eachRoundEl}>
                         {item.tech}
                       </div>
-                      <div className={s.eachTech}>
-                        {/* <img src={'/img/techIcon-html.svg'} alt="tech icon" /> */}
+                      <div className={s.eachRoundEl}>
                         HTML/CSS
                       </div>
-                      <div className={s.eachTech}>
-                        {/* <img src={'/i/mg/techIcon-js.svg'} alt="tech icon" /> */}
+                      <div className={s.eachRoundEl}>
                         JavaScript
                       </div>
                     </div>
@@ -193,7 +198,10 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
         </section>
 
         <section>
-          <h1 className={cx(s.sectionTitle, s.projectSectionTitle)}>PROJECTS</h1>
+          <div>
+            <h1 className={cx(s.sectionTitle, s.projectSectionTitle)}>PROJECTS</h1>
+            <h1>프로젝트 경험</h1>
+          </div>
 
           <div className={s.gridArea}>
             {projectData.map((item, index) => {
@@ -201,18 +209,30 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                 <div className={s.gridItem} key={index}>
                   <p className={s.number}>[0{index + 1}]</p>
                   <div className={s.workImgContainer}>
-                    <img src={`/img/work${index + 1}.png`} alt={item.name} />
+                    <img src={`/img/project-${item.src}.png`} alt={item.name} />
                     {item.href && (
-                      <a href={item.href} className={s.goBtn}>
-                        <svg
-                          height="32"
-                          aria-hidden="true"
-                          viewBox="0 0 24 24"
-                          version="1.1"
-                          width="32"
-                          data-view-component="true"
-                        >
-                          <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
+                      <a href={item.href} className={cx(s.projectGitBtn, s.goBtn, s.workGoBtn)}>
+                        {/* <svg className={css({mr: '.5rem'})} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10 0.833984C4.93587 0.833984 0.833374 4.93648 0.833374 10.0007C0.833374 14.0565 3.45754 17.4832 7.10087 18.6973C7.55921 18.7773 7.73088 18.5032 7.73088 18.2623C7.73088 18.044 7.72004 17.3223 7.72004 16.5548C5.41671 16.979 4.82087 15.9932 4.63754 15.4782C4.53421 15.214 4.08754 14.4007 3.69837 14.1832C3.37754 14.0107 2.91837 13.5873 3.68671 13.5757C4.40837 13.564 4.92421 14.2398 5.09587 14.5157C5.92087 15.9015 7.23837 15.5123 7.76588 15.2715C7.84588 14.6757 8.08671 14.2748 8.35004 14.0457C6.31004 13.8165 4.17921 13.0257 4.17921 9.51898C4.17921 8.52232 4.53421 7.69732 5.11921 7.05565C5.02671 6.82648 4.70587 5.88732 5.21087 4.62648C5.21087 4.62648 5.97838 4.38648 7.73088 5.56648C8.4771 5.35945 9.24813 5.25543 10.0225 5.25732C10.8025 5.25732 11.5817 5.35982 12.3142 5.56648C14.0675 4.37482 14.835 4.62648 14.835 4.62648C15.3392 5.88732 15.0192 6.82648 14.9275 7.05565C15.5117 7.69732 15.8667 8.51148 15.8667 9.51898C15.8667 13.0373 13.7242 13.8165 11.6842 14.0457C12.0167 14.3323 12.3034 14.8823 12.3034 15.7415C12.3034 16.9673 12.2917 17.9532 12.2917 18.2623C12.2917 18.5032 12.4634 18.789 12.9217 18.6973C16.5425 17.4832 19.1667 14.0457 19.1667 10.0007C19.1667 4.93648 15.065 0.833984 10 0.833984Z" fill="white"/>
+                        </svg> */}
+                        GitHub
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
+                            stroke="#F0EEED"
+                            strokeWidth="1.5"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M8.22009 17.2357L17.1455 8.31028"
+                            stroke="#F0EEED"
+                            strokeWidth="1.5"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                       </a>
                     )}
@@ -220,12 +240,18 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                   <div>
                     <div className={s.projectTitleContainer}>
                       <h1 className={s.projectName}>{item.name}</h1>
+                      <span>|</span>
                       <span className={s.projectBody}>{item.what}</span>
                     </div>
-                    <div className={s.techList}>
+                    <p className={cx(s.projectDes, s.projectBodyMore)}>{item.des}</p>
+                    <div className={cx(s.roundElList, s.projectRoleList)}>
+                      {item.role.map((role) => (
+                        <div className={cx(s.eachRoundEl, css({w:'fit-content', bg: '#1d1d23ff'}))} key={role}>{role}</div>
+                      ))}
+                    </div>
+                    <div className={s.roundElList}>
                       {item.tech.map((tech) => (
-                        <div className={s.eachTech} key={tech}>
-                          {/* <img src={`/img/techIcon-${item.src[idx]}.svg`} alt="tech icon" /> */}
+                        <div className={s.eachRoundEl} key={tech}>
                           {tech}
                         </div>
                       ))}
