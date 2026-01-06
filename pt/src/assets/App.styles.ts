@@ -8,6 +8,19 @@ export const sectionTitle = css({
   ml: '2rem',
 });
 
+export const smallSectionTitle = css({
+  fontSize: '2rem',
+  fontWeight: 500,
+  opacity: .8,
+  mr: '4rem',
+});
+
+export const roundElList = css({
+  display: 'flex',
+  gap: '.8rem'
+})
+
+
 export const main = css({
   maxWidth: '1404px',
   w: '100%',
@@ -15,6 +28,25 @@ export const main = css({
   pb: '19rem'
 });
 
+export const eachRoundEl = css({
+  p: '0 1.7rem',
+  rounded: '5555555px',
+  textAlign: 'center',
+  height: '3.8rem',
+  fontSize: '1.5rem',
+  fontWeight: 500,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '.5rem',
+
+  bg: '#f0eeed1f',
+  color: 'primary',
+  border: '1px solid',
+  borderColor: '#ffffff72',
+});
+
+// 배너 영역 =======================================
 export const bannerSection = css({
   w: '100%',
   h: '100svh',
@@ -240,6 +272,9 @@ export const workSection = css({
 export const workSectionTitleContainer = css({
   // borderRight: '1px solid',
   // borderRightColor: 'border',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
   pt: '13rem',
   pb:'4.5rem'
 });
@@ -305,6 +340,9 @@ export const projectSectionTitle = css({
   // borderLeft: '1px solid',
   // borderLeftColor: 'border',
   ml: 0,
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
 })
 
 export const projectTitleContainer = css({
@@ -332,7 +370,8 @@ export const projectBodyMore = css({
 
 export const projectDes = css({
   lineHeight: '1.8',
-  minH: '11.6rem'
+  fontSize: '1.8rem !',
+  minH: '13rem'
 })
 
 export const projectRoleList = css({
@@ -341,28 +380,11 @@ export const projectRoleList = css({
 })
 
 export const projectGitBtn = css({
-  w: '10.8rem',
+  w: '13rem',
 })
 
-export const roundElList = css({
-  display: 'flex',
-  gap: '.8rem'
+export const projectRole = css({
+  fontSize: '1.6rem !',
+  w:'fit-content',
+  bg: '#1d1d23ff'
 })
-
-export const eachRoundEl = css({
-  p: '0 1.7rem',
-  rounded: '5555555px',
-  textAlign: 'center',
-  height: '3.8rem',
-  fontSize: '1.5rem',
-  fontWeight: 500,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '.5rem',
-
-  bg: '#f0eeed1f',
-  color: 'primary',
-  border: '1px solid',
-  borderColor: '#ffffff72',
-});

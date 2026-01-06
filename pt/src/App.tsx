@@ -141,7 +141,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
               <h1 className={s.sectionTitle}>WORK</h1>
               <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>EXPERIENCES</h1>
             </div>
-            <h1>이력</h1>
+            <h1 className={s.smallSectionTitle}>// 이력</h1>
           </div>
 
           <div className={s.gridArea}>
@@ -203,9 +203,9 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
         </section>
 
         <section>
-          <div>
-            <h1 className={cx(s.sectionTitle, s.projectSectionTitle)}>PROJECTS</h1>
-            <h1>프로젝트 경험</h1>
+          <div className={cx(s.projectSectionTitle)}>
+            <h1 className={cx(s.sectionTitle, )}>PROJECTS</h1>
+            <h1 className={s.smallSectionTitle}>// 프로젝트 경험</h1>
           </div>
 
           <div className={s.gridArea}>
@@ -217,9 +217,9 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                     <img src={`/img/project-${item.src}.png`} alt={item.name} />
                     {item.href && (
                       <a href={item.href} className={cx(s.projectGitBtn, s.goBtn, s.workGoBtn)}>
-                        {/* <svg className={css({mr: '.5rem'})} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className={css({mr: '.5rem'})} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M10 0.833984C4.93587 0.833984 0.833374 4.93648 0.833374 10.0007C0.833374 14.0565 3.45754 17.4832 7.10087 18.6973C7.55921 18.7773 7.73088 18.5032 7.73088 18.2623C7.73088 18.044 7.72004 17.3223 7.72004 16.5548C5.41671 16.979 4.82087 15.9932 4.63754 15.4782C4.53421 15.214 4.08754 14.4007 3.69837 14.1832C3.37754 14.0107 2.91837 13.5873 3.68671 13.5757C4.40837 13.564 4.92421 14.2398 5.09587 14.5157C5.92087 15.9015 7.23837 15.5123 7.76588 15.2715C7.84588 14.6757 8.08671 14.2748 8.35004 14.0457C6.31004 13.8165 4.17921 13.0257 4.17921 9.51898C4.17921 8.52232 4.53421 7.69732 5.11921 7.05565C5.02671 6.82648 4.70587 5.88732 5.21087 4.62648C5.21087 4.62648 5.97838 4.38648 7.73088 5.56648C8.4771 5.35945 9.24813 5.25543 10.0225 5.25732C10.8025 5.25732 11.5817 5.35982 12.3142 5.56648C14.0675 4.37482 14.835 4.62648 14.835 4.62648C15.3392 5.88732 15.0192 6.82648 14.9275 7.05565C15.5117 7.69732 15.8667 8.51148 15.8667 9.51898C15.8667 13.0373 13.7242 13.8165 11.6842 14.0457C12.0167 14.3323 12.3034 14.8823 12.3034 15.7415C12.3034 16.9673 12.2917 17.9532 12.2917 18.2623C12.2917 18.5032 12.4634 18.789 12.9217 18.6973C16.5425 17.4832 19.1667 14.0457 19.1667 10.0007C19.1667 4.93648 15.065 0.833984 10 0.833984Z" fill="white"/>
-                        </svg> */}
+                        </svg>
                         GitHub
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -251,7 +251,7 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                     <p className={cx(s.projectDes, s.projectBodyMore)}>{item.des}</p>
                     <div className={cx(s.roundElList, s.projectRoleList)}>
                       {item.role.map((role) => (
-                        <div className={cx(s.eachRoundEl, css({w:'fit-content', bg: '#1d1d23ff'}))} key={role}>{role}</div>
+                        <div className={cx(s.eachRoundEl, s.projectRole)} key={role}>{role}</div>
                       ))}
                     </div>
                     <div className={s.roundElList}>
