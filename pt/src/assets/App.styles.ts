@@ -157,7 +157,7 @@ export const mark = css({
 
 export const profileBody = css({
   lineHeight: '1.9',
-  fontSize: '1.8rem',
+  fontSize: '2rem',
   whiteSpace: 'pre-wrap',
   mb: '5.3rem',
   mt: '-7.8rem'
@@ -183,23 +183,52 @@ export const goGithub = css({
 });
 
 export const history = css({
-  fontSize: '1.8rem',
-  gap: '3.6rem',
-  m: '5.3rem 0',
-  
+  fontSize: '2rem',
+  gap: '4rem',
+  m: '5.8rem 0',
+
   '& p': {
-    lineHeight: '2'
+    lineHeight: 2,
   },
 
-  '& span': {
-    fontSize: '1.4rem'
-  }
+  '& .date1': {
+    pl: '4rem',
+  },
 
+  '& .date2': {
+    pl: '10.6rem',
+  },
+
+  '& .date3': {
+    pl: '4rem',
+  },
+  
+  '& .date4': {
+    pl: '8rem',
+  },
+
+  '& .date5': {
+    pl: '15rem',
+  },
 });
 
 export const historyTitle = css({
+  fontSize: '2.2rem',
   fontWeight: 600,
-  mb: '.8rem'
+  mb: '1rem'
+})
+
+export const eachHistoryContainer = css({
+  mt: '.4rem',
+
+  '& p': {
+    lineHeight: '1.6'
+  },
+})
+
+export const smallHistoryTxt = css({
+  fontSize: '1.5rem',
+  m: '.2rem 0 1.2rem 0'
 })
 
 // 이력 영역 =======================================

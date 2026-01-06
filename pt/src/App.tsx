@@ -76,7 +76,7 @@ function App() {
 
           <div className={flex()}>
             <div className={s.myProfileImg}>
-              <img src="" alt="" />
+              <img src={"/img/profile.png"} alt="프로필" />
             </div>
 
             <div className={s.profileBodyContainer}>
@@ -108,18 +108,23 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
               <div className={cx(s.history, stack())}>
                 <div>
                   <h1 className={s.historyTitle}>경력</h1>
-                  <p>(주)엔셀텍바이오랩스&nbsp;&nbsp;&nbsp;&nbsp;2024.04 ~ 2025.12</p>
-                  <p>해커스홀딩스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2023.08 ~ 2023.09</p>
+                  <p>(주)엔셀텍바이오랩스<span className='date1'>2024.04 ~ 2025.12</span></p>
+                  <p>해커스홀딩스<span className='date2'>2023.08 ~ 2023.09</span></p>
                 </div>
                 <div>
-                  <h1 className={s.historyTitle}>학력</h1>
-                  <p>2024.03 ~ 재학중&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;한국방송통신대학교 컴퓨터과학과</p>
-                  {/* <p>2023.05 ~ 2023.07&nbsp;&nbsp;블록체인 기반의 기술 사업화 전문 인력 양성 과정 이수</p>
-                  <p>
-                    2022.07 ~ 2023.03&nbsp;&nbsp;&nbsp;&nbsp;이젠컴퓨터아카데미
-                    <span>&nbsp;(AWS클라우드 기반 JAVA 개발자 과정 이수)</span>
-                  </p> */}
-                  <p>2014.03 ~ 2017.02&nbsp;&nbsp;&nbsp;&nbsp;성동글로벌경영고등학교</p>
+                  <h1 className={s.historyTitle}>학력·교육이수</h1>
+                  <p>한국방송통신대학교 컴퓨터과학과<span className='date3'>2024.03 ~ 재학중</span></p>
+                  <div className={s.eachHistoryContainer}>
+                    <p>한국에이아이블록체인융합원<span className='date4'>2023.05 ~ 2023.07</span></p>
+                    <p className={s.smallHistoryTxt}>(블록체인 기반의 기술 사업화 전문 인력 양성 과정)</p>
+                  </div>
+                  <div className={s.eachHistoryContainer}>
+                    <p>
+                      이젠컴퓨터아카데미<span className='date5'>2022.07 ~ 2023.03</span>
+                      <p className={s.smallHistoryTxt}>(AWS클라우드 기반 JAVA 개발자 과정)</p>
+                    </p>
+                  </div>
+                  {/* <p>성동글로벌경영고등학교 패션디자인과&nbsp;&nbsp;&nbsp;&nbsp;2014.03 ~ 2017.02</p> */}
                 </div>
                 <div>
                   <h1 className={s.historyTitle}>자격증</h1>
