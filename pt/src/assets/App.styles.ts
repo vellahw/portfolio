@@ -20,12 +20,10 @@ export const roundElList = css({
   gap: '.8rem'
 })
 
-
 export const main = css({
   maxWidth: '1404px',
   w: '100%',
-  m: '0 auto',
-  pb: '19rem'
+  m: '0 auto 10rem auto',
 });
 
 export const eachRoundEl = css({
@@ -270,13 +268,24 @@ export const workSection = css({
 });
 
 export const workSectionTitleContainer = css({
-  // borderRight: '1px solid',
-  // borderRightColor: 'border',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-end',
   pt: '13rem',
-  pb:'4.5rem'
+  pb:'4.5rem',
+
+  // pos: 'relative',
+  // borderRight: '1px solid',
+  // borderRightColor: 'border',
+  // _after: {
+  //   content: '""',
+  //   w: '1px',
+  //   h: '6rem',
+  //   pos: 'absolute',
+  //   bottom: 'calc(-6rem - 1px)',
+  //   left: 0,
+  //   bg: 'border'
+  // }
 });
 
 export const workSectionTitle2 = css({
@@ -337,8 +346,8 @@ export const number = css({
 export const projectSectionTitle = css({
   pt: '13rem',
   pb: '4.5rem',
-  // borderLeft: '1px solid',
-  // borderLeftColor: 'border',
+  // borderRight: '1px solid',
+  // borderRightColor: 'border',
   ml: 0,
   display: 'flex',
   justifyContent: 'space-between',

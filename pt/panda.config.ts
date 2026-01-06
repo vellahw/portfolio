@@ -81,11 +81,26 @@ export default defineConfig({
         fontDisplay: 'swap',
       },
     ],
+    Montserrat: [
+      {
+        src: 'url(/fonts/Montserrat-Medium.ttf) format("truetype")',
+        fontWeight: 500,
+        fontStyle: 'normal',
+        fontDisplay: 'swap',
+      },
+      {
+        src: 'url(/fonts/Montserrat-Bold.ttf) format("truetype")',
+        fontWeight: 700,
+        fontStyle: 'normal',
+        fontDisplay: 'swap',
+      },
+    ]
   },
 
   globalVars: {
     '--font-pretendard': 'Pretendard',
     '--font-darker': 'Darker',
+    '--font-montserrat': 'Montserrat',
   },
 
   // Files to exclude
@@ -98,6 +113,7 @@ export default defineConfig({
       fonts: {
         pretendard: { value: 'var(--font-pretendard)' },
         darker: { value: 'var(--font-darker)' },
+        montserrat: { value: 'var(--font-montserrat)' },
       },
       colors: {
         primary: { value: '#f9f9f8' },

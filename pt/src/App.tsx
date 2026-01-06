@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { header, navigator } from './assets/Header.styles';
+import { header, mail, navigator } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { css, cx } from '../styled-system/css';
@@ -34,20 +34,14 @@ function App() {
   return (
     <>
       <header className={header} ref={headerRef}>
-        {/* <div className={container}> */}
-        {/* <a href="" className={logo}>
-            <p className="name">Hanwon Jang</p>
-            <p className="small">Front-End Developer</p>
-          </a> */}
+        <a href="mailto:iamhanwon@gmail.com" className={mail}>
+          iamhanwon@gmail.com
+        </a>
         <nav className={navigator}>
           <a href="#1">#프로필</a>
-          <a href="#2">#이력·경험</a>
-          <a href="#3">#연락하기</a>
+          <a href="#2">#이력</a>
+          <a href="#3">#경험</a>
         </nav>
-        {/* <a href="mailto:iamhanwon@gmail.com" className={mail}>
-            iamhanwon@gmail.com
-          </a> */}
-        {/* </div> */}
       </header>
       <main className={s.main}>
         {/* 배너 */}
@@ -268,7 +262,8 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
           </div>
         </section>
 
-        <section id="3"></section>
+        <section id="3">
+        </section>
       </main>
     </>
   );
