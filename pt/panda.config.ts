@@ -1,33 +1,4 @@
-import { defineConfig, defineGlobalStyles } from "@pandacss/dev";
-
-const globalCss = defineGlobalStyles({
-  'html, body': {
-    fontFamily: 'pretendard',
-    fontSize: '62.5%',
-    color: 'primary',
-    backgroundColor: 'black',
-
-    '& @media all and (max-width: 1024px)': {
-      fontSize: '50%',
-    },
-  },
-  button: {
-    cursor: 'pointer',
-
-    _active: {
-      outline: 'none',
-    },
-  },
-
-  'h1, h2, h3, h4, h5, h6, span, p': {
-    lineHeight: 1,
-  },
-
-  'h1, h2, h3, h4, h5, h6': {
-    fontWeight: 700
-  }
-});
-
+import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
   // Whether to use css reset
@@ -38,7 +9,41 @@ export default defineConfig({
   // Where to look for your css declarations
   include: ['./src/**/*.{ts,tsx,js,jsx}'],
 
-  globalCss,
+  globalCss: {
+    'html, body': {
+      fontSize: '62.5%',
+      fontFamily: 'pretendard',
+      color: 'primary',
+      backgroundColor: 'black',
+    },
+
+    '@media screen and (max-width: 768px)': {
+      'html, body': {
+        fontSize: '40%'
+      }
+    },
+    '@media screen and (min-width: 769px) and (max-width: 1456px)': {
+      'html, body': {
+        fontSize: '50%'
+      }
+    },
+
+    button: {
+      cursor: 'pointer',
+
+      _active: {
+        outline: 'none',
+      },
+    },
+
+    'h1, h2, h3, h4, h5, h6, span, p': {
+      lineHeight: 1,
+    },
+
+    'h1, h2, h3, h4, h5, h6': {
+      fontWeight: 700
+    },
+  },
 
   globalFontface: {
     Pretendard: [
@@ -125,8 +130,8 @@ export default defineConfig({
     },
     breakpoints: {
       sm: '150px',
-      md: '767px',
-      lg: '1367px',
+      md: '768px',
+      lg: '1456px',
       '2xl': '1921px',
     },
   },

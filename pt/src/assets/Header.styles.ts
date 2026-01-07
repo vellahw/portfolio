@@ -3,11 +3,20 @@ import { css } from "../../styled-system/css";
 export const header = css({
   pos: 'fixed',
   top: '2.9rem',
-  left: '50%',
-  transform: 'translateX(-50%)',
   w: '100%',
-  h: '6.4rem',
   zIndex: 999,
+  
+  sm: {
+    h: '7.8rem',
+    left: '0',
+    transform: 'unset',
+  },
+  
+  md: {
+    h: '6.4rem',
+    left: '50%',
+    transform: 'translateX(-50%)',
+  },
 });
 
 export const mail = css({
@@ -20,14 +29,13 @@ export const mail = css({
   transform: 'translateY(-50%)',
   opacity: .8,
 
-  // sm: {
-  //   display: 'none',
-  // },
-  // md: {
-  //   display: 'unset',
-  // },
+  sm: {
+    display: 'none',
+  },
+  md: {
+    display: 'unset',
+  },
 });
-
 
 export const navigator = css({
   display: 'flex',
@@ -36,13 +44,40 @@ export const navigator = css({
   pos: 'absolute',
   left: '50%',
   transform: 'translateX(-50%)',
-  w: '43.8rem',
   h: '100%',
-  gap: '5.7rem',
-  fontSize: '1.8rem',
   bg: '#0a090e6c',
   backdropFilter: 'blur(14px)',
   rounded: '55555px',
   border: '1px solid',
-  borderColor: '#82828290'
+  borderColor: '#82828290',
+  minW: '275px',
+
+  sm: {
+    w: '80%',
+    gap: '1.5rem',
+    fontSize: '14px',
+  },
+  md: {
+    w: '43.8rem',
+    gap: '2.5rem',
+    fontSize: '1.8rem',
+  }
 });
+
+export const menuWrapper = css({
+  display:'flex',
+  alignItems: 'center'
+})
+
+export const slash = css({
+  fontFamily: 'darker',
+  fontSize: '1.8rem',
+  opacity: .7,
+  
+  sm: {
+    ml: '1.5rem',
+  },
+  md: {
+    ml: '2.5rem',
+  }
+})

@@ -54,14 +54,16 @@ export const projectData = [
     role: ['메인, 상세보기, 회원가입, 로그인, 알림 페이지 구현', 'UX/UI 구현', '디자인 시스템 구축'],
     tech: ['JavaScript', 'JSP', 'Java', 'Spring Framework'],
     href: 'https://github.com/vellahw/gather',
+    year: '2024'
   },
   {
-    name: 'BLEND',
+    name: 'BLEND 블랜드',
     src: 'blend',
     what: '블록체인 기반 통합 마일리지 서비스',
     des: 'React 학습 이후 프론트엔드 팀원으로 참여한 프로젝트입니다.\n상태 관리를 통해 UI를 제어하고, styled-components를 활용해 재사용 가능한 컴포넌트를 설계하며 React 기반의 모던 웹 개발 경험을 쌓았습니다.',
     role: ['메뉴, 마이페이지, 마일리지 현황, 지갑 현황 구현', 'UX/UI 구현'],
     tech: ['React', 'JavasScript'],
     href: 'https://github.com/vellahw/BLEND',
+    year: '2023'
   },
 ];
