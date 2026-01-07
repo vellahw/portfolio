@@ -100,7 +100,7 @@ function App() {
           </div>
           <div ref={nameRef} className={s.myName}>
             <h1>Hanwon</h1>
-            <h1 className='bt'>Jang</h1>
+            <h1>Jang</h1>
           </div>
           <div className={cx(s.roundTxtEl, s.positionTxt)} ref={positionRef}>
             <span>웹 프론트엔드 개발자</span>

@@ -169,6 +169,7 @@ export const myName = css({
   },
   md: {
     fontSize: '12vw',
+    display: 'flex',
   },
   lg: {
     fontSize: '20rem',
