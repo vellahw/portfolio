@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
