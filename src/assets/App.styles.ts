@@ -66,10 +66,11 @@ export const eachRoundEl = css({
   color: 'black',
   border: '1px solid',
   borderColor: 'border',
+  whiteSpace: 'nowrap',
 
   sm: {
     p: '0 2rem',
-    fontSize: '13px',
+    fontSize: '13px !',
     height: '4.4rem',
     gap: '1rem',
   },
@@ -159,14 +160,15 @@ export const myName = css({
   transform: 'translate3d(-50%, -50%, 0)',
   whiteSpace: 'nowrap',
   lineHeight: '1',
+  letterSpacing: '-.7rem',
 
   sm: {
-    fontSize: '7rem',
+    fontSize: '10rem',
     letterSpacing: '0px',
+    textAlign: 'center'
   },
   md: {
     fontSize: '12vw',
-    letterSpacing: '-7px',
   },
   lg: {
     fontSize: '20rem',
@@ -180,7 +182,7 @@ export const profileSection = css({
   mt: '9rem',
   
   sm: {
-    p: '5.8rem 4.5rem 0 4.5rem',
+    p: '5.8rem 3rem 0 3rem',
   },
   md: {
     p: '5.8rem 5.5rem 0 5.5rem',
@@ -594,7 +596,7 @@ export const goBtn = css({
   pos: 'absolute',
   bottom: '1.5rem',
   right: '1.5rem',
-  zIndex: '1',
+  zIndex: '3',
   
   sm: {
     w: ' 18.4rem',
@@ -616,8 +618,8 @@ export const workGoBtn = css({
   bg: '#ffffffa4',
   backdropFilter: 'blur(50px)',
   rounded: '.5rem',
-  border: '1px solid',
-  borderColor: '#0a090f52',
+  outline: '1px solid',
+  outlineColor: '#0a090f52',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -875,9 +877,6 @@ export const contactMail = css({
   transform: 'translate3d(-50%, 0, 0)',
 
   sm: {
-    fontSize: '3rem',
-  },
-  md: {
     fontSize: '6vw',
   },
   lg: {

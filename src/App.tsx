@@ -98,9 +98,10 @@ function App() {
           <div className={cx(s.roundTxtEl, s.sloganTxt)} ref={sloganRef}>
             <span>책임감 있는 자세로 결과를 만드는</span>
           </div>
-          <h1 ref={nameRef} className={s.myName}>
-            Hanwon Jang
-          </h1>
+          <div ref={nameRef} className={s.myName}>
+            <h1>Hanwon</h1>
+            <h1 className='bt'>Jang</h1>
+          </div>
           <div className={cx(s.roundTxtEl, s.positionTxt)} ref={positionRef}>
             <span>웹 프론트엔드 개발자</span>
           </div>
