@@ -13,7 +13,7 @@ function App() {
   const positionRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    if (!headerRef.current) return;
+    // if (!headerRef.current) return;
 
     let tl: gsap.core.Timeline;
 
@@ -58,12 +58,12 @@ function App() {
     });
 
     // resize 시 다시 계산
-    window.addEventListener('resize', playAnimation);
+    // window.addEventListener('resize', playAnimation);
 
-    return () => {
-      window.removeEventListener('resize', playAnimation);
-      tl?.kill();
-    };
+    // return () => {
+    //   window.removeEventListener('resize', playAnimation);
+    //   tl?.kill();
+    // };
   });
 
   return (
