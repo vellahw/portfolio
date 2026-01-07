@@ -547,8 +547,47 @@ export const gridItem = css({
   bg: 'gray100',
 });
 
+export const workThumbnail = css({
+  pos: 'relative',
+})
+
 export const workImgContainer = css({
   pos: 'relative',
+
+  _hover: {
+    '& .gif': {
+      opacity: 1
+    }
+  },
+
+  // _after: {
+  //   content: '""',
+  //   pos: "absolute",
+  //   top: 0,
+  //   left: 0,
+  //   opacity: .3,
+  //   bg: '#fff',
+  //   zIndex: '1',
+  //   w: '100%',
+  //   h: '100%',
+  // }
+})
+
+export const workImgGif = css({
+  opacity: 0,
+  pos: 'absolute',
+  top: 0,
+  left: 0,
+  transition: 'opacity .4s',
+  rounded: '1.5rem',
+  zIndex: '2',
+
+  sm: {
+    display: 'none',
+  },
+  lg: {
+    display: 'block'
+  }
 })
 
 export const goBtn = css({

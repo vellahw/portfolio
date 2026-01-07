@@ -14,6 +14,12 @@ export const worksData = [
     more: '워드프레스 기반 게시판 페이징 기능 제작'
   },
   {
+    name: 'BBC GINZA 원장 소개 페이지',
+    tech: '워드프레스(PHP)',
+    href: 'https://bb-clinic.jp/byon/',
+    src: 'bbgz2',
+  },
+  {
     name: 'BBC OMOTESANDO',
     tech: '워드프레스(PHP)',
     href: 'https://bbc-omote.com/',

@@ -146,7 +146,7 @@ function App() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />
-                        </svg>
+                </svg>
               </a>
 
               {/* 경력 */}
@@ -194,8 +194,13 @@ function App() {
               return (
                 <div className={s.gridItem} key={index}>
                   <p className={s.number}>[0{index + 1}]</p>
-                  <div className={s.workImgContainer}>
-                    <img src={`/img/work-${item.src}.png`} alt={item.name} />
+                  <div className={s.workThumbnail}>
+                    <div className={s.workImgContainer}>
+                      <img src={`/img/work-${item.src}.png`} alt={item.name} />
+                      {item.src != 'bbom' ? (
+                        <img src={`/img/work-${item.src}-g.gif`} className={cx(s.workImgGif, 'gif')} alt={item.name} loading='lazy'/>
+                      ) : ''}
+                    </div>
                     {item.href && (
                       <a href={item.href} target='_blank' className={cx(s.goBtn, s.workGoBtn)}>
                         <span>사이트 바로가기</span>
