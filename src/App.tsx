@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { container, header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
@@ -12,7 +12,7 @@ function App() {
   const sloganRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // if (!headerRef.current) return;
 
     let tl: gsap.core.Timeline;
