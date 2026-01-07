@@ -9,13 +9,13 @@ export const header = css({
   sm: {
     h: '7.8rem',
     left: '0',
-    transform: 'unset',
+    transform: 'unset !',
   },
   
   md: {
     h: '6.4rem',
     left: '50%',
-    transform: 'translateX(-50%)',
+    transform: 'translateX(-50%) !',
   },
 });
 
@@ -61,7 +61,7 @@ export const navigator = css({
     w: '43.8rem',
     gap: '2.5rem',
     fontSize: '1.8rem',
-  }
+  },
 });
 
 export const menuWrapper = css({

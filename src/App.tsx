@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
@@ -10,26 +10,44 @@ function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const headerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    document.fonts.ready.then(() => { 
-      const tl = gsap.timeline();
-  
+  useLayoutEffect(() => {
+    if (!headerRef.current) return;
+
+    let tl: gsap.core.Timeline;
+
+    const playAnimation = () => {
+      // 기존 애니메이션 제거
+      tl?.kill();
+
+      tl = gsap.timeline();
+
       // 이름 등장
       tl.fromTo(
         nameRef.current,
         { opacity: 0, y: 90 },
         { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }
       );
-  
+
       // 헤더 등장
       tl.fromTo(
         headerRef.current,
         { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: .6, ease: 'power3.out' },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
       );
+    };
 
-    })
-  }, [])
+    document.fonts.ready.then(() => {
+      playAnimation();
+    });
+
+    // resize 시 다시 계산
+    window.addEventListener('resize', playAnimation);
+
+    return () => {
+      window.removeEventListener('resize', playAnimation);
+      tl?.kill();
+    };
+  }, []);
 
   return (
     <>

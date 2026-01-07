@@ -10,6 +10,10 @@ export const main = css({
     w: 'calc(100% - 6rem)',
   },
   md: {
+    m: '0 30px',
+    w: 'calc(100% - 60px)',
+  },
+  lg: {
     m: '0 auto',
     w: '100%',
   }
@@ -17,7 +21,7 @@ export const main = css({
 
 
 export const section = css({
-  md: {
+  lg: {
     minH: '939px',
   }
 })
@@ -109,7 +113,6 @@ export const bannerTxtSquare = css({
     height: '6.2rem',
     fontSize: '2.6rem', 
   }
-
 })
 
 export const sloganTxt = css({
@@ -120,11 +123,11 @@ export const sloganTxt = css({
     transform: 'translate3d(-50%, 0, 0)',
   },
   md: {
-    left: 'calc(50% - 40rem)',
-    transform: '0',
+    left: '50%',
   },
   lg: {
-    left: 'calc(50% - 52rem)',
+    left: 'calc(50% - 39vw)',
+    transform: 'none',
   }
 });
 
@@ -149,7 +152,6 @@ export const myName = css({
   // fontSize: '29.8rem',
   // fontFamily: 'darker',
   fontFamily: 'montserrat',
-  fontWeight: 500,
   pos: 'absolute',
   top: '50%',
   left: '50%',
@@ -160,11 +162,16 @@ export const myName = css({
   sm: {
     fontSize: '7rem',
     letterSpacing: '0px',
+    fontWeight: 700,
   },
   md: {
-    fontSize: '19rem',
+    fontSize: '12vw',
     letterSpacing: '-7px',
+    fontWeight: 500,
   },
+  lg: {
+    fontSize: '20rem',
+  }
 });
 
 // 프로필 영역 =======================================
@@ -214,10 +221,13 @@ export const profileHelloTitleContainer = css({
   
   md: {
     w: '50%',
-    fontSize: '5.8rem',
+    fontSize: '4.8rem',
     alignItems: 'unset',
     textAlign: 'unset',
     mt: 'unset'
+  },
+  lg: {
+    fontSize: '5.8rem',
   }
 });
 
@@ -229,6 +239,9 @@ export const helloFirst = css({
 
 export const helloLast = css({
   md: {
+    pl: '20rem',
+  },
+  lg: {
     pl: '24.7rem',
   }
 })
@@ -242,6 +255,8 @@ export const profileBodyContainer = css({
   },
   md: {
     flexDirection: 'row',
+  },
+  lg: {
     mt: '0',
   }
 })
@@ -252,9 +267,13 @@ export const myProfileImg = css({
   
   sm: {
     w: '100%',
-    h: 'auto'
+    h: 'fit-content'
   },
   md: {
+    w: '50%',
+    h: 'fit-content',
+  },
+  lg: {
     w: '60.9rem',
     h: '70.2rem',
   }
@@ -290,7 +309,7 @@ export const profileBodyWrapper = css({
     _before: {
       content: '""',
       w: '1px',
-      h: '95%',
+      h: '97%',
       bg: 'border',
       display: 'block',
       pos: 'absolute',
@@ -628,7 +647,8 @@ export const projectTitleContainer = css({
 export const projectName = css({
   fontWeight: 500,
   m: '1.8rem 0',
-  
+  whiteSpace: "nowrap",
+
   sm: {
     fontSize: '2.5rem',
   },
@@ -821,8 +841,11 @@ export const contactMail = css({
     fontSize: '3rem',
   },
   md: {
+    fontSize: '6vw',
+  },
+  lg: {
     fontSize: '9rem',
-  }
+  },
 })
 
 export const footerTxt = css({
