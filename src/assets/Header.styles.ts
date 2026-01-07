@@ -9,24 +9,31 @@ export const header = css({
   sm: {
     h: '7.8rem',
     left: '0',
-    transform: 'unset !',
+    // transform: 'unset !',
   },
   
   md: {
     h: '6.4rem',
-    left: '50%',
-    transform: 'translateX(-50%) !',
+    // left: '50%',
+    // transform: 'translateX(-50%) !',
   },
 });
+
+export const container = css({
+  display: 'flex',
+  h: '100%',
+  alignItems: 'center',
+  pos: 'relative'
+})
 
 export const mail = css({
   fontFamily: 'montserrat',
   fontWeight: 500,
   fontSize: '1.5rem',
-  pos: 'fixed',
+  pos: 'absolute',
   top: '50%',
+  transform: 'translate3d(0, -50%, 0)',
   left: '3.5rem',
-  transform: 'translateY(-50%)',
   opacity: .8,
 
   sm: {
@@ -41,9 +48,10 @@ export const navigator = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  pos: 'absolute',
-  left: '50%',
-  transform: 'translateX(-50%)',
+  m: '0 auto',
+  // pos: 'absolute',
+  // left: '50%',
+  // transform: 'translateX(-50%)',
   h: '100%',
   bg: '#d9d9d97d',
   backdropFilter: 'blur(14px)',

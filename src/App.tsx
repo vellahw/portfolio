@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from 'react';
-import { header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
+import { container, header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { css, cx } from '../styled-system/css';
@@ -9,6 +9,8 @@ import { center, stack } from '../styled-system/patterns';
 function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const sloganRef = useRef<HTMLDivElement>(null);
+  const positionRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (!headerRef.current) return;
@@ -25,14 +27,29 @@ function App() {
       tl.fromTo(
         nameRef.current,
         { opacity: 0, y: 90 },
-        { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }
       );
 
       // 헤더 등장
       tl.fromTo(
         headerRef.current,
-        { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
+        { opacity: 0 },
+        { opacity: 1, duration: .5, ease: 'power3.out' }
+      );
+
+      // 슬로건 등장
+      tl.fromTo(
+        sloganRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: .5, ease: 'power3.out' }
+      );
+
+      // 포지션 등장
+      tl.fromTo(
+        positionRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: .5, ease: 'power3.out' },
+        "<"
       );
     };
 
@@ -47,42 +64,44 @@ function App() {
       window.removeEventListener('resize', playAnimation);
       tl?.kill();
     };
-  }, []);
+  });
 
   return (
     <>
       <header className={header} ref={headerRef}>
-        <a href="mailto:iamhanwon@gmail.com" className={mail}>
-          iamhanwon@gmail.com
-        </a>
-        <nav className={navigator}>
-          <div className={menuWrapper}>
-            <a href="#1">프로필</a>
-            <span className={slash}>*</span>
-          </div>
-          <div className={menuWrapper}>
-            <a href="#2">이력</a>
-            <span className={slash}>*</span>
-          </div>
-          <div className={menuWrapper}>
-            <a href="#3">경험</a>
-            <span className={slash}>*</span>
-          </div>
-          <a href="#4">연락하기</a>
-        </nav>
+        <div className={container}>
+          <a href="mailto:iamhanwon@gmail.com" className={mail}>
+            iamhanwon@gmail.com
+          </a>
+          <nav className={navigator}>
+            <div className={menuWrapper}>
+              <a href="#1">프로필</a>
+              <span className={slash}>*</span>
+            </div>
+            <div className={menuWrapper}>
+              <a href="#2">이력</a>
+              <span className={slash}>*</span>
+            </div>
+            <div className={menuWrapper}>
+              <a href="#3">경험</a>
+              <span className={slash}>*</span>
+            </div>
+            <a href="#4">연락하기</a>
+          </nav>
+        </div>
       </header>
 
       <main className={s.main}>
 
         {/* 배너 */}
         <section className={cx(s.section, s.bannerSection)}>
-          <div className={cx(s.roundTxtEl, s.sloganTxt)}>
+          <div className={cx(s.roundTxtEl, s.sloganTxt)} ref={sloganRef}>
             <span>책임감 있는 자세로 결과를 만드는</span>
           </div>
           <h1 ref={nameRef} className={s.myName}>
             Hanwon Jang
           </h1>
-          <div className={cx(s.roundTxtEl, s.positionTxt)}>
+          <div className={cx(s.roundTxtEl, s.positionTxt)} ref={positionRef}>
             <span>웹 프론트엔드 개발자</span>
           </div>
         </section>
