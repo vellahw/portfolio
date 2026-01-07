@@ -88,15 +88,14 @@ function App() {
             <div className={s.profileBodyWrapper}>
               <span className={s.mark}>*</span>
               <p className={s.profileBody}>
-                {`HTML·CSS·JavaScript 기반의 퍼블리싱에 능숙하며,
-React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
-반응형 웹, 웹 표준, 웹 접근성을 고려한 사용자 경험을 중요하게 생각합니다. 
-개발뿐만 아니라 간단한 UI 디자인에도 참여하며
-기획과 디자인의 의도를 이해하고 구현하는 경험을 쌓아왔습니다.
-디자이너를 곧 클라이언트라고 생각하며
-원활한 소통을 통해 더 나은 결과를 만드는 협업에 즐거움을 느낍니다.`}
+                {`웹 프론트엔드 개발자로 근무하며 국내외 병의원 홈페이지 리뉴얼 프로젝트에서 프론트엔드 개발을 전담하고 주도적으로 진행한 경험이 있습니다.
+HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용자 경험을 개선하고, JavaScript를 활용한 인터랙션 구현으로 서비스 완성도를 높였습니다.
+레거시 그누보드 환경의 스크립트와 마크업을 표준 코드로 개선하며 단기적인 구현에 그치지 않고, 유지보수와 개선까지 책임지는 관점으로 프로젝트에 임해왔습니다.
+디자인 시안을 높은 정확도로 구현하는 동시에 간단한 UI 디자인에도 참여하며, 기획과 디자인의 의도를 이해하고 구현하는 역량을 쌓아왔습니다.
+디자이너를 곧 클라이언트로 생각하며, 원활한 소통을 통해 더 나은 결과를 만들어가는 협업 과정에 즐거움을 느낍니다.
+`}
               </p>
-              <div className={stack({ gap: '2.6rem' })}>
+              {/* <div className={stack({ gap: '2.6rem' })}>
                 <div className={flex({ gap: '1.6rem' })}>
                   <a href="" className={cx(s.profileLink, s.showResume, center())}>
                     <span>노션 이력서 보기</span>
@@ -108,7 +107,11 @@ React와 TypeScript 환경의 컴포넌트 단위 개발 경험이 있습니다.
                 <a href="https://github.com/vellahw" target='_blank' className={cx(s.profileLink, s.goGithub, center())}>
                   <span>Github</span>
                 </a>
-              </div>
+              </div> */}
+
+              <a href="https://github.com/vellahw" target='_blank' className={cx(s.profileLink, s.goGithub, center())}>
+                  <span>Github</span>
+              </a>
 
               {/* 경력 */}
               <div className={cx(s.history, stack())}>

@@ -320,7 +320,7 @@ export const mark = css({
 });
 
 export const profileBody = css({
-  lineHeight: '1.9',
+  lineHeight: '2.2',
   whiteSpace: 'pre-wrap',
   mb: '5.3rem',
   mt: '-7.8rem',
@@ -621,8 +621,7 @@ export const projectTitleContainer = css({
     gap: '1.2rem'
   },
   md: {
-  justifyContent: 'space-between',
-
+    justifyContent: 'unset',
   }
 });
 
