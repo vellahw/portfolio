@@ -2,9 +2,9 @@
 
 🔎 Demo: [https://iamhanwon.netlify.app/](https://iamhanwon.netlify.app/)
 
-💌 iamhanwon@gmail.com
+💌 Contact: iamhanwon@gmail.com
 
-![스크린샷 2026-01-08 003208.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-01-08_003208.png)
+<img width="1901" height="907" alt="스크린샷_2026-01-08_003208" src="https://github.com/user-attachments/assets/38f96e68-1290-4da0-9f27-8d28e6137bbd" />
 
 ## ABOUT
 
