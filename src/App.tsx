@@ -128,7 +128,25 @@ function App() {
               </div> */}
 
               <a href="https://github.com/vellahw" target='_blank' className={cx(s.profileLink, s.goGithub, center())}>
-                  <span>Github</span>
+                <span>Github</span>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
+                            stroke="#15151aac"
+                            strokeWidth="1.5"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M8.22009 17.2357L17.1455 8.31028"
+                            stroke="#15151aac"
+                            strokeWidth="1.5"
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
               </a>
 
               {/* 경력 */}

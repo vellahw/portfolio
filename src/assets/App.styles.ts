@@ -63,7 +63,7 @@ export const eachRoundEl = css({
   alignItems: 'center',
   justifyContent: 'center',
   bg: '#dbdbdbff',
-  color: 'primary',
+  color: 'black',
   border: '1px solid',
   borderColor: 'border',
 
@@ -152,6 +152,7 @@ export const myName = css({
   // fontSize: '29.8rem',
   // fontFamily: 'darker',
   fontFamily: 'montserrat',
+  fontWeight: 700,
   pos: 'absolute',
   top: '50%',
   left: '50%',
@@ -162,12 +163,10 @@ export const myName = css({
   sm: {
     fontSize: '7rem',
     letterSpacing: '0px',
-    fontWeight: 700,
   },
   md: {
     fontSize: '12vw',
     letterSpacing: '-7px',
-    fontWeight: 500,
   },
   lg: {
     fontSize: '20rem',
@@ -369,12 +368,12 @@ export const profileLink = css({
 
 export const showResume = css({
   bg: 'primary',
-  color: 'primary',
+  color: 'black',
 });
 
 export const goGithub = css({
   bg: 'gray100',
-  color: 'primary',
+  color: 'black',
   border: '1px solid',
   borderColor: 'border',
 });
@@ -574,7 +573,7 @@ export const goBtn = css({
 });
 
 export const workGoBtn = css({
-  color: 'primary',
+  color: 'black',
   bg: '#ffffffa4',
   backdropFilter: 'blur(50px)',
   rounded: '.5rem',
@@ -722,7 +721,6 @@ export const projectGitBtn = css({
 export const projectRole = css({
   fontSize: '1.6rem !',
   w:'fit-content',
-  bg: '#1d1d23ff'
 })
 
 // 컨택트 영역 =======================================

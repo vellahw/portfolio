@@ -13,8 +13,8 @@ export default defineConfig({
     'html, body': {
       fontSize: '62.5%',
       fontFamily: 'pretendard',
-      color: 'primary',
-      backgroundColor: 'black',
+      color: 'black',
+      backgroundColor: 'primary',
     },
 
     '@media screen and (max-width: 768px)': {
@@ -127,8 +127,8 @@ export default defineConfig({
         montserrat: { value: 'var(--font-montserrat)' },
       },
       colors: {
-        primary: { value: '#15151A' },
-        black: { value: '#f9f9f8' },
+        black: { value: '#15151A' },
+        primary: { value: '#f9f9f8' },
         border: { value: '#15151a70' },
         // primary: { value: '#f9f9f8' },
         // black: { value: '#15151A' },
