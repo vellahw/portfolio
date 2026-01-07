@@ -4,7 +4,7 @@ import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { css, cx } from '../styled-system/css';
 import gsap from 'gsap';
-import { center, flex, stack } from '../styled-system/patterns';
+import { center, stack } from '../styled-system/patterns';
 
 function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
