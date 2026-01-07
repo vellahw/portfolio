@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://iamhanwon.netlify.app/",
   "scripts": {
     "dev": "panda watch & vite",
     "build": "tsc -b && vite build",
