@@ -1,8 +1,8 @@
 # 2026 웹 포트폴리오 🙋‍♀️
 
-🔎 Demo: [https://iamhanwon.netlify.app/](https://iamhanwon.netlify.app/)
+🔎 [https://iamhanwon.netlify.app/](https://iamhanwon.netlify.app/)
 
-💌 Contact: iamhanwon@gmail.com
+💌 iamhanwon@gmail.com
 
 <img width="1901" height="907" alt="스크린샷_2026-01-08_003208" src="https://github.com/user-attachments/assets/38f96e68-1290-4da0-9f27-8d28e6137bbd" />
 
