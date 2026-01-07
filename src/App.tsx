@@ -76,13 +76,13 @@ function App() {
 
         {/* 배너 */}
         <section className={cx(s.section, s.bannerSection)}>
-          <div className={cx(s.bannerTxtSquare, s.sloganTxt)}>
+          <div className={cx(s.roundTxtEl, s.sloganTxt)}>
             <span>책임감 있는 자세로 결과를 만드는</span>
           </div>
           <h1 ref={nameRef} className={s.myName}>
             Hanwon Jang
           </h1>
-          <div className={cx(s.bannerTxtSquare, s.positionTxt)}>
+          <div className={cx(s.roundTxtEl, s.positionTxt)}>
             <span>웹 프론트엔드 개발자</span>
           </div>
         </section>
@@ -106,8 +106,8 @@ function App() {
             <div className={s.profileBodyWrapper}>
               <span className={s.mark}>*</span>
               <p className={s.profileBody}>
-                {`웹 프론트엔드 개발자로 근무하며 국내외 병의원 홈페이지 리뉴얼 프로젝트에서 프론트엔드 개발을 전담하고 주도적으로 진행한 경험이 있습니다.
-HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용자 경험을 개선하고, JavaScript를 활용한 인터랙션 구현으로 서비스 완성도를 높였습니다.
+                {`웹 프론트엔드 개발자로 근무하며 국내외 병의원 홈페이지 리뉴얼 프로젝트에서 프론트엔드 개발을 전담하고 주도적으로 진행했습니다.
+반응형 웹과 정교한 마크업을 기반으로 사용자 경험을 개선하고, JavaScript를 활용한 인터랙션 구현으로 서비스 완성도를 높였습니다.
 레거시 그누보드 환경의 스크립트와 마크업을 표준 코드로 개선하며 단기적인 구현에 그치지 않고, 유지보수와 개선까지 책임지는 관점으로 프로젝트에 임해왔습니다.
 디자인 시안을 높은 정확도로 구현하는 동시에 간단한 UI 디자인에도 참여하며, 기획과 디자인의 의도를 이해하고 구현하는 역량을 쌓아왔습니다.
 디자이너를 곧 클라이언트로 생각하며, 원활한 소통을 통해 더 나은 결과를 만들어가는 협업 과정에 즐거움을 느낍니다.
@@ -184,7 +184,7 @@ HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용�
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                            stroke="#F0EEED"
+                            stroke="#15151aac"
                             strokeWidth="1.5"
                             strokeMiterlimit="10"
                             strokeLinecap="round"
@@ -192,7 +192,7 @@ HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용�
                           />
                           <path
                             d="M8.22009 17.2357L17.1455 8.31028"
-                            stroke="#F0EEED"
+                            stroke="#15151aac"
                             strokeWidth="1.5"
                             strokeMiterlimit="10"
                             strokeLinecap="round"
@@ -206,7 +206,7 @@ HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용�
                     <div className={s.projectTitleContainer}>
                       <h1 className={s.projectName}>{item.name}</h1>
                       <span>|</span>
-                      <span className={s.projectBody}>{item.what ? item.what : '홈페이지 전체 퍼블리싱'}</span>
+                      <span className={s.projectBody}>{item.what ? item.what : '홈페이지 전체 리뉴얼'}</span>
                     </div>
                     {item.more && (
                       <p className={s.projectBodyMore}>{`${item.more}`}</p>
@@ -245,13 +245,13 @@ HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용�
                     {item.href && (
                       <a href={item.href} target='_blank' className={cx(s.projectGitBtn, s.goBtn, s.workGoBtn)}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M10 0.833984C4.93587 0.833984 0.833374 4.93648 0.833374 10.0007C0.833374 14.0565 3.45754 17.4832 7.10087 18.6973C7.55921 18.7773 7.73088 18.5032 7.73088 18.2623C7.73088 18.044 7.72004 17.3223 7.72004 16.5548C5.41671 16.979 4.82087 15.9932 4.63754 15.4782C4.53421 15.214 4.08754 14.4007 3.69837 14.1832C3.37754 14.0107 2.91837 13.5873 3.68671 13.5757C4.40837 13.564 4.92421 14.2398 5.09587 14.5157C5.92087 15.9015 7.23837 15.5123 7.76588 15.2715C7.84588 14.6757 8.08671 14.2748 8.35004 14.0457C6.31004 13.8165 4.17921 13.0257 4.17921 9.51898C4.17921 8.52232 4.53421 7.69732 5.11921 7.05565C5.02671 6.82648 4.70587 5.88732 5.21087 4.62648C5.21087 4.62648 5.97838 4.38648 7.73088 5.56648C8.4771 5.35945 9.24813 5.25543 10.0225 5.25732C10.8025 5.25732 11.5817 5.35982 12.3142 5.56648C14.0675 4.37482 14.835 4.62648 14.835 4.62648C15.3392 5.88732 15.0192 6.82648 14.9275 7.05565C15.5117 7.69732 15.8667 8.51148 15.8667 9.51898C15.8667 13.0373 13.7242 13.8165 11.6842 14.0457C12.0167 14.3323 12.3034 14.8823 12.3034 15.7415C12.3034 16.9673 12.2917 17.9532 12.2917 18.2623C12.2917 18.5032 12.4634 18.789 12.9217 18.6973C16.5425 17.4832 19.1667 14.0457 19.1667 10.0007C19.1667 4.93648 15.065 0.833984 10 0.833984Z" fill="white"/>
+                          <path d="M10 0.833984C4.93587 0.833984 0.833374 4.93648 0.833374 10.0007C0.833374 14.0565 3.45754 17.4832 7.10087 18.6973C7.55921 18.7773 7.73088 18.5032 7.73088 18.2623C7.73088 18.044 7.72004 17.3223 7.72004 16.5548C5.41671 16.979 4.82087 15.9932 4.63754 15.4782C4.53421 15.214 4.08754 14.4007 3.69837 14.1832C3.37754 14.0107 2.91837 13.5873 3.68671 13.5757C4.40837 13.564 4.92421 14.2398 5.09587 14.5157C5.92087 15.9015 7.23837 15.5123 7.76588 15.2715C7.84588 14.6757 8.08671 14.2748 8.35004 14.0457C6.31004 13.8165 4.17921 13.0257 4.17921 9.51898C4.17921 8.52232 4.53421 7.69732 5.11921 7.05565C5.02671 6.82648 4.70587 5.88732 5.21087 4.62648C5.21087 4.62648 5.97838 4.38648 7.73088 5.56648C8.4771 5.35945 9.24813 5.25543 10.0225 5.25732C10.8025 5.25732 11.5817 5.35982 12.3142 5.56648C14.0675 4.37482 14.835 4.62648 14.835 4.62648C15.3392 5.88732 15.0192 6.82648 14.9275 7.05565C15.5117 7.69732 15.8667 8.51148 15.8667 9.51898C15.8667 13.0373 13.7242 13.8165 11.6842 14.0457C12.0167 14.3323 12.3034 14.8823 12.3034 15.7415C12.3034 16.9673 12.2917 17.9532 12.2917 18.2623C12.2917 18.5032 12.4634 18.789 12.9217 18.6973C16.5425 17.4832 19.1667 14.0457 19.1667 10.0007C19.1667 4.93648 15.065 0.833984 10 0.833984Z" fill="#15151ac6"/>
                         </svg>
                         GitHub
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                            stroke="#F0EEED"
+                            stroke="#15151aac"
                             strokeWidth="1.5"
                             strokeMiterlimit="10"
                             strokeLinecap="round"
@@ -259,7 +259,7 @@ HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용�
                           />
                           <path
                             d="M8.22009 17.2357L17.1455 8.31028"
-                            stroke="#F0EEED"
+                            stroke="#15151aac"
                             strokeWidth="1.5"
                             strokeMiterlimit="10"
                             strokeLinecap="round"
@@ -279,17 +279,20 @@ HTML/CSS 기반의 반응형 웹과 정교한 마크업을 기반으로 사용�
                       <span className={cx(s.projectBody, css({fontSize: '1.4rem'}))}>{item.year}</span>
                     </div>
                     <p className={cx(s.projectDes, s.projectBodyMore)}>{item.des}</p>
-                    <div className={cx(s.roundElList, s.projectRoleList)}>
-                      {item.role.map((role) => (
-                        <div className={cx(s.eachRoundEl, s.projectRole)} key={role}>{role}</div>
-                      ))}
-                    </div>
-                    <div className={s.roundElList}>
-                      {item.tech.map((tech) => (
-                        <div className={s.eachRoundEl} key={tech}>
-                          {tech}
-                        </div>
-                      ))}
+                    
+                    <div>
+                      <div className={cx(s.roundElList, s.projectRoleList)}>
+                        {item.role.map((role) => (
+                          <div className={cx(s.eachRoundEl, s.projectRole)} key={role}>{role}</div>
+                        ))}
+                      </div>
+                      <div className={s.roundElList}>
+                        {item.tech.map((tech) => (
+                          <div className={s.eachRoundEl} key={tech}>
+                            {tech}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

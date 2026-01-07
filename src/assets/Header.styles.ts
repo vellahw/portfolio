@@ -45,7 +45,7 @@ export const navigator = css({
   left: '50%',
   transform: 'translateX(-50%)',
   h: '100%',
-  bg: '#0a090e6c',
+  bg: '#d9d9d97d',
   backdropFilter: 'blur(14px)',
   rounded: '55555px',
   border: '1px solid',
@@ -58,7 +58,7 @@ export const navigator = css({
     fontSize: '14px',
   },
   md: {
-    w: '43.8rem',
+    w: '44.8rem',
     gap: '2.5rem',
     fontSize: '1.8rem',
   },

@@ -62,10 +62,10 @@ export const eachRoundEl = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  bg: '#f0eeed1f',
+  bg: '#dbdbdbff',
   color: 'primary',
   border: '1px solid',
-  borderColor: '#ffffff72',
+  borderColor: 'border',
 
   sm: {
     p: '0 2rem',
@@ -89,11 +89,11 @@ export const bannerSection = css({
   pos: 'relative'
 });
 
-export const bannerTxtSquare = css({
+export const roundTxtEl = css({
   rounded: '5555555px',
   border: '1px solid',
   borderColor: 'border',
-  bg: '#f9f9f821',
+  bg: 'gray100',
   textAlign: 'center',
   whiteSpace: 'nowrap',
   p: '0 3.4rem',
@@ -262,7 +262,6 @@ export const profileBodyContainer = css({
 })
 
 export const myProfileImg = css({
-  bg: 'border',
   mr: '3.8rem',
   
   sm: {
@@ -370,14 +369,14 @@ export const profileLink = css({
 
 export const showResume = css({
   bg: 'primary',
-  color: 'black',
+  color: 'primary',
 });
 
 export const goGithub = css({
-  bg: '#f0eeed1f',
+  bg: 'gray100',
   color: 'primary',
   border: '1px solid',
-  borderColor: 'primary',
+  borderColor: 'border',
 });
 
 export const history = css({
@@ -546,7 +545,7 @@ export const gridItem = css({
   rounded: '1.5rem',
   border: '1px solid',
   borderColor: 'border',
-  bg: '#1d1d23ff',
+  bg: 'gray100',
 });
 
 export const workImgContainer = css({
@@ -575,8 +574,8 @@ export const goBtn = css({
 });
 
 export const workGoBtn = css({
-  color: '#fff',
-  bg: '#0a090e40',
+  color: 'primary',
+  bg: '#ffffffa4',
   backdropFilter: 'blur(50px)',
   rounded: '.5rem',
   border: '1px solid',
@@ -645,7 +644,7 @@ export const projectTitleContainer = css({
 });
 
 export const projectName = css({
-  fontWeight: 500,
+  fontWeight: 600,
   m: '1.8rem 0',
   whiteSpace: "nowrap",
 
@@ -658,6 +657,7 @@ export const projectName = css({
 })
 
 export const projectBody = css({
+  fontWeight: 600,
   fontSize: '2rem',
 
   sm: {
@@ -670,20 +670,20 @@ export const projectBody = css({
 
 export const projectBodyMore = css({
   whiteSpace: 'pre-line',
-  color: '#dbdbdbff',
+  // color: '#dbdbdbff',
   
   sm: {
     m: '0 0 2.5rem 0',
     fontSize: '14px',
   },
   md: {
-    m: '0 0 1.6rem 0',
+    m: '0 0 2rem 0',
     fontSize: '1.6rem',
   }
 })
 
 export const projectDes = css({
-  lineHeight: '1.8',
+  lineHeight: '2',
   minH: '15rem',
   
   sm: {
@@ -696,7 +696,7 @@ export const projectDes = css({
 
 export const projectRoleList = css({
   flexDirection: 'column',
-  mb: '1rem',
+  mb: '1.5rem',
 })
 
 export const projectGitBtn = css({
@@ -720,7 +720,7 @@ export const projectGitBtn = css({
 })
 
 export const projectRole = css({
-  fontSize: '1.6rem',
+  fontSize: '1.6rem !',
   w:'fit-content',
   bg: '#1d1d23ff'
 })
