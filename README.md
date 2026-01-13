@@ -4,7 +4,7 @@
 
 💌 iamhanwon@gmail.com
 
-<img width="1901" height="907" alt="스크린샷_2026-01-08_003208" src="https://github.com/user-attachments/assets/38f96e68-1290-4da0-9f27-8d28e6137bbd" />
+<img width="1901" height="907" alt="image" src="https://github.com/user-attachments/assets/35fabd64-9b91-4f76-97c3-47c02a03b8a6" />
 
 ## ABOUT
 - 포트폴리오와 저에 대한 가벼운 소개가 담긴 웹 포트폴리오입니다.
