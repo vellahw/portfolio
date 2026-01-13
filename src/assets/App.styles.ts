@@ -380,64 +380,8 @@ export const goGithub = css({
 });
 
 export const history = css({
-  gap: '4rem',
-  m: '5.8rem 0',
-
-  '& p': {
-    lineHeight: 2,
-  },
-
-  '& .date1': {
-    pl: '4rem',
-    opacity: .8
-  },
-
-  '& .date2': {
-    opacity: .8,
-    sm: {
-      pl: '11.2rem',
-    },
-    md: {
-      pl: '10.6rem',
-    }
-  },
-
-  '& .date3': {
-    opacity: .8,
-    sm: {
-      display: 'flex'
-    },
-    md: {
-      display: 'unset',
-      pl: '4rem',
-    }
-  },
-  
-  '& .date4': {
-    opacity: .8,
-    sm: {
-      display: 'flex',
-      lineHeight: '1.5'
-    },
-    md: {
-      display: 'unset',
-      pl: '8rem',
-      lineHeight: '1'
-    }
-  },
-
-  '& .date5': {
-    opacity: .8,
-    sm: {
-      lineHeight: '1.5',
-      display: 'flex'
-    },
-    md: {
-      pl: '15rem',
-      display: 'unset',
-      lineHeight: '1'
-    }
-  },
+  gap: '6rem',
+  m: '6.2rem 0 5.8rem 0',
 
   sm: {
     fontSize: '14px',
@@ -449,7 +393,7 @@ export const history = css({
 
 export const historyTitle = css({
   fontWeight: 600,
-  mb: '1rem',
+  mb: '2rem',
 
   sm: {
     fontSize: '16px',
@@ -459,22 +403,39 @@ export const historyTitle = css({
   }
 })
 
-export const eachHistoryContainer = css({
-  '& p': {
-    lineHeight: '1.6'
-  },
+export const historyContainer = css({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2.4rem'
+})
+
+export const eachHistory = css({
+  display: 'flex',
+  justifyContent: 'space-between',
+
+  '& .date': {
+    minW: '40%',
+    opacity: .6
+  }
+})
+
+export const date5 = css({
+  opacity: .8,
   
   sm: {
-    mt: '2rem',
+    lineHeight: '1.5',
+    display: 'flex'
   },
   md: {
-    mt: '.4rem',
+    pl: '15rem',
+    display: 'unset',
+    lineHeight: '1'
   }
 })
 
 export const smallHistoryTxt = css({
-  m: '.2rem 0 1.2rem 0',
-  
+  mt: '1rem',
+
   sm: {
     fontSize: '12px'    
   },
