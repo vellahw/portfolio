@@ -243,11 +243,11 @@ function App() {
                   <h1 className={s.historyTitle}>경력</h1>
                   <div className={s.historyContainer}>
                     <div className={s.eachHistory}>
-                      <p className='company'>(주)엔셀텍바이오랩스</p>
+                      <p className='group'>(주)엔셀텍바이오랩스</p>
                       <p className='date'>2024.04 ~ 2025.12</p>
                     </div>
                     <div className={s.eachHistory}>
-                      <p className='company'>해커스홀딩스</p>
+                      <p className='group'>해커스홀딩스</p>
                       <p className='date'>2023.08 ~ 2023.09</p>
                     </div>
                   </div>
@@ -257,12 +257,12 @@ function App() {
                   <h1 className={s.historyTitle}>학력·교육이수</h1>
                   <div className={s.historyContainer}>
                     <div className={s.eachHistory}>
-                      <p className='company'>한국방송통신대학교 컴퓨터과학과</p>
+                      <p className='group'>한국방송통신대학교 컴퓨터과학과</p>
                       <p className='date'>2024.03 ~ 재학중*</p>
                     </div>
                     <div className={s.eachHistory}>
                       <div className='group'>
-                        <p className='company'>한국에이아이블록체인융합원</p>
+                        <p>한국에이아이블록체인융합원</p>
                         <p className={s.smallHistoryTxt}>
                           (블록체인 기반의 기술 사업화 전문 인력 양성 과정)
                         </p>
@@ -270,8 +270,8 @@ function App() {
                       <p className='date'>2023.05 ~ 2023.07</p>
                     </div>
                     <div className={s.eachHistory}>
-                      <div>
-                        <p className='company'>이젠컴퓨터아카데미</p>
+                      <div className='group'>
+                        <p>이젠컴퓨터아카데미</p>
                         <p className={s.smallHistoryTxt}>
                           (AWS클라우드 기반 JAVA 개발자 과정)
                         </p>

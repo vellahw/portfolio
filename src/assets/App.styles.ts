@@ -221,7 +221,8 @@ export const profileHelloTitleContainer = css({
   },
   
   md: {
-    w: '50%',
+    w: '55%',
+
     fontSize: '4.8rem',
     alignItems: 'unset',
     textAlign: 'unset',
@@ -237,6 +238,8 @@ export const profileHelloTitleContainer = css({
   },
 
   lg: {
+    w: '50%',
+
     fontSize: '5.8rem',
 
     '& .name': {
@@ -414,8 +417,35 @@ export const eachHistory = css({
   justifyContent: 'space-between',
 
   '& .date': {
-    minW: '40%',
-    opacity: .6
+    opacity: .6,
+    
+    sm: {
+      maxW: '70px',
+      lineHeight: '1.4'
+    },
+    
+    md: {
+      maxW: '50%',
+    },
+    
+    lg: {
+      minW: '40%',
+      maxW: 'unset',
+    },
+  },
+
+  '& .group': {
+    sm: {
+      maxW: '72%'
+    },
+    
+    md: {
+      maxW: '50%'
+    },
+    
+    lg: {
+      maxW: 'unset'
+    },
   }
 })
 
