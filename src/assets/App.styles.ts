@@ -160,7 +160,7 @@ export const myName = css({
   transform: 'translate3d(-50%, -50%, 0)',
   whiteSpace: 'nowrap',
   lineHeight: '1',
-  letterSpacing: '-.7rem',
+  letterSpacing: '-1rem',
 
   sm: {
     fontSize: '10rem',
@@ -211,7 +211,6 @@ export const profileTitle = css({
 })
 
 export const profileHelloTitleContainer = css({
-  fontWeight: '600',
   
   sm: {
     w: '100%',
@@ -226,27 +225,26 @@ export const profileHelloTitleContainer = css({
     fontSize: '4.8rem',
     alignItems: 'unset',
     textAlign: 'unset',
-    mt: 'unset'
+    mt: 'unset',
+
+    '& .hello': {
+      pl: '3.8rem',
+    },
+
+    '& .name': {
+      pl: '20rem',
+    },
   },
+
   lg: {
     fontSize: '5.8rem',
-  }
-});
 
-export const helloFirst = css({
-  md: {
-    pl: '3.8rem',
-  }
-})
-
-export const helloLast = css({
-  md: {
-    pl: '20rem',
+    '& .name': {
+      pl: '24.7rem',
+    },
   },
-  lg: {
-    pl: '24.7rem',
-  }
-})
+
+});
 
 export const profileBodyContainer = css({
   display: 'flex',

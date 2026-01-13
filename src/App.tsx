@@ -5,12 +5,46 @@ import { projectData, worksData } from './assets/data/Datas';
 import { css, cx } from '../styled-system/css';
 import gsap from 'gsap';
 import { center, stack } from '../styled-system/patterns';
+import { motion } from 'motion/react';
 
 function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const sloganRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef<HTMLDivElement>(null);
+
+  const profileLines = [
+    { text: "안녕하세요!", className: "hello" },
+    { text: "2년차 프론트엔드 개발자", className: "" },
+    { text: "장한원입니다", className: "name" },
+  ];
+
+  const profileLinesContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.4 // 줄간격
+      }
+    }
+  }
+
+  const lineVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05, // 글자 간격
+      },
+    },
+  };
+
+  const charVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { ease: "easeOut" },
+    },
+  };
 
   useEffect(() => {
     // if (!headerRef.current) return;
@@ -111,11 +145,44 @@ function App() {
         <section className={cx(s.section, s.profileSection)} id="1">
           <div className={s.profileTitleContainer}>
             <h1 className={s.profileTitle}>PROFILE</h1>
-            <div className={cx(stack(), s.profileHelloTitleContainer)}>
+            
+            <motion.div
+              variants={profileLinesContainer}
+              initial="hidden"
+              // animate="visible"
+              className={s.profileHelloTitleContainer}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.6 }}
+            >
+            {profileLines.map((line, lineIndex) => (
+              <motion.div
+                key={lineIndex}
+                variants={lineVariants}
+                style={{ overflow: "hidden" }}
+                className={line.className}
+              >
+                {line.text.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={charIndex}
+                    variants={charVariants}
+                    style={{
+                      display: "inline-block",
+                      marginRight: char === " " ? 6 : 0,
+                      fontWeight: 700
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.div>
+            ))}
+          </motion.div>
+
+            {/* <div className={cx(stack(), s.profileHelloTitleContainer)}>
               <h1 className={s.helloFirst}>안녕하세요!</h1>
               <h1>2년차 프론트엔드 개발자</h1>
               <h1 className={s.helloLast}>장한원입니다</h1>
-            </div>
+            </div> */}
           </div>
 
           <div className={s.profileBodyContainer}>
