@@ -4,8 +4,9 @@ import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { css, cx } from '../styled-system/css';
 import gsap from 'gsap';
-import { center, flex, stack } from '../styled-system/patterns';
+import { center, stack } from '../styled-system/patterns';
 import { motion } from 'motion/react';
+import type { Variants } from 'motion/react';
 
 function App() {
   const nameRef = useRef<HTMLHeadingElement>(null);
@@ -37,7 +38,7 @@ function App() {
     },
   };
 
-  const charVariants = {
+  const charVariants:Variants = {
     hidden: { opacity: 0, y: 12 },
     visible: {
       opacity: 1,
