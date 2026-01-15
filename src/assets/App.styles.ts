@@ -52,7 +52,16 @@ export const smallSectionTitle = css({
 export const roundElList = css({
   display: 'flex',
   flexWrap: 'wrap',
-  gap: '.8rem'
+  gap: '.8rem',
+
+  sm: {
+    mt: '2.5rem',
+    fontSize: '14px',
+  },
+  md: {
+    mt: '1.5rem',
+    fontSize: '1.6rem',
+  }
 })
 
 export const eachRoundEl = css({
@@ -656,7 +665,6 @@ export const projectSectionTitle = css({
 
 export const projectTitleContainer = css({
   display: 'flex',
-  alignItems: 'center',
 
   '& .wrap': {
     display: 'flex',
@@ -666,10 +674,25 @@ export const projectTitleContainer = css({
 
   sm: {
     justifyContent: 'unset',
-    gap: '1.2rem'
+    alignItems:'flex-start',
+    flexDirection: 'column',
+    // gap: '1.2rem',
+    gap: 0,
+    mb: '1rem',
+
+    '& .slash': {
+      display: 'none'
+    }
   },
   md: {
     justifyContent: 'unset',
+    alignItems: 'center',
+    flexDirection: 'row',
+    mb: '0',
+
+    '& span': {
+      display: 'block'
+    }
   }
 });
 
@@ -679,7 +702,7 @@ export const projectName = css({
   whiteSpace: "nowrap",
 
   sm: {
-    fontSize: '2.5rem',
+    fontSize: '16px',
   },
   md: {
     fontSize: '2.2rem',
@@ -687,27 +710,22 @@ export const projectName = css({
 })
 
 export const projectBody = css({
-  fontWeight: 600,
-  fontSize: '2rem',
-
   sm: {
-    fontSize: '2.5rem',
+    fontSize: '14px',
   },
   md: {
     fontSize: '2rem',
+    fontWeight: 600,
   }
 })
 
 export const projectBodyMore = css({
   whiteSpace: 'pre-line',
-  // color: '#dbdbdbff',
   
   sm: {
-    m: '0 0 2.5rem 0',
     fontSize: '14px',
   },
   md: {
-    m: '0 0 2rem 0',
     fontSize: '1.6rem',
   }
 })
@@ -884,11 +902,8 @@ export const footerTxt = css({
 
 export const toTopBtn = css({
   pos: 'fixed',
-  right: '5rem',
-  bottom: '5rem',
+
   zIndex: 999,
-  w: '8rem', 
-  h: '8rem', 
   rounded: '555555555px',
   // bgColor: 'primary',
   display: 'flex',
@@ -897,5 +912,28 @@ export const toTopBtn = css({
   bg: '#ffffffe3',
   border: '1px solid',
   borderColor: 'border',
-  boxShadow: '#15151a12 0px 2px 24px'
+  boxShadow: '#15151a12 0px 2px 24px',
+
+  sm: {
+    w: '6.2rem', 
+    h: '6.2rem', 
+    right: '2.5rem',
+    bottom: '5.5rem',
+    
+    '& svg': {
+      w: '20px',
+      h: '20px',
+    }
+  },
+  md: {
+    w: '8rem', 
+    h: '8rem', 
+    right: '5rem',
+    bottom: '5rem',
+    
+    '& svg': {
+      w: 'unset',
+      h: 'unset',
+    }
+  }
 })

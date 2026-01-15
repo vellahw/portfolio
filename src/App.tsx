@@ -343,7 +343,7 @@ function App() {
                   <div>
                     <div className={s.projectTitleContainer}>
                       <h1 className={s.projectName}>{item.name}</h1>
-                      <span>|</span>
+                      <span className='slash'>|</span>
                       <span className={s.projectBody}>{item.what ? item.what : '홈페이지 전체 리뉴얼'}</span>
                     </div>
                     {item.more && (
