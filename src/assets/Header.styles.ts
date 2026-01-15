@@ -16,7 +16,7 @@ export const header = css({
   },
 });
 
-export const container = css({
+export const headerContainer = css({
   display: 'flex',
   h: '100%',
   alignItems: 'center',

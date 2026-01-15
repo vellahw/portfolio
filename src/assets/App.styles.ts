@@ -76,7 +76,7 @@ export const eachRoundEl = css({
   },
   md: {
     p: '0 1.7rem',
-    fontSize: '1.5rem',
+    fontSize: '1.5rem !',
     height: '3.8rem',
     gap: '.5rem',
   }
@@ -822,13 +822,14 @@ export const contactMark = css({
 
 export const mailContainer = css({
   pos: 'relative',
-  m: '14rem 0',
+  m: '20rem 0',
 })
 
 export const myType = css({
   w: 'fit-content',
   fontSize: '1.8rem',
   pos: 'absolute',
+  bg: 'primary',
 
   '&._1': {
     top: '-12rem',
@@ -885,6 +886,7 @@ export const toTopBtn = css({
   pos: 'fixed',
   right: '5rem',
   bottom: '5rem',
+  zIndex: 999,
   w: '8rem', 
   h: '8rem', 
   rounded: '555555555px',
@@ -892,7 +894,7 @@ export const toTopBtn = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  bg: 'rgb(255, 255, 255)',
+  bg: '#ffffffe3',
   border: '1px solid',
   borderColor: 'border',
   boxShadow: '#15151a12 0px 2px 24px'

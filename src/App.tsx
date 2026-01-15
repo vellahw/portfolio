@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { container, header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
+import { headerContainer, header, mail, menuWrapper, navigator, slash } from './assets/Header.styles';
 import * as s from './assets/App.styles';
 import { projectData, worksData } from './assets/data/Datas';
 import { css, cx } from '../styled-system/css';
@@ -47,11 +47,18 @@ function App() {
     },
   };
 
+  const mailTxt = "iamhanwon@gmail.com";
+  const mailTxtVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+
   const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-  })
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
   }
 
   const scrollToTop = () => {
@@ -62,8 +69,6 @@ function App() {
   }
 
   useEffect(() => {
-    // if (!headerRef.current) return;
-
     let tl: gsap.core.Timeline;
 
     const playAnimation = () => {
@@ -105,20 +110,12 @@ function App() {
     document.fonts.ready.then(() => {
       playAnimation();
     });
-
-    // resize 시 다시 계산
-    // window.addEventListener('resize', playAnimation);
-
-    // return () => {
-    //   window.removeEventListener('resize', playAnimation);
-    //   tl?.kill();
-    // };
   });
 
   return (
     <>
       <header className={header} ref={headerRef}>
-        <div className={container}>
+        <div className={headerContainer}>
           <a href="mailto:iamhanwon@gmail.com" className={mail}>
             iamhanwon@gmail.com
           </a>
@@ -164,40 +161,33 @@ function App() {
             <motion.div
               variants={profileLinesContainer}
               initial="hidden"
-              // animate="visible"
               className={s.profileHelloTitleContainer}
               whileInView="visible"
               viewport={{ once: true, amount: 0.6 }}
             >
-            {profileLines.map((line, lineIndex) => (
-              <motion.div
-                key={lineIndex}
-                variants={lineVariants}
-                style={{ overflow: "hidden" }}
-                className={line.className}
-              >
-                {line.text.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={charIndex}
-                    variants={charVariants}
-                    style={{
-                      display: "inline-block",
-                      marginRight: char === " " ? 6 : 0,
-                      fontWeight: 700
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.div>
-            ))}
-          </motion.div>
-
-            {/* <div className={cx(stack(), s.profileHelloTitleContainer)}>
-              <h1 className={s.helloFirst}>안녕하세요!</h1>
-              <h1>2년차 프론트엔드 개발자</h1>
-              <h1 className={s.helloLast}>장한원입니다</h1>
-            </div> */}
+              {profileLines.map((line, lineIndex) => (
+                <motion.div
+                  key={lineIndex}
+                  variants={lineVariants}
+                  style={{ overflow: "hidden" }}
+                  className={line.className}
+                >
+                  {line.text.split("").map((char, charIndex) => (
+                    <motion.span
+                      key={charIndex}
+                      variants={charVariants}
+                      style={{
+                        display: "inline-block",
+                        marginRight: char === " " ? 6 : 0,
+                        fontWeight: 700
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
           <div className={s.profileBodyContainer}>
@@ -460,7 +450,25 @@ function App() {
             {/* <div className={cx(s.eachRoundEl, s.myType, '_1')}>책임감있는🙋‍♀️</div>
             <div className={cx(s.eachRoundEl, s.myType, '_2')}>끈기있는💪</div>
             <div className={cx(s.eachRoundEl, s.myType, '_3')}>몰두하는🧐</div> */}
-            <a href="mailto:iamhanwon@gmail.com" className={s.contactMail}>iamhanwon@gmail.com</a>
+             <motion.a
+              variants={lineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.6 }}
+              href="mailto:iamhanwon@gmail.com"
+              className={s.contactMail}
+            >
+              {mailTxt.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={mailTxtVariants}
+                  style={{ display: "inline-block" }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.a>
+
             {/* <div className={cx(s.eachRoundEl, s.myType, '_4')}>외향적인😁</div>
             <div className={cx(s.eachRoundEl, s.myType, '_5')}>긍정적인🎶</div> */}
           </div>
