@@ -64,8 +64,11 @@ export const navigator = css({
   md: {
     w: '54rem',
     gap: '4rem',
-    fontSize: '1.8rem',
+    fontSize: '2rem',
   },
+  lg: {
+    fontSize: '1.8rem',
+  }
 });
 
 export const menuWrapper = css({

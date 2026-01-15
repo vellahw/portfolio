@@ -366,6 +366,10 @@ export const profileBody = css({
 export const profileLink = css({
   rounded: '55555px',
   minW: '116px',
+    bg: 'gray100',
+  color: 'black',
+  border: '1px solid',
+  borderColor: 'border',
   
   sm: {
     w: '18rem',
@@ -379,17 +383,6 @@ export const profileLink = css({
   }
 });
 
-export const showResume = css({
-  bg: 'primary',
-  color: 'black',
-});
-
-export const goGithub = css({
-  bg: 'gray100',
-  color: 'black',
-  border: '1px solid',
-  borderColor: 'border',
-});
 
 export const history = css({
   gap: '6rem',
@@ -418,7 +411,7 @@ export const historyTitle = css({
 export const historyContainer = css({
   display: 'flex',
   flexDirection: 'column',
-  gap: '2.4rem'
+  gap: '1.8rem'
 })
 
 export const eachHistory = css({
@@ -455,6 +448,10 @@ export const eachHistory = css({
     lg: {
       maxW: 'unset'
     },
+  },
+
+  '& .job': {
+    fontSize: '1.6rem'
   }
 })
 
