@@ -880,3 +880,20 @@ export const footerTxt = css({
   w: '100%',
   textAlign: 'center'
 })
+
+export const toTopBtn = css({
+  pos: 'fixed',
+  right: '5rem',
+  bottom: '5rem',
+  w: '8rem', 
+  h: '8rem', 
+  rounded: '555555555px',
+  // bgColor: 'primary',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  bg: 'rgb(255, 255, 255)',
+  border: '1px solid',
+  borderColor: 'border',
+  boxShadow: '#15151a12 0px 2px 24px'
+})

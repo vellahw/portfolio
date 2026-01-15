@@ -9,13 +9,10 @@ export const header = css({
   sm: {
     h: '7.8rem',
     left: '0',
-    // transform: 'unset !',
   },
   
   md: {
     h: '6.4rem',
-    // left: '50%',
-    // transform: 'translateX(-50%) !',
   },
 });
 
@@ -49,13 +46,12 @@ export const navigator = css({
   alignItems: 'center',
   justifyContent: 'center',
   m: '0 auto',
-  // pos: 'absolute',
-  // left: '50%',
-  // transform: 'translateX(-50%)',
   h: '100%',
-  bg: '#d9d9d97d',
-  backdropFilter: 'blur(14px)',
   rounded: '55555px',
+  bg: '#ffffffe3',
+  boxShadow: '#15151a12 0px 2px 24px',
+  // bg: '#d9d9d97d',
+  backdropFilter: 'blur(14px)',
   border: '1px solid',
   borderColor: '#82828290',
   minW: '275px',
@@ -66,8 +62,8 @@ export const navigator = css({
     fontSize: '14px',
   },
   md: {
-    w: '44.8rem',
-    gap: '2.5rem',
+    w: '54rem',
+    gap: '4rem',
     fontSize: '1.8rem',
   },
 });
@@ -86,6 +82,6 @@ export const slash = css({
     ml: '1.5rem',
   },
   md: {
-    ml: '2.5rem',
+    ml: '3.5rem',
   }
 })

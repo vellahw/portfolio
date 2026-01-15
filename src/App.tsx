@@ -47,6 +47,20 @@ function App() {
     },
   };
 
+  const scrollToSection = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
   useEffect(() => {
     // if (!headerRef.current) return;
 
@@ -110,18 +124,18 @@ function App() {
           </a>
           <nav className={navigator}>
             <div className={menuWrapper}>
-              <a href="#1">프로필</a>
+              <button type='button' onClick={()=>scrollToSection('1')}>프로필</button>
               <span className={slash}>*</span>
             </div>
             <div className={menuWrapper}>
-              <a href="#2">이력</a>
+              <button type='button' onClick={()=>scrollToSection('2')}>이력</button>
               <span className={slash}>*</span>
             </div>
             <div className={menuWrapper}>
-              <a href="#3">경험</a>
+              <button type='button' onClick={()=>scrollToSection('3')}>경험</button>
               <span className={slash}>*</span>
             </div>
-            <a href="#4">연락하기</a>
+            <button type='button' onClick={()=>scrollToSection('4')}>연락하기</button>
           </nav>
         </div>
       </header>
@@ -453,6 +467,14 @@ function App() {
           <p className={s.footerTxt}>© 2026 장한원. All rights reserved.</p>
         </section>
       </main>
+
+      <button type="button" onClick={scrollToTop} className={s.toTopBtn}>
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.91833 11.1641L14 4.0824L21.0817 11.1641" stroke="#15151A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 23.916L14 4.28102" stroke="#15151A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+      </button>
     </>
   );
 }
