@@ -682,6 +682,7 @@ export const projectSectionTitle = css({
 
 export const projectTitleContainer = css({
   display: "flex",
+  alignItems: "center",
 
   "& .wrap": {
     display: "flex",
@@ -691,25 +692,17 @@ export const projectTitleContainer = css({
 
   sm: {
     justifyContent: "unset",
-    alignItems: "flex-start",
-    flexDirection: "column",
+    // alignItems: "flex-start",
+    // flexDirection: "column",
     // gap: '1.2rem',
     gap: 0,
     mb: "1rem",
-
-    "& .slash": {
-      display: "none",
-    },
   },
+
   md: {
     justifyContent: "unset",
-    alignItems: "center",
-    flexDirection: "row",
+    // flexDirection: "row",
     mb: "0",
-
-    "& span": {
-      display: "block",
-    },
   },
 });
 
@@ -727,13 +720,28 @@ export const projectName = css({
 });
 
 export const projectBody = css({
-  sm: {
+  "&.slash": {
+    display: "block",
+    fontWeight: 500!,
     fontSize: "14px",
   },
+
+  "&.year": {
+    fontWeight: 500!,
+    pl: ".6rem",
+  },
+
+  sm: {
+    fontSize: "14px",
+
+    "& .slash": {
+      display: "none",
+    },
+  },
+
   md: {
     fontSize: "2rem",
     fontWeight: 600,
-    pl: "1.6rem",
   },
 });
 

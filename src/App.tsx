@@ -320,7 +320,7 @@ function App() {
                     이미지에 마우스를 올려보세요!
                   </span>
                 </div>
-                <h1 className={s.smallSectionTitle}>이력</h1>
+                {/* <h1 className={s.smallSectionTitle}>이력</h1> */}
               </div>
 
               <div className={s.gridArea}>
@@ -388,11 +388,15 @@ function App() {
                       </div>
                       <div>
                         <div className={s.projectTitleContainer}>
-                          <h1 className={s.projectName}>{item.name}</h1>
-                          <span className="slash">|</span>
-                          <span className={s.projectBody}>
-                            {item.what ? item.what : "홈페이지 전체 리뉴얼"}
-                          </span>
+                          <div className="wrap">
+                            <h1 className={s.projectName}>{item.name}</h1>
+                            <span className={cx(s.projectBody, "slash")}>
+                              |
+                            </span>
+                            <span className={s.projectBody}>
+                              {item.what ? item.what : "홈페이지 전체 리뉴얼"}
+                            </span>
+                          </div>
                         </div>
                         {item.more && (
                           <p className={s.projectBodyMore}>{`${item.more}`}</p>
@@ -412,7 +416,7 @@ function App() {
             <section id="3" className={s.section}>
               <div className={cx(s.projectSectionTitle)}>
                 <h1 className={cx(s.sectionTitle)}>PROJECTS</h1>
-                <h1 className={s.smallSectionTitle}>프로젝트 경험</h1>
+                {/* <h1 className={s.smallSectionTitle}>프로젝트 경험</h1> */}
               </div>
 
               <div className={s.gridArea}>
@@ -479,16 +483,13 @@ function App() {
                         <div className={s.projectTitleContainer}>
                           <div className="wrap">
                             <h1 className={s.projectName}>{item.name}</h1>
-                            <span>|</span>
+                            <span className={cx(s.projectBody, "slash")}>
+                              |
+                            </span>
                             <span className={s.projectBody}>{item.what}</span>
                           </div>
-                          <span
-                            className={cx(
-                              s.projectBody,
-                              css({ fontSize: "1.4rem" }),
-                            )}
-                          >
-                            {item.year}
+                          <span className={cx(s.projectBody, "year")}>
+                            ({item.year})
                           </span>
                         </div>
                         <p className={cx(s.projectDes, s.projectBodyMore)}>
