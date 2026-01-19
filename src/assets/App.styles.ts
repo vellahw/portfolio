@@ -490,11 +490,12 @@ export const workSection = css({
 });
 
 export const workSectionTitleContainer = css({
-  display: "flex",
-  alignItems: "flex-end",
+  // display: "flex",
+  // alignItems: "flex-end",
   pb: "4.5rem",
   justifyContent: "space-between",
   pos: "relative",
+  lineHeight: "1",
 
   // borderRight: '1px solid',
   // borderRightColor: 'border',
@@ -509,14 +510,20 @@ export const workSectionTitleContainer = css({
   // }
 });
 
-export const workSectionTitle2 = css({
-  sm: {
-    pl: "5rem",
-  },
-  md: {
-    pl: "10rem",
+export const workSectionTitle = css({
+  // fontFamily: "Montserrat",
+
+  "&.sec": {
+    sm: {
+      pl: "5rem",
+    },
+    md: {
+      pl: "10rem",
+    },
   },
 });
+
+export const workSectionTitle2 = css({});
 
 export const workSectionTitleTxt = css({
   pos: "absolute",

@@ -9,6 +9,7 @@ function LoadingScreen() {
         justifyContent: "center",
         background: "#ffffff",
         color: "#212121",
+        fontSize: "16px",
       }}
     >
       Loading...

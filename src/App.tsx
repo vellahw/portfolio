@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import * as s from "./assets/App.styles";
 import { projectData, worksData } from "./assets/data/Datas";
-import { css, cx } from "../styled-system/css";
+import { cx } from "../styled-system/css";
 import gsap from "gsap";
 import { center, stack } from "../styled-system/patterns";
 import { motion } from "motion/react";
@@ -47,6 +47,13 @@ function App() {
       transition: { ease: "easeOut" },
     },
   };
+
+  const workTitle = [
+    { text: "WORK", className: "" },
+    { text: "EXPERIENCES", className: "sec" },
+  ];
+
+  const ProjectTitle = "PROJECTS";
 
   const mailTxt = "iamhanwon@gmail.com";
   const mailTxtVariants = {
@@ -310,18 +317,56 @@ function App() {
             </section>
 
             <section className={cx(s.section, s.workSection)} id="2">
-              <div className={s.workSectionTitleContainer}>
-                <div>
-                  <h1 className={s.sectionTitle}>WORK</h1>
-                  <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>
-                    EXPERIENCES
-                  </h1>
+              {/* <div className={s.workSectionTitleContainer}> */}
+              {isLoaded && (
+                <motion.div
+                  variants={profileLinesContainer}
+                  initial="hidden"
+                  className={s.workSectionTitleContainer}
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.6 }}
+                >
+                  {workTitle.map((line, lineIndex) => (
+                    <motion.div
+                      key={lineIndex}
+                      variants={lineVariants}
+                      style={{ overflow: "hidden" }}
+                      className={cx(
+                        line.className,
+                        s.sectionTitle,
+                        s.workSectionTitle,
+                      )}
+                    >
+                      {line.text.split("").map((char, charIndex) => (
+                        <motion.span
+                          key={charIndex}
+                          variants={charVariants}
+                          style={{
+                            display: "inline-block",
+                            marginRight: char === " " ? 6 : 0,
+                            fontWeight: 700,
+                            lineHeight: 1,
+                          }}
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  ))}
+
                   <span className={s.workSectionTitleTxt}>
                     이미지에 마우스를 올려보세요!
                   </span>
-                </div>
-                {/* <h1 className={s.smallSectionTitle}>이력</h1> */}
-              </div>
+                </motion.div>
+              )}
+
+              {/* <h1 className={s.sectionTitle}>WORK</h1>
+                  <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>
+                    EXPERIENCES
+                  </h1> */}
+
+              {/* </div> */}
+              {/* <h1 className={s.smallSectionTitle}>이력</h1> */}
 
               <div className={s.gridArea}>
                 {worksData.map((item, index) => {
@@ -415,8 +460,26 @@ function App() {
 
             <section id="3" className={s.section}>
               <div className={cx(s.projectSectionTitle)}>
-                <h1 className={cx(s.sectionTitle)}>PROJECTS</h1>
-                {/* <h1 className={s.smallSectionTitle}>프로젝트 경험</h1> */}
+                {isLoaded && (
+                  <motion.div
+                    variants={lineVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.6 }}
+                    className={s.sectionTitle}
+                    style={{ lineHeight: "1" }}
+                  >
+                    {ProjectTitle.split("").map((char, index) => (
+                      <motion.span
+                        key={index}
+                        variants={mailTxtVariants}
+                        style={{ display: "inline-block", fontWeight: 700 }}
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                )}
               </div>
 
               <div className={s.gridArea}>
