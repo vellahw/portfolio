@@ -158,8 +158,6 @@ export const positionTxt = css({
 });
 
 export const myName = css({
-  // fontSize: '29.8rem',
-  // fontFamily: 'darker',
   fontFamily: "montserrat",
   fontWeight: 700,
   pos: "absolute",
@@ -178,6 +176,10 @@ export const myName = css({
   md: {
     fontSize: "12vw",
     display: "flex",
+
+    "& .last": {
+      pl: "5rem",
+    },
   },
   lg: {
     fontSize: "20rem",

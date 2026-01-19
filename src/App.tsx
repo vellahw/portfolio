@@ -120,7 +120,7 @@ function App() {
               </div>
               <div ref={nameRef} className={s.myName}>
                 <h1>Hanwon</h1>
-                <h1>Jang</h1>
+                <h1 className="last">Jang</h1>
               </div>
               <div
                 className={cx(s.roundTxtEl, s.positionTxt)}
