@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as s from "./assets/Header.styles";
+import gsap from "gsap";
 
 function Header() {
   const headerRef = useRef<HTMLElement>(null);
@@ -10,6 +11,23 @@ function Header() {
       block: "start",
     });
   };
+
+  useEffect(() => {
+    const playAnimation = () => {
+      const tl = gsap.timeline();
+
+      // 헤더 등장
+      tl.fromTo(
+        headerRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: "power3.out" },
+      );
+    };
+
+    document.fonts.ready.then(() => {
+      playAnimation();
+    });
+  }, []);
 
   return (
     <header className={s.header} ref={headerRef}>
