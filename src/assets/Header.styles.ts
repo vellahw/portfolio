@@ -2,26 +2,30 @@ import { css } from "../../styled-system/css";
 
 export const header = css({
   pos: "fixed",
-  top: "1.9rem",
   left: "50%",
   transform: "translate3d(-50%, 0, 0)",
-  w: "90%",
   zIndex: 999,
 
-  bg: "#f9f9f881",
-  borderTop: "1px solid",
   borderBottom: "2px solid",
   borderBottomColor: "black",
 
   sm: {
+    // top: ".9rem",
+    w: "100%",
     h: "7.8rem",
-    // left: "0",
+    bg: "#f9f9f8",
   },
 
   md: {
+    top: "1.9rem",
     h: "5.4rem",
     p: "3rem",
+    bg: "#f9f9f881",
+    borderTop: "1px solid",
+    w: "90%",
   },
+
+  lg: {},
 });
 
 export const headerContainer = css({
@@ -44,7 +48,7 @@ export const mail = css({
   sm: {
     display: "none",
   },
-  md: {
+  "@media screen and (min-width: 691px)": {
     display: "unset",
   },
 });
@@ -65,7 +69,7 @@ export const navigator = css({
 
   sm: {
     w: "80%",
-    gap: "4rem",
+    gap: "3.5rem",
     fontSize: "14px",
   },
   md: {
@@ -89,9 +93,9 @@ export const slash = css({
   opacity: 0.7,
 
   sm: {
-    ml: "4rem",
+    ml: "3.5rem",
   },
   md: {
-    ml: "3.5rem",
+    ml: "4rem",
   },
 });
