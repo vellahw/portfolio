@@ -255,6 +255,7 @@ function App() {
                           strokeLinejoin="round"
                         />
                       </svg>
+                      <span>둘러보기</span>
                     </a>
                   </div>
 
@@ -279,13 +280,13 @@ function App() {
                     <div>
                       <h1 className={s.historyTitle}>학력·교육이수</h1>
                       <div className={s.historyContainer}>
-                        <div className={s.eachHistory}>
+                        <div className={cx(s.eachHistory, "edu")}>
                           <p className="group">
                             한국방송통신대학교 컴퓨터과학과
                           </p>
                           <p className="date">2024.03 ~ 재학중*</p>
                         </div>
-                        <div className={s.eachHistory}>
+                        <div className={cx(s.eachHistory, "edu")}>
                           <div className="group">
                             <p>한국에이아이블록체인융합원</p>
                             <p className={s.smallHistoryTxt}>
@@ -294,7 +295,7 @@ function App() {
                           </div>
                           <p className="date">2023.05 ~ 2023.07</p>
                         </div>
-                        <div className={s.eachHistory}>
+                        <div className={cx(s.eachHistory, "edu")}>
                           <div className="group">
                             <p>이젠컴퓨터아카데미</p>
                             <p className={s.smallHistoryTxt}>

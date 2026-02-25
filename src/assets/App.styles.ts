@@ -409,12 +409,16 @@ export const historyTitle = css({
 export const historyContainer = css({
   display: "flex",
   flexDirection: "column",
-  gap: "1.8rem",
+  gap: "2.5rem",
 });
 
 export const eachHistory = css({
   display: "flex",
   justifyContent: "space-between",
+
+  "&.edu": {
+    mb: ".5rem",
+  },
 
   "& .date": {
     opacity: 0.6,
@@ -426,6 +430,7 @@ export const eachHistory = css({
 
     md: {
       maxW: "50%",
+      lineHeight: "1",
     },
 
     lg: {
