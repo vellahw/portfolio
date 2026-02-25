@@ -255,7 +255,6 @@ function App() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span>둘러보기</span>
                     </a>
                   </div>
 
@@ -361,18 +360,18 @@ function App() {
                 </motion.div>
               )}
 
-              {/* <h1 className={s.sectionTitle}>WORK</h1>
-                  <h1 className={cx(s.sectionTitle, s.workSectionTitle2)}>
-                    EXPERIENCES
-                  </h1> */}
-
-              {/* </div> */}
-              {/* <h1 className={s.smallSectionTitle}>이력</h1> */}
-
               <div className={s.gridArea}>
                 {worksData.map((item, index) => {
                   return (
-                    <div className={s.gridItem} key={index}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 80 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.6 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                      className={s.gridItem}
+                      key={index}
+                    >
+                      {/* <div className={s.gridItem} key={index}> */}
                       <p className={s.number}>[0{index + 1}]</p>
                       <div className={s.workThumbnail}>
                         <div className={s.workImgContainer}>
@@ -380,12 +379,6 @@ function App() {
                             src={`/img/work-${item.src}.png`}
                             alt={item.name}
                           />
-                          {/* <img
-                          src={`/img/work-${item.src}-g.gif`}
-                          className={cx(s.workImgGif, "gif")}
-                          alt={item.name}
-                          loading="lazy"
-                        /> */}
                           <video
                             muted
                             loop
@@ -453,7 +446,8 @@ function App() {
                           <div className={s.eachRoundEl}>JavaScript</div>
                         </div>
                       </div>
-                    </div>
+                      {/* </div> */}
+                    </motion.div>
                   );
                 })}
               </div>
