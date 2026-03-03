@@ -1,3 +1,5 @@
+import { css } from "../styled-system/css";
+
 function LoadingScreen() {
   return (
     <div
@@ -12,7 +14,16 @@ function LoadingScreen() {
         fontSize: "16px",
       }}
     >
-      Loading...
+      <img
+        src={"/img/loading.jpg"}
+        alt="loading image"
+        className={css({
+          animationName: "spin",
+          animationDuration: "5s",
+          animationIterationCount: "infinite",
+          animationTimingFunction: "linear",
+        })}
+      />
     </div>
   );
 }
