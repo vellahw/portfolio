@@ -44,13 +44,13 @@ function Header() {
           </div>
           <div className={s.menuWrapper}>
             <button type="button" onClick={() => scrollToSection("2")}>
-              이력
+              업무경험
             </button>
             <span className={s.slash}>*</span>
           </div>
           <div className={s.menuWrapper}>
             <button type="button" onClick={() => scrollToSection("3")}>
-              경험
+              프로젝트
             </button>
             <span className={s.slash}>*</span>
           </div>
