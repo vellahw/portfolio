@@ -1,19 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import * as s from "./assets/App.styles";
 import { projectData, worksData } from "./assets/data/Datas";
 import { cx } from "../styled-system/css";
-import gsap from "gsap";
+// import gsap from "gsap";
 import { center, stack } from "../styled-system/patterns";
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import LoadingScreen from "./LoadingScreen";
+import SectionBanner from "./SectionBanner";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const nameRef = useRef<HTMLHeadingElement>(null);
-  const sloganRef = useRef<HTMLDivElement>(null);
-  const positionRef = useRef<HTMLDivElement>(null);
+  // const nameRef = useRef<HTMLHeadingElement>(null);
+  // const sloganRef = useRef<HTMLDivElement>(null);
+  // const positionRef = useRef<HTMLDivElement>(null);
 
   const profileLines = [
     { text: "안녕하세요!", className: "hello" },
@@ -74,37 +75,6 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    if (!isLoaded) return;
-    const tl = gsap.timeline();
-
-    // 이름 등장
-    tl.fromTo(
-      nameRef.current,
-      { opacity: 0, y: 90 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-    );
-
-    // 슬로건 등장
-    tl.fromTo(
-      sloganRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, ease: "power3.out" },
-    );
-
-    // 포지션 등장
-    tl.fromTo(
-      positionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, ease: "power3.out" },
-      "<",
-    );
-
-    return () => {
-      tl.kill();
-    };
-  }, [isLoaded]);
-
   return (
     <>
       {!isLoaded && <LoadingScreen />}
@@ -114,21 +84,7 @@ function App() {
           <Header />
           <main className={s.main}>
             {/* 배너 */}
-            <section className={cx(s.section, s.bannerSection)}>
-              <div className={cx(s.roundTxtEl, s.sloganTxt)} ref={sloganRef}>
-                <span>책임감 있는 자세로 결과를 만드는</span>
-              </div>
-              <div ref={nameRef} className={s.myName}>
-                <h1>Hanwon</h1>
-                <h1 className="last">Jang</h1>
-              </div>
-              <div
-                className={cx(s.roundTxtEl, s.positionTxt)}
-                ref={positionRef}
-              >
-                <span>웹 프론트엔드 개발자</span>
-              </div>
-            </section>
+            <SectionBanner isLoaded={isLoaded} />
 
             {/* 프로필 */}
             <section className={cx(s.section, s.profileSection)} id="1">
