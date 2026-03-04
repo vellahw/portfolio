@@ -69,7 +69,7 @@ export const navigator = css({
 
   sm: {
     w: "80%",
-    gap: "3.5rem",
+    gap: "2.5rem",
     fontSize: "14px",
   },
   md: {
@@ -93,7 +93,7 @@ export const slash = css({
   opacity: 0.7,
 
   sm: {
-    ml: "3.5rem",
+    ml: "2.5rem",
   },
   md: {
     ml: "4rem",
