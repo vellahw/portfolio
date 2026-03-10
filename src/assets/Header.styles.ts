@@ -7,13 +7,13 @@ export const header = css({
   zIndex: 999,
 
   borderBottom: "2px solid",
-  borderBottomColor: "black",
+  borderBottomColor: "primary",
 
   sm: {
     // top: ".9rem",
     w: "100%",
     h: "7.8rem",
-    bg: "#f9f9f8",
+    bg: "black",
   },
 
   md: {
@@ -23,6 +23,9 @@ export const header = css({
     bg: "#f9f9f881",
     borderTop: "1px solid",
     w: "90%",
+    "&._dark": {
+      bg: "none",
+    },
   },
 
   lg: {},

@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
-import { cx } from "../styled-system/css";
+import { css, cx } from "../styled-system/css";
 import * as s from "./assets/App.styles";
 import gsap from "gsap";
 import { motion } from "motion/react";
 
 interface SectionBannerProps {
   isLoaded: boolean;
+  isDark: boolean;
 }
 
-function SectionBanner({ isLoaded }: SectionBannerProps) {
+function SectionBanner({ isLoaded, isDark }: SectionBannerProps) {
   const sloganRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLHeadingElement>(null);
   const positionRef = useRef<HTMLDivElement>(null);
@@ -67,7 +68,7 @@ function SectionBanner({ isLoaded }: SectionBannerProps) {
           variants={letterContainer}
           initial="hidden"
           animate="visible"
-          className={cx(s.roundTxtEl, s.sloganTxt)}
+          className={cx(s.roundTxtEl, s.sloganTxt, isDark && "_dark")}
           ref={sloganRef}
         >
           {slogan.split("").map((char, index) => (
@@ -83,10 +84,16 @@ function SectionBanner({ isLoaded }: SectionBannerProps) {
       )}
 
       <div ref={nameRef} className={s.myName}>
-        <h1>Hanwon</h1>
-        <h1 className="last">Jang</h1>
+        <img
+          src={isDark ? "/img/name-w.svg" : "/img/name-b.svg"}
+          alt="name logo"
+          className={css({ maxW: "none" })}
+        />
       </div>
-      <div className={cx(s.roundTxtEl, s.positionTxt)} ref={positionRef}>
+      <div
+        className={cx(s.roundTxtEl, s.positionTxt, isDark && "_dark")}
+        ref={positionRef}
+      >
         <span>웹 프론트엔드 개발자</span>
       </div>
     </section>

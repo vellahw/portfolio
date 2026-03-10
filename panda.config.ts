@@ -2,20 +2,24 @@ import { defineConfig } from "@pandacss/dev";
 import pandaAnimate from "pandacss-animate";
 
 export default defineConfig({
-  // Whether to use css reset
   preflight: true,
 
   presets: [pandaAnimate, "@pandacss/dev/presets"],
 
-  // Where to look for your css declarations
   include: ["./src/**/*.{ts,tsx,js,jsx}"],
+
+  // 다크 테마 감지
+  conditions: {
+    dark: '[data-theme="dark"] &',
+  },
 
   globalCss: {
     "html, body": {
       fontSize: "62.5%",
       fontFamily: "pretendard",
-      color: "black",
-      backgroundColor: "primary",
+      background: "black",
+      color: "primary",
+      transition: "background 0.4s, color 0.4s",
     },
 
     "@media screen and (max-width: 768px)": {
@@ -121,6 +125,22 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {},
+    semanticTokens: {
+      colors: {
+        black: {
+          value: {
+            base: "#f9f9f8",
+            _dark: "#15151A",
+          },
+        },
+        primary: {
+          value: {
+            base: "#15151A",
+            _dark: "#f9f9f8",
+          },
+        },
+      },
+    },
     tokens: {
       fonts: {
         pretendard: { value: "var(--font-pretendard)" },
@@ -128,12 +148,9 @@ export default defineConfig({
         montserrat: { value: "var(--font-montserrat)" },
       },
       colors: {
-        black: { value: "#15151A" },
-        primary: { value: "#f9f9f8" },
+        text: { value: "#15151A" },
+        white: { value: "#f9f9f8" },
         border: { value: "#15151a70" },
-        // primary: { value: '#f9f9f8' },
-        // black: { value: '#15151A' },
-        // border: { value: '#e4eaee4d' },
         gray100: { value: "#eaeaeaff" },
         gray500: { value: "#575757" },
       },

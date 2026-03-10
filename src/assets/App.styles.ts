@@ -71,7 +71,7 @@ export const eachRoundEl = css({
   alignItems: "center",
   justifyContent: "center",
   bg: "#dbdbdbff",
-  color: "black",
+  color: "text",
   border: "1px solid",
   borderColor: "border",
   whiteSpace: "nowrap",
@@ -102,6 +102,7 @@ export const roundTxtEl = css({
   rounded: "5555555px",
   border: "1px solid",
   borderColor: "border",
+  color: "primary",
   bg: "gray100",
   textAlign: "center",
   whiteSpace: "nowrap",
@@ -111,6 +112,11 @@ export const roundTxtEl = css({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+
+  "&._dark": {
+    borderColor: "primary",
+    bg: "none",
+  },
 
   sm: {
     w: "fit-content",
@@ -158,23 +164,12 @@ export const positionTxt = css({
 });
 
 export const myName = css({
-  fontFamily: "montserrat",
-  fontWeight: 700,
   pos: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate3d(-50%, -50%, 0)",
-  whiteSpace: "nowrap",
-  lineHeight: "1",
-  letterSpacing: "-1rem",
 
-  sm: {
-    fontSize: "10rem",
-    letterSpacing: "0px",
-    textAlign: "center",
-  },
   md: {
-    fontSize: "12vw",
     display: "flex",
 
     "& .last": {
@@ -182,7 +177,7 @@ export const myName = css({
     },
   },
   lg: {
-    fontSize: "20rem",
+    display: "unset",
   },
 });
 
@@ -365,8 +360,9 @@ export const profileBody = css({
 export const profileLink = css({
   rounded: "55555px",
   minW: "116px",
-  bg: "gray100",
-  color: "black",
+  // bg: "gray100",
+  bg: "text",
+  color: "white",
   border: "1px solid",
   borderColor: "border",
 
@@ -644,7 +640,7 @@ export const goBtn = css({
 });
 
 export const workGoBtn = css({
-  color: "black",
+  color: "text",
   bg: "#ffffff44",
   backdropFilter: "blur(25px)",
   rounded: ".5rem",

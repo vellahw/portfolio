@@ -1,8 +1,13 @@
 import { useEffect, useRef } from "react";
 import * as s from "./assets/Header.styles";
 import gsap from "gsap";
+import { cx } from "../styled-system/css";
 
-function Header() {
+interface HeaderProps {
+  isDark: boolean;
+}
+
+function Header({ isDark }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
 
   const scrollToSection = (id: string) => {
@@ -31,7 +36,7 @@ function Header() {
   }, []);
 
   return (
-    <header className={s.header} ref={headerRef}>
+    <header className={cx(s.header, isDark && "_dark")} ref={headerRef}>
       <div className={s.headerContainer}>
         <a href="mailto:iamhanwon@gmail.com" className={s.mail}>
           iamhanwon@gmail.com

@@ -12,9 +12,7 @@ import SectionBanner from "./SectionBanner";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
-  // const nameRef = useRef<HTMLHeadingElement>(null);
-  // const sloganRef = useRef<HTMLDivElement>(null);
-  // const positionRef = useRef<HTMLDivElement>(null);
+  const [isDark, setIsDark] = useState(true);
 
   const profileLines = [
     { text: "안녕하세요!", className: "hello" },
@@ -75,16 +73,29 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isTop = window.scrollY < 5;
+      setIsDark(isTop);
+
+      document.documentElement.dataset.theme = isTop ? "dark" : "light";
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       {!isLoaded && <LoadingScreen />}
 
       {isLoaded && (
         <>
-          <Header />
+          <Header isDark={isDark} />
           <main className={s.main}>
             {/* 배너 */}
-            <SectionBanner isLoaded={isLoaded} />
+            <SectionBanner isLoaded={isLoaded} isDark={isDark} />
 
             {/* 프로필 */}
             <section className={cx(s.section, s.profileSection)} id="1">
@@ -154,7 +165,7 @@ function App() {
                       >
                         <path
                           d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                          stroke="#15151aac"
+                          stroke="#f9f9f8"
                           strokeWidth="1.5"
                           strokeMiterlimit="10"
                           strokeLinecap="round"
@@ -162,7 +173,7 @@ function App() {
                         />
                         <path
                           d="M8.22009 17.2357L17.1455 8.31028"
-                          stroke="#15151aac"
+                          stroke="#f9f9f8"
                           strokeWidth="1.5"
                           strokeMiterlimit="10"
                           strokeLinecap="round"
@@ -170,15 +181,6 @@ function App() {
                         />
                       </svg>
                     </a>
-                    {/* <div className={flex({ gap: '1.6rem' })}>
-                  <a href="" className={cx(s.profileLink, s.showResume, center())}>
-                    <span>노션 이력서 보기</span>
-                  </a>
-                  <a href="" className={cx(s.profileLink, s.showResume, center())}>
-                    <span>PDF 이력서 보기</span>
-                  </a>
-                </div> */}
-
                     <a
                       href="https://github.com/vellahw"
                       target="_blank"
@@ -194,7 +196,7 @@ function App() {
                       >
                         <path
                           d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                          stroke="#15151aac"
+                          stroke="#f9f9f8"
                           strokeWidth="1.5"
                           strokeMiterlimit="10"
                           strokeLinecap="round"
@@ -202,7 +204,7 @@ function App() {
                         />
                         <path
                           d="M8.22009 17.2357L17.1455 8.31028"
-                          stroke="#15151aac"
+                          stroke="#f9f9f8"
                           strokeWidth="1.5"
                           strokeMiterlimit="10"
                           strokeLinecap="round"
