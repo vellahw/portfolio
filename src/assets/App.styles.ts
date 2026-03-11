@@ -149,17 +149,31 @@ export const sloganTxt = css({
 export const positionTxt = css({
   left: "50%",
   transform: "translateX(-50%)",
-  bottom: "16rem",
 
   _after: {
     content: '""',
     pos: "absolute",
-    bottom: "calc(-25rem - 1px)",
     left: "50%",
     transform: "translateX(-50%)",
     w: "1px",
-    h: "25rem",
     bg: "border",
+
+    sm: {
+      h: "33rem",
+      bottom: "calc(-33rem - 1px)",
+    },
+
+    md: {
+      h: "25rem",
+      bottom: "calc(-25rem - 1px)",
+    },
+  },
+
+  sm: {
+    bottom: "24rem",
+  },
+  md: {
+    bottom: "16rem",
   },
 });
 
@@ -167,17 +181,28 @@ export const myName = css({
   pos: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate3d(-50%, -50%, 0)",
+  // transform: "translate3d(-50%, -50%, 0)",
 
   md: {
     display: "flex",
-
     "& .last": {
       pl: "5rem",
     },
   },
   lg: {
     display: "unset",
+  },
+
+  "& img": {
+    sm: {
+      maxW: "320px",
+    },
+    md: {
+      maxW: "80vw",
+    },
+    lg: {
+      maxW: "unset",
+    },
   },
 });
 
@@ -783,22 +808,16 @@ export const projectRoleList = css({
   mb: "1.5rem",
 });
 
-export const projectGitBtn = css({
+export const projectViewBtn = css({
   sm: {
-    w: "15.5rem",
-
     "& svg:nth-of-type(1)": {
       w: "15px",
-      mr: ".8rem",
     },
   },
 
   md: {
-    w: "13rem",
-
     "& svg:nth-of-type(1)": {
       w: "unset",
-      mr: ".5rem",
     },
   },
 });
@@ -938,7 +957,7 @@ export const footerTxt = css({
 export const toTopBtn = css({
   pos: "fixed",
 
-  zIndex: 999,
+  zIndex: 997,
   rounded: "555555555px",
   // bgColor: 'primary',
   display: "flex",

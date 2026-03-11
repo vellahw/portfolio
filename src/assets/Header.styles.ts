@@ -4,7 +4,7 @@ export const header = css({
   pos: "fixed",
   left: "50%",
   transform: "translate3d(-50%, 0, 0)",
-  zIndex: 999,
+  zIndex: 997,
 
   borderBottom: "2px solid",
   borderBottomColor: "primary",

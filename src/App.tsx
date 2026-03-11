@@ -9,11 +9,25 @@ import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import LoadingScreen from "./LoadingScreen";
 import SectionBanner from "./SectionBanner";
+import Modal from "./components/Modal";
+import { AnimatePresence } from "framer-motion";
+type Project = {
+  name: string;
+  thumbSrc: string;
+  what: string;
+  des: string;
+  role: string[];
+  tech: string[];
+  href: string;
+  year: string;
+  slideCount: number;
+};
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isDark, setIsDark] = useState(true);
-
+  const [open, setOpen] = useState(false); // 모달
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null); // 모달 오픈된 프로젝트
   const profileLines = [
     { text: "안녕하세요!", className: "hello" },
     { text: "2년차 프론트엔드 개발자", className: "" },
@@ -438,10 +452,43 @@ function App() {
                       <p className={s.number}>[0{index + 1}]</p>
                       <div className={s.workImgContainer}>
                         <img
-                          src={`/img/project-${item.src}.png`}
+                          src={`/img/project/project-${item.thumbSrc}.png`}
                           alt={item.name}
                         />
-                        {item.href && (
+                        <button
+                          onClick={() => {
+                            setSelectedProject(item);
+                            setOpen(true);
+                          }}
+                          className={cx(s.projectViewBtn, s.goBtn, s.workGoBtn)}
+                        >
+                          프로젝트 둘러보기
+                          <svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 26 26"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
+                              stroke="#15151aac"
+                              strokeWidth="1.5"
+                              strokeMiterlimit="10"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M8.22009 17.2357L17.1455 8.31028"
+                              stroke="#15151aac"
+                              strokeWidth="1.5"
+                              strokeMiterlimit="10"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                        {/* {item.href && (
                           <a
                             href={item.href}
                             target="_blank"
@@ -489,7 +536,7 @@ function App() {
                               />
                             </svg>
                           </a>
-                        )}
+                        )} */}
                       </div>
                       <div>
                         <div className={s.projectTitleContainer}>
@@ -532,6 +579,19 @@ function App() {
                   );
                 })}
               </div>
+              <AnimatePresence mode="wait">
+                {open && selectedProject && (
+                  <Modal
+                    open={open}
+                    onClose={() => {
+                      setOpen(false);
+                      setSelectedProject(null);
+                    }}
+                    slideCount={selectedProject.slideCount}
+                    slideName={selectedProject.thumbSrc}
+                  />
+                )}
+              </AnimatePresence>
             </section>
 
             <section className={s.contactSection} id="4">

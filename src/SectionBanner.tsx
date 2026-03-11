@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { css, cx } from "../styled-system/css";
+import { cx } from "../styled-system/css";
 import * as s from "./assets/App.styles";
 import gsap from "gsap";
 import { motion } from "motion/react";
@@ -52,8 +52,8 @@ function SectionBanner({ isLoaded, isDark }: SectionBannerProps) {
     // 이름 등장
     tl.fromTo(
       nameRef.current,
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+      { opacity: 0, x: "-50%", y: 40 },
+      { opacity: 1, y: "-50%", duration: 0.8, ease: "power3.out" },
     );
 
     return () => {
@@ -86,8 +86,7 @@ function SectionBanner({ isLoaded, isDark }: SectionBannerProps) {
       <div ref={nameRef} className={s.myName}>
         <img
           src={isDark ? "/img/name-w.svg" : "/img/name-b.svg"}
-          alt="name logo"
-          className={css({ maxW: "none" })}
+          alt="Hanwon Jang 로고"
         />
       </div>
       <div
