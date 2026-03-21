@@ -46,20 +46,20 @@ function Header({ isDark }: HeaderProps) {
             <button type="button" onClick={() => scrollToSection("1")}>
               프로필
             </button>
-            <span className={s.slash}>*</span>
           </div>
+          <span className={s.slash}>*</span>
           <div className={s.menuWrapper}>
             <button type="button" onClick={() => scrollToSection("2")}>
               업무경험
             </button>
-            <span className={s.slash}>*</span>
           </div>
+          <span className={s.slash}>*</span>
           <div className={s.menuWrapper}>
             <button type="button" onClick={() => scrollToSection("3")}>
               프로젝트
             </button>
-            <span className={s.slash}>*</span>
           </div>
+          <span className={s.slash}>*</span>
           <button type="button" onClick={() => scrollToSection("4")}>
             연락하기
           </button>

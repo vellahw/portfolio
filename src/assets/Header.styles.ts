@@ -10,7 +10,6 @@ export const header = css({
   borderBottomColor: "primary",
 
   sm: {
-    // top: ".9rem",
     w: "100%",
     h: "7.8rem",
     bg: "black",
@@ -27,8 +26,6 @@ export const header = css({
       bg: "none",
     },
   },
-
-  lg: {},
 });
 
 export const headerContainer = css({
@@ -45,13 +42,13 @@ export const mail = css({
   pos: "absolute",
   top: "50%",
   transform: "translate3d(0, -50%, 0)",
-  left: "3.5rem",
   opacity: 0.8,
 
   sm: {
     display: "none",
   },
-  "@media screen and (min-width: 691px)": {
+  lg: {
+    left: "3.5rem",
     display: "unset",
   },
 });
@@ -59,20 +56,14 @@ export const mail = css({
 export const navigator = css({
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "space-between",
   m: "0 auto",
   h: "100%",
-  // rounded: "55555px",
-  // bg: "#ffffffe3",
-  // boxShadow: "#15151a12 0px 2px 24px",
-  // backdropFilter: "blur(14px)",
-  // border: "1px solid",
-  // borderColor: "#82828290",
   minW: "275px",
 
   sm: {
     w: "80%",
-    gap: "2.5rem",
+    gap: "2rem",
     fontSize: "14px",
   },
   md: {
@@ -94,11 +85,4 @@ export const slash = css({
   fontFamily: "darker",
   fontSize: "1.8rem",
   opacity: 0.7,
-
-  sm: {
-    ml: "2.5rem",
-  },
-  md: {
-    ml: "4rem",
-  },
 });
