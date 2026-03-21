@@ -1,15 +1,16 @@
 import { useEffect, useRef } from "react";
-import { cx } from "../styled-system/css";
-import * as s from "./assets/App.styles";
+import { cx } from "../../../styled-system/css";
+import * as s from "./Hero.styles";
 import gsap from "gsap";
 import { motion } from "motion/react";
+import { section } from "../../assets/App.styles";
 
-interface SectionBannerProps {
+interface HeroProps {
   isLoaded: boolean;
   isDark: boolean;
 }
 
-function SectionBanner({ isLoaded, isDark }: SectionBannerProps) {
+function Hero({ isLoaded, isDark }: HeroProps) {
   const sloganRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLHeadingElement>(null);
   const positionRef = useRef<HTMLDivElement>(null);
@@ -62,7 +63,7 @@ function SectionBanner({ isLoaded, isDark }: SectionBannerProps) {
   }, [isLoaded]);
 
   return (
-    <section className={cx(s.section, s.bannerSection)}>
+    <section className={cx(section, s.bannerSection)}>
       {isLoaded && (
         <motion.div
           variants={letterContainer}
@@ -99,4 +100,4 @@ function SectionBanner({ isLoaded, isDark }: SectionBannerProps) {
   );
 }
 
-export default SectionBanner;
+export default Hero;

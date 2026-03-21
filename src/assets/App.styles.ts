@@ -2,26 +2,23 @@ import { css } from "../../styled-system/css";
 
 // 공용
 export const main = css({
-  minW: "300px",
-  maxW: "140.4rem",
+  m: "0 auto",
+  w: "100%",
 
   sm: {
-    m: "0 3rem",
     w: "calc(100% - 6rem)",
   },
   md: {
-    m: "0 30px",
-    w: "calc(100% - 60px)",
+    w: "90%",
   },
   lg: {
-    m: "0 auto",
-    w: "100%",
+    maxW: "140.4rem",
   },
 });
 
 export const section = css({
   lg: {
-    minH: "939px",
+    minH: "800px",
   },
 });
 
@@ -41,7 +38,6 @@ export const sectionTitle = css({
 export const smallSectionTitle = css({
   fontSize: "2rem",
   fontWeight: 500,
-  // opacity: 0.8,
 
   md: {
     mr: "4rem",
@@ -87,122 +83,6 @@ export const eachRoundEl = css({
     fontSize: "1.5rem !",
     height: "3.8rem",
     gap: ".5rem",
-  },
-});
-
-// 배너 영역 =======================================
-export const bannerSection = css({
-  w: "100%",
-  h: "100svh",
-  m: "0 auto",
-  pos: "relative",
-});
-
-export const roundTxtEl = css({
-  rounded: "5555555px",
-  border: "1px solid",
-  borderColor: "border",
-  color: "primary",
-  bg: "gray100",
-  textAlign: "center",
-  whiteSpace: "nowrap",
-  p: "0 3.4rem",
-  fontWeight: 500,
-  pos: "absolute",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-
-  "&._dark": {
-    borderColor: "primary",
-    bg: "none",
-  },
-
-  sm: {
-    w: "fit-content",
-    height: "6rem",
-    fontSize: "2.8rem",
-  },
-  md: {
-    w: "auto",
-    height: "6.2rem",
-    fontSize: "2.6rem",
-  },
-});
-
-export const sloganTxt = css({
-  top: "26rem",
-
-  sm: {
-    left: "50%",
-    transform: "translate3d(-50%, 0, 0)",
-  },
-  md: {
-    left: "50%",
-  },
-  lg: {
-    left: "calc(50% - 39vw)",
-    transform: "none",
-  },
-});
-
-export const positionTxt = css({
-  left: "50%",
-  transform: "translateX(-50%)",
-
-  _after: {
-    content: '""',
-    pos: "absolute",
-    left: "50%",
-    transform: "translateX(-50%)",
-    w: "1px",
-    bg: "border",
-
-    sm: {
-      h: "33rem",
-      bottom: "calc(-33rem - 1px)",
-    },
-
-    md: {
-      h: "25rem",
-      bottom: "calc(-25rem - 1px)",
-    },
-  },
-
-  sm: {
-    bottom: "24rem",
-  },
-  md: {
-    bottom: "16rem",
-  },
-});
-
-export const myName = css({
-  pos: "absolute",
-  top: "50%",
-  left: "50%",
-  // transform: "translate3d(-50%, -50%, 0)",
-
-  md: {
-    display: "flex",
-    "& .last": {
-      pl: "5rem",
-    },
-  },
-  lg: {
-    display: "unset",
-  },
-
-  "& img": {
-    sm: {
-      maxW: "320px",
-    },
-    md: {
-      maxW: "80vw",
-    },
-    lg: {
-      maxW: "unset",
-    },
   },
 });
 
@@ -368,11 +248,16 @@ export const mark = css({
   },
 });
 
-export const profileBody = css({
-  lineHeight: "2.2",
-  whiteSpace: "pre-wrap",
+export const IntroduceContainer = css({
   mb: "5.3rem",
   mt: "-7.8rem",
+});
+
+export const Introduce = css({
+  lineHeight: "2",
+  // whiteSpace: "pre-wrap",
+  pos: "relative",
+  mb: "1.4rem",
 
   sm: {
     fontSize: "16px",
@@ -380,6 +265,12 @@ export const profileBody = css({
   md: {
     fontSize: "2rem",
   },
+});
+
+export const IntroduceBold = css({
+  fontWeight: 600,
+  pos: "relative",
+  background: "linear-gradient(180deg,rgba(255,255,255,0) 50%, #6c7ccd2d 50%)",
 });
 
 export const profileLink = css({
@@ -956,11 +847,8 @@ export const footerTxt = css({
 
 export const toTopBtn = css({
   pos: "fixed",
-
   zIndex: 997,
   rounded: "555555555px",
-  // bgColor: 'primary',
-  display: "flex",
   justifyContent: "center",
   alignItems: "center",
   bg: "#ffffffe3",
@@ -969,17 +857,10 @@ export const toTopBtn = css({
   boxShadow: "#15151a12 0px 2px 24px",
 
   sm: {
-    w: "6.2rem",
-    h: "6.2rem",
-    right: "2.5rem",
-    bottom: "5.5rem",
-
-    "& svg": {
-      w: "20px",
-      h: "20px",
-    },
+    display: "none",
   },
   md: {
+    display: "flex",
     w: "8rem",
     h: "8rem",
     right: "5rem",

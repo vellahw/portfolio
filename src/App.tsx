@@ -4,13 +4,14 @@ import * as s from "./assets/App.styles";
 import { projectData, worksData } from "./assets/data/Datas";
 import { cx } from "../styled-system/css";
 // import gsap from "gsap";
-import { center, stack } from "../styled-system/patterns";
+import { center, flex, stack } from "../styled-system/patterns";
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import LoadingScreen from "./LoadingScreen";
-import SectionBanner from "./SectionBanner";
+import Hero from "./section/Hero/Hero";
 import Modal from "./components/Modal";
 import { AnimatePresence } from "framer-motion";
+import LinkButton from "./components/LinkButton";
 type Project = {
   name: string;
   thumbSrc: string;
@@ -108,8 +109,8 @@ function App() {
         <>
           <Header isDark={isDark} />
           <main className={s.main}>
-            {/* 배너 */}
-            <SectionBanner isLoaded={isLoaded} isDark={isDark} />
+            {/* 히어로 섹션 */}
+            <Hero isLoaded={isLoaded} isDark={isDark} />
 
             {/* 프로필 */}
             <section className={cx(s.section, s.profileSection)} id="1">
@@ -157,75 +158,68 @@ function App() {
 
                 <div className={s.profileBodyWrapper}>
                   <span className={s.mark}>*</span>
-                  <p className={s.profileBody}>
-                    {`웹 프론트엔드 개발자로 근무하며 국내외 병의원 홈페이지 리뉴얼 프로젝트에서 프론트엔드 개발을 전담하고 주도적으로 진행했습니다.
-레거시 그누보드 환경의 스크립트를 표준 코드로 개선하며 단기적인 구현에 그치지 않고, 유지보수와 개선까지 책임지는 관점으로 프로젝트에 임해왔습니다. 시맨틱 구조를 기반으로 SEO와 접근성을 고려해 의미 중심의 마크업을 설계합니다. 디자인 변경에도 구조가 흔들리지 않는 마크업을 지향하며 컴포넌트 재사용을 고려한 구조적 HTML을 작성합니다.
-간단한 UI 및 정적 랜딩페이지 디자인에 참여한 경험을 통해 기획과 디자인 의도를 정확히 이해하고 이를 충실히 반영할 수 있습니다. 디자이너를 협업 파트너이자 또 하나의 클라이언트로 생각하며, 적극적인 소통을 통해 결과물의 완성도를 높이는 과정에서 큰 즐거움을 느낍니다.
-`}
-                  </p>
+                  <div className={s.IntroduceContainer}>
+                    <p className={s.Introduce}>
+                      웹 프론트엔드 개발자로 근무하며 국내외 병의원 홈페이지
+                      리뉴얼 프로젝트에서{" "}
+                      <span className={s.IntroduceBold}>
+                        프론트엔드 개발을 전담하고 주도적으로 진행
+                      </span>
+                      했습니다.
+                    </p>
+                    <p className={s.Introduce}>
+                      <span className={s.IntroduceBold}>
+                        레거시 그누보드 환경의 스크립트를 표준 코드로 개선
+                      </span>
+                      하며 단기적인 구현에 그치지 않고,{" "}
+                      <span className={s.IntroduceBold}>
+                        유지보수와 개선까지 책임지는 관점
+                      </span>
+                      으로 프로젝트에 임해왔습니다. 시맨틱 구조를 기반으로{" "}
+                      <span className={s.IntroduceBold}>
+                        SEO와 접근성을 고려해 의미 중심의 마크업을 설계
+                      </span>
+                      합니다. 디자인 변경에도 구조가 흔들리지 않는 마크업을
+                      지향하며{" "}
+                      <span className={s.IntroduceBold}>
+                        컴포넌트 재사용을 고려한 구조적 HTML을 작성
+                      </span>
+                      합니다.
+                    </p>
+                    <p className={s.Introduce}>
+                      <span className={s.IntroduceBold}>
+                        간단한 UI 및 정적 랜딩페이지 디자인에 참여한 경험
+                      </span>
+                      을 통해{" "}
+                      <span className={s.IntroduceBold}>
+                        기획과 디자인 의도를 정확히 이해하고 이를 충실히 반영
+                      </span>
+                      할 수 있습니다. 디자이너를 협업 파트너이자 또 하나의
+                      클라이언트로 생각하며, 적극적인 소통을 통해 결과물의
+                      완성도를 높이는 과정에서 큰 즐거움을 느낍니다.
+                    </p>
+                  </div>
                   <div className={stack({ gap: "2.6rem" })}>
-                    <a
-                      href="https://my.surfit.io/w/1415583333"
-                      target="_blank"
+                    <LinkButton
+                      link="https://my.surfit.io/w/1415583333"
                       className={cx(s.profileLink, center())}
                     >
-                      <span>이력서 보기</span>
-                      <svg
-                        width="26"
-                        height="26"
-                        viewBox="0 0 26 26"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                      이력서 보기
+                    </LinkButton>
+                    <div className={flex({ gap: "8px" })}>
+                      <LinkButton
+                        link="https://github.com/vellahw"
+                        className={cx(s.profileLink, center())}
                       >
-                        <path
-                          d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                          stroke="#f9f9f8"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M8.22009 17.2357L17.1455 8.31028"
-                          stroke="#f9f9f8"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="https://github.com/vellahw"
-                      target="_blank"
-                      className={cx(s.profileLink, center())}
-                    >
-                      <span>Github</span>
-                      <svg
-                        width="26"
-                        height="26"
-                        viewBox="0 0 26 26"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        Github
+                      </LinkButton>
+                      <LinkButton
+                        link="https://tavi.tistory.com/"
+                        className={cx(s.profileLink, center())}
                       >
-                        <path
-                          d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                          stroke="#f9f9f8"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M8.22009 17.2357L17.1455 8.31028"
-                          stroke="#f9f9f8"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
+                        Blog
+                      </LinkButton>
+                    </div>
                   </div>
 
                   {/* 이력사항 */}
@@ -285,7 +279,6 @@ function App() {
             </section>
 
             <section className={cx(s.section, s.workSection)} id="2">
-              {/* <div className={s.workSectionTitleContainer}> */}
               {isLoaded && (
                 <motion.div
                   variants={profileLinesContainer}
@@ -488,55 +481,6 @@ function App() {
                             />
                           </svg>
                         </button>
-                        {/* {item.href && (
-                          <a
-                            href={item.href}
-                            target="_blank"
-                            className={cx(
-                              s.projectGitBtn,
-                              s.goBtn,
-                              s.workGoBtn,
-                            )}
-                          >
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10 0.833984C4.93587 0.833984 0.833374 4.93648 0.833374 10.0007C0.833374 14.0565 3.45754 17.4832 7.10087 18.6973C7.55921 18.7773 7.73088 18.5032 7.73088 18.2623C7.73088 18.044 7.72004 17.3223 7.72004 16.5548C5.41671 16.979 4.82087 15.9932 4.63754 15.4782C4.53421 15.214 4.08754 14.4007 3.69837 14.1832C3.37754 14.0107 2.91837 13.5873 3.68671 13.5757C4.40837 13.564 4.92421 14.2398 5.09587 14.5157C5.92087 15.9015 7.23837 15.5123 7.76588 15.2715C7.84588 14.6757 8.08671 14.2748 8.35004 14.0457C6.31004 13.8165 4.17921 13.0257 4.17921 9.51898C4.17921 8.52232 4.53421 7.69732 5.11921 7.05565C5.02671 6.82648 4.70587 5.88732 5.21087 4.62648C5.21087 4.62648 5.97838 4.38648 7.73088 5.56648C8.4771 5.35945 9.24813 5.25543 10.0225 5.25732C10.8025 5.25732 11.5817 5.35982 12.3142 5.56648C14.0675 4.37482 14.835 4.62648 14.835 4.62648C15.3392 5.88732 15.0192 6.82648 14.9275 7.05565C15.5117 7.69732 15.8667 8.51148 15.8667 9.51898C15.8667 13.0373 13.7242 13.8165 11.6842 14.0457C12.0167 14.3323 12.3034 14.8823 12.3034 15.7415C12.3034 16.9673 12.2917 17.9532 12.2917 18.2623C12.2917 18.5032 12.4634 18.789 12.9217 18.6973C16.5425 17.4832 19.1667 14.0457 19.1667 10.0007C19.1667 4.93648 15.065 0.833984 10 0.833984Z"
-                                fill="#15151ac6"
-                              />
-                            </svg>
-                            GitHub
-                            <svg
-                              width="26"
-                              height="26"
-                              viewBox="0 0 26 26"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                                stroke="#15151aac"
-                                strokeWidth="1.5"
-                                strokeMiterlimit="10"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M8.22009 17.2357L17.1455 8.31028"
-                                stroke="#15151aac"
-                                strokeWidth="1.5"
-                                strokeMiterlimit="10"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </a>
-                        )} */}
                       </div>
                       <div>
                         <div className={s.projectTitleContainer}>
