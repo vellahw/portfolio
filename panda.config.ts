@@ -22,6 +22,10 @@ export default defineConfig({
       transition: "background 0.4s, color 0.4s",
     },
 
+    "*": {
+      letterSpacing: "-0.5px",
+    },
+
     "@media screen and (max-width: 768px)": {
       "html, body": {
         fontSize: "40%",
@@ -150,8 +154,10 @@ export default defineConfig({
       colors: {
         text: { value: "#15151A" },
         white: { value: "#f9f9f8" },
-        border: { value: "#15151a70" },
-        gray100: { value: "#eaeaeaff" },
+        // border: { value: "#15151a70" },
+        border: { value: "#C1C1BE" },
+        // gray100: { value: "#eaeaeaff" },
+        gray100: { value: "#F2F2EF" },
         gray500: { value: "#575757" },
       },
     },

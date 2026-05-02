@@ -66,7 +66,8 @@ export const eachRoundEl = css({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  bg: "#dbdbdbff",
+  // bg: "#dbdbdbff",
+  bg: "#E8E8E5",
   color: "text",
   border: "1px solid",
   borderColor: "border",
@@ -251,21 +252,24 @@ export const mark = css({
 export const IntroduceContainer = css({
   mb: "5.3rem",
   mt: "-7.8rem",
+
+  "& p": {
+    lineHeight: "2",
+    pos: "relative",
+    mb: "1.4rem",
+
+    sm: {
+      fontSize: "16px",
+    },
+    md: {
+      fontSize: "2rem",
+    },
+  },
 });
 
-export const Introduce = css({
-  lineHeight: "2",
-  // whiteSpace: "pre-wrap",
-  pos: "relative",
-  mb: "1.4rem",
+// export const Introduce = css({
 
-  sm: {
-    fontSize: "16px",
-  },
-  md: {
-    fontSize: "2rem",
-  },
-});
+// });
 
 export const IntroduceBold = css({
   fontWeight: 600,
@@ -308,13 +312,13 @@ export const history = css({
 
 export const historyTitle = css({
   fontWeight: 600,
-  mb: "2rem",
+  mb: "3rem",
 
   sm: {
     fontSize: "16px",
   },
   md: {
-    fontSize: "2.2rem",
+    fontSize: "2.4rem",
   },
 });
 
@@ -327,14 +331,9 @@ export const historyContainer = css({
 export const eachHistory = css({
   display: "flex",
   justifyContent: "space-between",
-
-  "&.edu": {
-    mb: ".5rem",
-  },
+  mb: "1rem",
 
   "& .date": {
-    opacity: 0.6,
-
     sm: {
       maxW: "70px",
       lineHeight: "1.4",
@@ -352,6 +351,8 @@ export const eachHistory = css({
   },
 
   "& .group": {
+    fontWeight: 600,
+
     sm: {
       maxW: "72%",
     },
@@ -361,6 +362,7 @@ export const eachHistory = css({
     },
 
     lg: {
+      textAlign: "right",
       maxW: "unset",
     },
   },
@@ -385,6 +387,7 @@ export const date5 = css({
 });
 
 export const smallHistoryTxt = css({
+  fontWeight: 400,
   mt: "1rem",
 
   sm: {
@@ -486,52 +489,47 @@ export const gridItem = css({
   border: "1px solid",
   borderColor: "border",
   bg: "gray100",
+  overflow: "hidden",
+  display: "flex",
+  flexFlow: "column",
 });
 
 export const workThumbnail = css({
   pos: "relative",
+  width: "100%",
+  height: "100%",
+  overflow: "hidden",
+  display: "inline-block",
 });
 
 export const workImgContainer = css({
-  pos: "relative",
+  rounded: "1.5rem",
   overflow: "hidden",
+  // display: "inline-block",
+  width: "100%",
+  height: "100%",
 
-  _hover: {
-    "& .gif": {
-      opacity: 1,
-    },
+  _after: {
+    content: "''",
+    pos: "absolute",
+    top: "0",
+    left: "0",
+    right: "0",
+    bottom: "0",
+    w: "100%",
+    h: "100%",
+    rounded: "1.5rem",
+    overflow: "hidden",
+    background:
+      "linear-gradient(0deg, rgba(0, 0, 0, 0.32) 0%, rgba(255, 255, 255, 0) 100%)",
   },
-
-  // _after: {
-  //   content: '""',
-  //   pos: "absolute",
-  //   top: 0,
-  //   left: 0,
-  //   opacity: .3,
-  //   bg: '#fff',
-  //   zIndex: '1',
-  //   w: '100%',
-  //   h: '100%',
-  // }
 });
 
 export const workImgGif = css({
-  opacity: 0,
-  pos: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate3d(-50%, -50%, 0)",
-  transition: "opacity .4s",
-  // rounded: "1.5rem",
-  // overflow: "hidden",
-  zIndex: "2",
-
-  sm: {
-    display: "none",
-  },
-  lg: {
-    display: "block",
-  },
+  objectFit: "cover",
+  objectPosition: "center",
+  width: "100%",
+  height: "101%",
 });
 
 export const goBtn = css({
@@ -539,15 +537,24 @@ export const goBtn = css({
   bottom: "1.5rem",
   right: "1.5rem",
   zIndex: "3",
+  color: "text",
+  rounded: ".5rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  h: "4rem",
 
   sm: {
     w: " 18.4rem",
+    fontSize: "12px",
 
     "& svg": {
       w: "20px",
     },
   },
   md: {
+    fontSize: "1.6rem",
+
     w: " 16.4rem",
     "& svg": {
       w: "unset",
@@ -556,23 +563,11 @@ export const goBtn = css({
 });
 
 export const workGoBtn = css({
-  color: "text",
-  bg: "#ffffff44",
-  backdropFilter: "blur(25px)",
-  rounded: ".5rem",
+  bg: "#ffffff",
+  // bg: "#ffffff44",
+  // backdropFilter: "blur(25px)",
   outline: "1px solid",
   outlineColor: "#0a090f52",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  h: "4rem",
-
-  sm: {
-    fontSize: "12px",
-  },
-  md: {
-    fontSize: "1.6rem",
-  },
 });
 
 export const number = css({
@@ -689,9 +684,6 @@ export const projectDes = css({
   sm: {
     fontSize: "14px",
   },
-  md: {
-    fontSize: "1.8rem !",
-  },
 });
 
 export const projectRoleList = css({
@@ -700,6 +692,10 @@ export const projectRoleList = css({
 });
 
 export const projectViewBtn = css({
+  // bgColor: "#fff",
+  bgColor: "#ffffff44",
+  backdropFilter: "blur(25px)",
+
   sm: {
     "& svg:nth-of-type(1)": {
       w: "15px",

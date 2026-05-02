@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import * as s from "./assets/App.styles";
 import { projectData, worksData } from "./assets/data/Datas";
-import { cx } from "../styled-system/css";
+import { css, cx } from "../styled-system/css";
 // import gsap from "gsap";
 import { center, flex, stack } from "../styled-system/patterns";
 import { motion } from "motion/react";
@@ -159,44 +159,45 @@ function App() {
                 <div className={s.profileBodyWrapper}>
                   <span className={s.mark}>*</span>
                   <div className={s.IntroduceContainer}>
-                    <p className={s.Introduce}>
-                      웹 프론트엔드 개발자로 근무하며 국내외 병의원 홈페이지
-                      리뉴얼 프로젝트에서{" "}
+                    <p>
+                      에이전시 환경에서 다양한 국내외 병의원 홈페이지 리뉴얼
+                      프로젝트의{" "}
                       <span className={s.IntroduceBold}>
-                        프론트엔드 개발을 전담하고 주도적으로 진행
+                        프론트엔드 개발을 전담하고 주도했습니다.
                       </span>
-                      했습니다.
                     </p>
-                    <p className={s.Introduce}>
+                    <p>
                       <span className={s.IntroduceBold}>
-                        레거시 그누보드 환경의 스크립트를 표준 코드로 개선
+                        디자인 시안이 없는 영역까지 포함해 반응형·적응형 UI를
+                        스스로 판단해 구현
                       </span>
-                      하며 단기적인 구현에 그치지 않고,{" "}
-                      <span className={s.IntroduceBold}>
-                        유지보수와 개선까지 책임지는 관점
-                      </span>
-                      으로 프로젝트에 임해왔습니다. 시맨틱 구조를 기반으로{" "}
-                      <span className={s.IntroduceBold}>
-                        SEO와 접근성을 고려해 의미 중심의 마크업을 설계
-                      </span>
-                      합니다. 디자인 변경에도 구조가 흔들리지 않는 마크업을
-                      지향하며{" "}
-                      <span className={s.IntroduceBold}>
-                        컴포넌트 재사용을 고려한 구조적 HTML을 작성
-                      </span>
-                      합니다.
+                      할 수 있으며 기획과 디자인 의도를 정확히 이해하고 이를
+                      충실히 반영 할 수 있습니다.
                     </p>
-                    <p className={s.Introduce}>
+                    <p>
+                      구현 과정에서{" "}
                       <span className={s.IntroduceBold}>
-                        간단한 UI 및 정적 랜딩페이지 디자인에 참여한 경험
+                        사용자 경험 측면의 개선점을 제안을 진행하고 실제
+                        프로젝트에 반영
                       </span>
-                      을 통해{" "}
+                      한 경험이 있습니다.
+                    </p>
+                    <p>
+                      레거시 그누보드 환경을 개선하며{" "}
                       <span className={s.IntroduceBold}>
-                        기획과 디자인 의도를 정확히 이해하고 이를 충실히 반영
+                        단순 구현에 그치지 않고 이후 작업이 수월하도록 개선하는
+                        데 집중
                       </span>
-                      할 수 있습니다. 디자이너를 협업 파트너이자 또 하나의
-                      클라이언트로 생각하며, 적극적인 소통을 통해 결과물의
-                      완성도를 높이는 과정에서 큰 즐거움을 느낍니다.
+                      해왔습니다.{" "}
+                      <span className={s.IntroduceBold}>
+                        코드를 작성할 때마다 협업과 유지보수를 고려
+                      </span>
+                      해 읽기 쉽고 범용성 있는 구조를 고민합니다.
+                    </p>
+                    <p>
+                      업무에 필요한 기술은 익숙하지 않더라도 직접 적용해보며
+                      익히고, React와 TypeScript 기반의 웹 개발을 별도로
+                      학습하며 역량을 확장해왔습니다.
                     </p>
                   </div>
                   <div className={stack({ gap: "2.6rem" })}>
@@ -228,12 +229,12 @@ function App() {
                       <h1 className={s.historyTitle}>경력</h1>
                       <div className={s.historyContainer}>
                         <div className={s.eachHistory}>
-                          <p className="group">(주)엔셀텍바이오랩스</p>
                           <p className="date">2024.04 ~ 2025.12</p>
+                          <p className="group">(주)엔셀텍바이오랩스</p>
                         </div>
                         <div className={s.eachHistory}>
-                          <p className="group">해커스홀딩스</p>
                           <p className="date">2023.08 ~ 2023.09</p>
+                          <p className="group">해커스홀딩스</p>
                         </div>
                       </div>
                     </div>
@@ -242,28 +243,28 @@ function App() {
                       <h1 className={s.historyTitle}>학력·교육이수</h1>
                       <div className={s.historyContainer}>
                         <div className={cx(s.eachHistory, "edu")}>
+                          <p className="date">2024.03 ~ 재학중*</p>
                           <p className="group">
                             한국방송통신대학교 컴퓨터과학과
                           </p>
-                          <p className="date">2024.03 ~ 재학중*</p>
                         </div>
                         <div className={cx(s.eachHistory, "edu")}>
+                          <p className="date">2023.05 ~ 2023.07</p>
                           <div className="group">
                             <p>한국에이아이블록체인융합원</p>
                             <p className={s.smallHistoryTxt}>
                               (블록체인 기반의 기술 사업화 전문 인력 양성 과정)
                             </p>
                           </div>
-                          <p className="date">2023.05 ~ 2023.07</p>
                         </div>
                         <div className={cx(s.eachHistory, "edu")}>
+                          <p className="date">2022.07 ~ 2023.03</p>
                           <div className="group">
                             <p>이젠컴퓨터아카데미</p>
                             <p className={s.smallHistoryTxt}>
                               (AWS클라우드 기반 JAVA 개발자 과정)
                             </p>
                           </div>
-                          <p className="date">2022.07 ~ 2023.03</p>
                         </div>
                       </div>
                       {/* <p>성동글로벌경영고등학교 패션디자인과&nbsp;&nbsp;&nbsp;&nbsp;2014.03 ~ 2017.02</p> */}
@@ -315,9 +316,9 @@ function App() {
                     </motion.div>
                   ))}
 
-                  <span className={s.workSectionTitleTxt}>
+                  {/* <span className={s.workSectionTitleTxt}>
                     이미지에 마우스를 올려보세요!
-                  </span>
+                  </span> */}
                 </motion.div>
               )}
 
@@ -336,10 +337,10 @@ function App() {
                       <p className={s.number}>[0{index + 1}]</p>
                       <div className={s.workThumbnail}>
                         <div className={s.workImgContainer}>
-                          <img
+                          {/* <img
                             src={`/img/work-${item.src}.png`}
                             alt={item.name}
-                          />
+                          /> */}
                           <video
                             muted
                             loop
@@ -443,7 +444,7 @@ function App() {
                   return (
                     <div className={s.gridItem} key={index}>
                       <p className={s.number}>[0{index + 1}]</p>
-                      <div className={s.workImgContainer}>
+                      <div className={css({ pos: "relative" })}>
                         <img
                           src={`/img/project/project-${item.thumbSrc}.png`}
                           alt={item.name}
@@ -453,7 +454,7 @@ function App() {
                             setSelectedProject(item);
                             setOpen(true);
                           }}
-                          className={cx(s.projectViewBtn, s.goBtn, s.workGoBtn)}
+                          className={cx(s.projectViewBtn, s.goBtn)}
                         >
                           프로젝트 둘러보기
                           <svg
@@ -483,21 +484,23 @@ function App() {
                         </button>
                       </div>
                       <div>
-                        <div className={s.projectTitleContainer}>
-                          <div className="wrap">
-                            <h1 className={s.projectName}>{item.name}</h1>
-                            <span className={cx(s.projectBody, "slash")}>
-                              |
+                        <div>
+                          <div className={s.projectTitleContainer}>
+                            <div className="wrap">
+                              <h1 className={s.projectName}>{item.name}</h1>
+                              <span className={cx(s.projectBody, "slash")}>
+                                |
+                              </span>
+                              <span className={s.projectBody}>{item.what}</span>
+                            </div>
+                            <span className={cx(s.projectBody, "year")}>
+                              ({item.year})
                             </span>
-                            <span className={s.projectBody}>{item.what}</span>
                           </div>
-                          <span className={cx(s.projectBody, "year")}>
-                            ({item.year})
-                          </span>
+                          <p className={cx(s.projectDes, s.projectBodyMore)}>
+                            {item.des}
+                          </p>
                         </div>
-                        <p className={cx(s.projectDes, s.projectBodyMore)}>
-                          {item.des}
-                        </p>
 
                         <div>
                           <div className={cx(s.roundElList, s.projectRoleList)}>
@@ -511,11 +514,14 @@ function App() {
                             ))}
                           </div>
                           <div className={s.roundElList}>
-                            {item.tech.map((tech) => (
-                              <div className={s.eachRoundEl} key={tech}>
-                                {tech}
-                              </div>
-                            ))}
+                            <div className={s.eachRoundEl}>
+                              {item.tech.map((tech, index) => (
+                                <>
+                                  {tech}
+                                  {index !== item.tech.length - 1 ? " · " : ""}
+                                </>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
