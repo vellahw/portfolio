@@ -3,7 +3,7 @@ import { cx } from "../../../styled-system/css";
 import * as s from "./Hero.styles";
 import gsap from "gsap";
 import { motion } from "motion/react";
-import { section } from "../../assets/App.styles";
+import { section } from "../../assets/style/App.styles";
 
 interface HeroProps {
   isLoaded: boolean;

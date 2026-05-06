@@ -1,6 +1,5 @@
 import { css } from "../../../styled-system/css";
 
-// 배너 영역 =======================================
 export const bannerSection = css({
   w: "100%",
   h: "100svh",

@@ -1,13 +1,9 @@
 import { useEffect, useRef } from "react";
-import * as s from "./assets/Header.styles";
 import gsap from "gsap";
-import { cx } from "../styled-system/css";
+import { cx } from "../../../styled-system/css";
+import * as s from "./Header.styles";
 
-interface HeaderProps {
-  isDark: boolean;
-}
-
-function Header({ isDark }: HeaderProps) {
+function Header({ isDark }: { isDark: boolean }) {
   const headerRef = useRef<HTMLElement>(null);
 
   const scrollToSection = (id: string) => {

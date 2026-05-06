@@ -2,12 +2,12 @@
 import { motion } from "framer-motion";
 import { backDrop, closeBtn, modalEl } from "./Modal.styles";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { css } from "../../styled-system/css";
+import { css } from "../../../styled-system/css";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "../assets/customSwiper.css";
+import "../../assets/style/customSwiper.css";
 
 interface ModalProps {
   open: boolean;
