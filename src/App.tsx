@@ -208,18 +208,18 @@ function App() {
                       이력서 보기
                     </LinkButton>
                     <div className={flex({ gap: "8px" })}>
-                      <LinkButton
+                      {/* <LinkButton
                         link="https://github.com/vellahw"
                         className={cx(s.profileLink, center())}
                       >
                         Github
-                      </LinkButton>
-                      <LinkButton
+                      </LinkButton> */}
+                      {/* <LinkButton
                         link="https://tavi.tistory.com/"
                         className={cx(s.profileLink, center())}
                       >
                         Blog
-                      </LinkButton>
+                      </LinkButton> */}
                     </div>
                   </div>
 
@@ -337,10 +337,6 @@ function App() {
                       <p className={s.number}>[0{index + 1}]</p>
                       <div className={s.workThumbnail}>
                         <div className={s.workImgContainer}>
-                          {/* <img
-                            src={`/img/work-${item.src}.png`}
-                            alt={item.name}
-                          /> */}
                           <video
                             muted
                             loop
@@ -348,7 +344,7 @@ function App() {
                             className={cx(s.workImgGif, "gif")}
                           >
                             <source
-                              src={`/img/work-${item.src}.mp4`}
+                              src={`/img/work/work-${item.src}.mp4`}
                               type="video/mp4"
                             />
                           </video>
@@ -357,33 +353,13 @@ function App() {
                           <a
                             href={item.href}
                             target="_blank"
-                            className={cx(s.goBtn, s.workGoBtn)}
+                            className={cx(s.goBtn)}
                           >
                             <span>사이트 바로가기</span>
-                            <svg
-                              width="26"
-                              height="26"
-                              viewBox="0 0 26 26"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                                stroke="#15151aac"
-                                strokeWidth="1.5"
-                                strokeMiterlimit="10"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M8.22009 17.2357L17.1455 8.31028"
-                                stroke="#15151aac"
-                                strokeWidth="1.5"
-                                strokeMiterlimit="10"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
+                            <img
+                              src={"/img/icon/arrow-b.svg"}
+                              alt="화살표 아이콘"
+                            />
                           </a>
                         )}
                       </div>
@@ -454,33 +430,13 @@ function App() {
                             setSelectedProject(item);
                             setOpen(true);
                           }}
-                          className={cx(s.projectViewBtn, s.goBtn)}
+                          className={cx(s.goBtn, s.projectViewBtn)}
                         >
                           프로젝트 둘러보기
-                          <svg
-                            width="26"
-                            height="26"
-                            viewBox="0 0 26 26"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10.7975 8.22011L17.2358 8.22011L17.2358 14.6583"
-                              stroke="#15151aac"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M8.22009 17.2357L17.1455 8.31028"
-                              stroke="#15151aac"
-                              strokeWidth="1.5"
-                              strokeMiterlimit="10"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
+                          <img
+                            src={"/img/icon/arrow-w.svg"}
+                            alt="화살표 아이콘"
+                          />
                         </button>
                       </div>
                       <div>
@@ -516,10 +472,10 @@ function App() {
                           <div className={s.roundElList}>
                             <div className={s.eachRoundEl}>
                               {item.tech.map((tech, index) => (
-                                <>
+                                <span key={index}>
                                   {tech}
                                   {index !== item.tech.length - 1 ? " · " : ""}
-                                </>
+                                </span>
                               ))}
                             </div>
                           </div>
@@ -584,30 +540,7 @@ function App() {
           </main>
 
           <button type="button" onClick={scrollToTop} className={s.toTopBtn}>
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.91833 11.1641L14 4.0824L21.0817 11.1641"
-                stroke="#15151A"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14 23.916L14 4.28102"
-                stroke="#15151A"
-                strokeWidth="1.5"
-                strokeMiterlimit="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img src={"/img/icon/arrow-b.svg"} alt="화살표 아이콘" />
           </button>
         </>
       )}

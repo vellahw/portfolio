@@ -267,10 +267,6 @@ export const IntroduceContainer = css({
   },
 });
 
-// export const Introduce = css({
-
-// });
-
 export const IntroduceBold = css({
   fontWeight: 600,
   pos: "relative",
@@ -280,11 +276,11 @@ export const IntroduceBold = css({
 export const profileLink = css({
   rounded: "55555px",
   minW: "116px",
-  // bg: "gray100",
   bg: "text",
   color: "white",
-  border: "1px solid",
-  borderColor: "border",
+  border: "none",
+  // border: "1px solid",
+  // borderColor: "border",
 
   sm: {
     w: "18rem",
@@ -293,7 +289,7 @@ export const profileLink = css({
   },
   md: {
     w: "16rem",
-    h: "4.2rem",
+    h: "4.6rem",
     fontSize: "1.8rem",
   },
 });
@@ -335,7 +331,7 @@ export const eachHistory = css({
 
   "& .date": {
     sm: {
-      maxW: "70px",
+      maxW: "unset",
       lineHeight: "1.4",
     },
 
@@ -352,9 +348,10 @@ export const eachHistory = css({
 
   "& .group": {
     fontWeight: 600,
+    textAlign: "right",
 
     sm: {
-      maxW: "72%",
+      maxW: "43%",
     },
 
     md: {
@@ -362,7 +359,6 @@ export const eachHistory = css({
     },
 
     lg: {
-      textAlign: "right",
       maxW: "unset",
     },
   },
@@ -412,29 +408,13 @@ export const workSection = css({
 });
 
 export const workSectionTitleContainer = css({
-  // display: "flex",
-  // alignItems: "flex-end",
   pb: "4.5rem",
   justifyContent: "space-between",
   pos: "relative",
   lineHeight: "1",
-
-  // borderRight: '1px solid',
-  // borderRightColor: 'border',
-  // _after: {
-  //   content: '""',
-  //   w: '1px',
-  //   h: '6rem',
-  //   pos: 'absolute',
-  //   bottom: 'calc(-6rem - 1px)',
-  //   left: 0,
-  //   bg: 'border'
-  // }
 });
 
 export const workSectionTitle = css({
-  // fontFamily: "Montserrat",
-
   "&.sec": {
     sm: {
       pl: "5rem",
@@ -444,8 +424,6 @@ export const workSectionTitle = css({
     },
   },
 });
-
-export const workSectionTitle2 = css({});
 
 export const workSectionTitleTxt = css({
   pos: "absolute",
@@ -543,31 +521,22 @@ export const goBtn = css({
   justifyContent: "center",
   alignItems: "center",
   h: "4rem",
+  bg: "#ffffff",
+  outline: "1px solid",
+  outlineColor: "#0a090f52",
 
   sm: {
     w: " 18.4rem",
     fontSize: "12px",
-
-    "& svg": {
-      w: "20px",
-    },
   },
   md: {
     fontSize: "1.6rem",
-
     w: " 16.4rem",
-    "& svg": {
-      w: "unset",
-    },
   },
-});
 
-export const workGoBtn = css({
-  bg: "#ffffff",
-  // bg: "#ffffff44",
-  // backdropFilter: "blur(25px)",
-  outline: "1px solid",
-  outlineColor: "#0a090f52",
+  "& img": {
+    w: "2.8rem",
+  },
 });
 
 export const number = css({
@@ -586,8 +555,6 @@ export const number = css({
 // 프로젝트 영역 =======================================
 export const projectSectionTitle = css({
   pb: "4.5rem",
-  // borderRight: '1px solid',
-  // borderRightColor: 'border',
   ml: 0,
   display: "flex",
   justifyContent: "space-between",
@@ -613,16 +580,12 @@ export const projectTitleContainer = css({
 
   sm: {
     justifyContent: "unset",
-    // alignItems: "flex-start",
-    // flexDirection: "column",
-    // gap: '1.2rem',
     gap: 0,
     mb: "1rem",
   },
 
   md: {
     justifyContent: "unset",
-    // flexDirection: "row",
     mb: "0",
   },
 });
@@ -692,21 +655,12 @@ export const projectRoleList = css({
 });
 
 export const projectViewBtn = css({
-  // bgColor: "#fff",
-  bgColor: "#ffffff44",
-  backdropFilter: "blur(25px)",
-
-  sm: {
-    "& svg:nth-of-type(1)": {
-      w: "15px",
-    },
-  },
-
-  md: {
-    "& svg:nth-of-type(1)": {
-      w: "unset",
-    },
-  },
+  // bgColor: "#ffffff44",
+  // backdropFilter: "blur(25px)",
+  // border: "1px solid",
+  // borderColor: "#0a090f52",
+  bgColor: "text",
+  color: "white",
 });
 
 export const projectRole = css({
@@ -861,10 +815,9 @@ export const toTopBtn = css({
     h: "8rem",
     right: "5rem",
     bottom: "5rem",
+  },
 
-    "& svg": {
-      w: "unset",
-      h: "unset",
-    },
+  "& img": {
+    transform: "rotate(-45deg)",
   },
 });
