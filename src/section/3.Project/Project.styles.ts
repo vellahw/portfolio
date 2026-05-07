@@ -15,7 +15,7 @@ export const projectSectionTitle = css({
   },
 });
 
-export const projectItem = css({
+export const projectImgContainer = css({
   pos: "relative",
 });
 
@@ -31,15 +31,6 @@ export const projectDes = css({
 export const projectRoleList = css({
   flexDirection: "column",
   mb: "1.5rem",
-});
-
-export const projectViewBtn = css({
-  // bgColor: "#ffffff44",
-  // backdropFilter: "blur(25px)",
-  // border: "1px solid",
-  // borderColor: "#0a090f52",
-  bgColor: "text",
-  color: "white",
 });
 
 export const projectRole = css({

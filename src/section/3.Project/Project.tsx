@@ -59,9 +59,9 @@ export default function Project({ isLoaded }: { isLoaded: boolean }) {
       <div className={as.gridArea}>
         {projectData.map((item, index) => {
           return (
-            <div className={cx(as.gridItem, s.projectItem)} key={index}>
+            <div className={as.gridItem} key={index}>
               <p className={number}>[0{index + 1}]</p>
-              <div className={cx(as.itemImgOverlay)}>
+              <div className={cx(as.itemImgOverlay, s.projectImgContainer)}>
                 <img
                   src={`/img/project/project-${item.thumbSrc}.png`}
                   alt={item.name}
@@ -71,10 +71,10 @@ export default function Project({ isLoaded }: { isLoaded: boolean }) {
                     setSelectedProject(item);
                     setOpen(true);
                   }}
-                  className={cx(as.goBtn, s.projectViewBtn)}
+                  className={as.goBtn}
                 >
                   프로젝트 둘러보기
-                  <img src={"/img/icon/arrow-w.svg"} alt="화살표 아이콘" />
+                  <img src={"/img/icon/arrow-b.svg"} alt="화살표 아이콘" />
                 </button>
               </div>
               <div>
