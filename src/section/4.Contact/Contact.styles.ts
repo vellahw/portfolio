@@ -77,6 +77,23 @@ export const contactMail = css({
   },
 });
 
+export const iconContainer = css({
+  gap: "1rem",
+  opacity: 0.8,
+  mb: ".5rem",
+
+  "& img": {
+    sm: {
+      w: "2.8rem",
+      h: "2.8rem",
+    },
+    md: {
+      w: "unset",
+      h: "unset",
+    },
+  },
+});
+
 export const footerTxt = css({
   fontSize: "1.4rem",
   opacity: 0.8,

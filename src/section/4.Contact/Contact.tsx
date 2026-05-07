@@ -1,3 +1,5 @@
+import { cx } from "../../../styled-system/css";
+import { center, flex, stack } from "../../../styled-system/patterns";
 import { lineVariants, mailTxtVariants } from "../../assets/animation/variants";
 import Section from "../../components/Section";
 import * as s from "./Contact.styles";
@@ -34,7 +36,17 @@ export default function Contact({ isLoaded }: { isLoaded: boolean }) {
           </motion.a>
         )}
       </div>
-      <p className={s.footerTxt}>© 2026 장한원. All rights reserved.</p>
+      <div className={cx(stack(), center())}>
+        <div className={cx(flex(), s.iconContainer)}>
+          <a href="https://github.com/vellahw" target="_blank">
+            <img src={"/img/icon/github.svg"} alt="깃허브 아이콘" />
+          </a>
+          <a href="https://tavi.tistory.com/" target="_blank">
+            <img src={"/img/icon/blog.svg"} alt="블로그 아이콘" />
+          </a>
+        </div>
+        <p className={s.footerTxt}>© 2026 장한원. All rights reserved.</p>
+      </div>
     </Section>
   );
 }
