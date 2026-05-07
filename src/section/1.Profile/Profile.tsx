@@ -6,7 +6,7 @@ import {
   lineVariants,
   charVariants,
 } from "../../assets/animation/variants";
-import { center, flex, stack } from "../../../styled-system/patterns";
+import { center, stack } from "../../../styled-system/patterns";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import { cx } from "../../../styled-system/css";
 
@@ -108,20 +108,20 @@ export default function Profile({ isLoaded }: { isLoaded: boolean }) {
             >
               이력서 보기
             </LinkButton>
-            <div className={flex({ gap: "8px" })}>
-              {/* <LinkButton
+            {/* <div className={flex({ gap: "8px" })}> */}
+            {/* <LinkButton
                             link="https://github.com/vellahw"
                             className={cx(s.profileLink, center())}
                           >
                             Github
                           </LinkButton> */}
-              {/* <LinkButton
+            {/* <LinkButton
                             link="https://tavi.tistory.com/"
                             className={cx(s.profileLink, center())}
                           >
                             Blog
                           </LinkButton> */}
-            </div>
+            {/* </div> */}
           </div>
 
           {/* 이력사항 */}

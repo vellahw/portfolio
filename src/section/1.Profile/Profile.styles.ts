@@ -9,6 +9,9 @@ export const profileSection = css({
     p: "5.8rem 3rem 0 3rem",
   },
   md: {
+    p: "5.8rem 5rem 0 5rem",
+  },
+  lg: {
     p: "5.8rem 5.5rem 0 5.5rem",
   },
 });
@@ -205,7 +208,7 @@ export const profileLink = css({
 });
 
 export const history = css({
-  gap: "6rem",
+  gap: "6rem !",
   m: "6.2rem 0 5.8rem 0",
 
   sm: {
@@ -231,13 +234,12 @@ export const historyTitle = css({
 export const historyContainer = css({
   display: "flex",
   flexDirection: "column",
-  gap: "2.5rem",
+  gap: "2.4rem",
 });
 
 export const eachHistory = css({
   display: "flex",
   justifyContent: "space-between",
-  mb: "1rem",
 
   "& .date": {
     sm: {
@@ -253,6 +255,8 @@ export const eachHistory = css({
     lg: {
       minW: "40%",
       maxW: "unset",
+      display: "flex",
+      alignItems: "center",
     },
   },
 
