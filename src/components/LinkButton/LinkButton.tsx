@@ -3,7 +3,7 @@ import { LinkButtonStyle } from "./LinkButton.styles";
 
 type ButtonProps = {
   link: string;
-  className: string;
+  className?: string;
   children: React.ReactNode;
 };
 

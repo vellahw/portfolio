@@ -72,34 +72,33 @@ export default function Profile({ isLoaded }: { isLoaded: boolean }) {
             </p>
             <p>
               <span className={s.IntroduceBold}>
-                디자인 시안이 없는 영역까지 포함해 반응형·적응형 UI를 스스로
-                판단해 구현
+                아름다운 UI와 자연스러운 애니메이션
               </span>
-              할 수 있으며 기획과 디자인 의도를 정확히 이해하고 이를 충실히 반영
-              할 수 있습니다.
+              을 구현하는 과정을 즐깁니다. 단순 디자인 구현을 넘어 사용자 경험을
+              개선하는 방향으로 개발하는 것을 중요하게 생각합니다.{" "}
+              <span className={s.IntroduceBold}>
+                실제 프로젝트에서도 UX적으로 더 적합하다고 판단되는 부분을
+                제안하고 적용
+              </span>
+              함으로써 서비스 완성도를 높인 경험이 있습니다.
             </p>
             <p>
-              구현 과정에서{" "}
+              기존의 그누보드 환경에서{" "}
+              <span className={s.IntroduceBold}>단순 구현에 그치지 않고 </span>
+              매 프로젝트에서 재사용 가능한 구조를 만드는 등{" "}
               <span className={s.IntroduceBold}>
-                사용자 경험 측면의 개선점을 제안을 진행하고 실제 프로젝트에 반영
+                개발 효율을 높이고 개선하는 데 집중{" "}
               </span>
-              한 경험이 있습니다.
+              해왔습니다. 코드를 작성할 때마다 협업과 유지보수를 고려 해{" "}
+              <span className={s.IntroduceBold}>
+                읽기 쉽고 범용성 있는 구조를 고민
+              </span>
+              합니다.
             </p>
             <p>
-              레거시 그누보드 환경을 개선하며{" "}
-              <span className={s.IntroduceBold}>
-                단순 구현에 그치지 않고 이후 작업이 수월하도록 개선하는 데 집중
-              </span>
-              해왔습니다.{" "}
-              <span className={s.IntroduceBold}>
-                코드를 작성할 때마다 협업과 유지보수를 고려
-              </span>
-              해 읽기 쉽고 범용성 있는 구조를 고민합니다.
-            </p>
-            <p>
-              업무에 필요한 기술은 익숙하지 않더라도 직접 적용해보며 익히고,
-              React와 TypeScript 기반의 웹 개발을 별도로 학습하며 역량을
-              확장해왔습니다.
+              업무에 필요한 기술은 익숙하지 않더라도 직접 적용해보며 빠르게
+              적응하고, React와 TypeScript 기반의 웹 개발을 별도로 학습하며
+              역량을 확장해왔습니다.
             </p>
           </div>
           <div className={stack({ gap: "2.6rem" })}>
