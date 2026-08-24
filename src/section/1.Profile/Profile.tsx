@@ -101,6 +101,10 @@ export default function Profile({ isLoaded }: { isLoaded: boolean }) {
               <h1 className={s.historyTitle}>경력</h1>
               <div className={s.historyContainer}>
                 <div className={s.eachHistory}>
+                  <p className="date">2026.06 ~ 2026.08</p>
+                  <p className="group">(주)한국심리교육원</p>
+                </div>
+                <div className={s.eachHistory}>
                   <p className="date">2024.04 ~ 2025.12</p>
                   <p className="group">(주)엔셀텍바이오랩스</p>
                 </div>
