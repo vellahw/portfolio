@@ -13,9 +13,11 @@ import { cx } from "../../../styled-system/css";
 export default function Profile({ isLoaded }: { isLoaded: boolean }) {
   const profileLines = [
     { text: "안녕하세요!", className: "hello" },
-    { text: "2년차 프론트엔드 개발자", className: "" },
+    { text: "3년차 프론트엔드 개발자", className: "" },
     { text: "장한원입니다", className: "name" },
   ];
+
+  const resumeLink = 'https://my.surfit.io/w/1415583333'
 
   return (
     <Section className={s.profileSection} id="1">
@@ -67,61 +69,30 @@ export default function Profile({ isLoaded }: { isLoaded: boolean }) {
             <p>
               에이전시 환경에서 다양한 국내외 병의원 홈페이지 리뉴얼 프로젝트의{" "}
               <span className={s.IntroduceBold}>
-                프론트엔드 개발을 전담하고 주도했습니다.
+                프론트엔드 개발을 전담하고 주도한 경험이 있습니다.
               </span>
             </p>
+           <p>
+             이후 <span className={s.IntroduceBold}>서비스 개발 환경으로 영역을 넓혀 Nuxt와 TypeScript 기반 환경에서 콘텐츠 언어 학습 기능, 다국어 지원, 멀티 PG 결제 시스템 등의 기능을 개발</span>했습니다.
+           </p>
             <p>
-              <span className={s.IntroduceBold}>
-                아름다운 UI와 자연스러운 애니메이션
-              </span>
-              을 구현하는 과정을 즐깁니다. 단순 디자인 구현을 넘어 사용자 경험을
-              개선하는 방향으로 개발하는 것을 중요하게 생각합니다.{" "}
-              <span className={s.IntroduceBold}>
-                실제 프로젝트에서도 UX적으로 더 적합하다고 판단되는 부분을
-                제안하고 적용
-              </span>
-              함으로써 서비스 완성도를 높인 경험이 있습니다.
+              단순한 화면 구현을 넘어 사용자의 상태와 서비스 정책에 따라 달라지는 흐름을 이해하고 설계하는 데 집중합니다.
             </p>
-            <p>
-              기존의 그누보드 환경에서{" "}
-              <span className={s.IntroduceBold}>단순 구현에 그치지 않고 </span>
-              매 프로젝트에서 재사용 가능한 구조를 만드는 등{" "}
-              <span className={s.IntroduceBold}>
-                개발 효율을 높이고 개선하는 데 집중{" "}
-              </span>
-              해왔습니다. 코드를 작성할 때마다 협업과 유지보수를 고려 해{" "}
-              <span className={s.IntroduceBold}>
-                읽기 쉽고 범용성 있는 구조를 고민
-              </span>
-              합니다.
+            <p>사용자 경험을 개선하는 방안을 직접 제안하고 적용하여{" "}
+              <span className={s.IntroduceBold}>Lighthouse SEO 점수를 90~100점대로 향상</span> 시키며 프로젝트의 완성도를 높이는 데 기여했습니다.
             </p>
-            <p>
-              업무에 필요한 기술은 익숙하지 않더라도 직접 적용해보며 빠르게
-              적응하고, React와 TypeScript 기반의 웹 개발을 별도로 학습하며
-              역량을 확장해왔습니다.
-            </p>
+
+            <p><span className={s.IntroduceBold}>팀 프로젝트에서 대상 수상과 교육과정 우수상 수상</span>의 성과를 거두며 협업과 문제 해결 능력을 입증한 바 있습니다. </p>
+
+            <p>실무와 프로젝트 경험을 바탕으로 새로운 기술 도입과 효율적인 개발 프로세스 개선에 적극적으로 기여할 수 있습니다.</p>
           </div>
           <div className={stack({ gap: "2.6rem" })}>
             <LinkButton
-              link="https://my.surfit.io/w/1415583333"
+              link={resumeLink}
               className={cx(s.profileLink, center())}
             >
               이력서 보기
             </LinkButton>
-            {/* <div className={flex({ gap: "8px" })}> */}
-            {/* <LinkButton
-                            link="https://github.com/vellahw"
-                            className={cx(s.profileLink, center())}
-                          >
-                            Github
-                          </LinkButton> */}
-            {/* <LinkButton
-                            link="https://tavi.tistory.com/"
-                            className={cx(s.profileLink, center())}
-                          >
-                            Blog
-                          </LinkButton> */}
-            {/* </div> */}
           </div>
 
           {/* 이력사항 */}

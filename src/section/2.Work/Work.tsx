@@ -70,12 +70,16 @@ export default function Work({ isLoaded }: { isLoaded: boolean }) {
               <p className={s.number}>[0{index + 1}]</p>
               <div className={s.workThumbnail}>
                 <div className={cx(s.workVideoContainer, as.itemImgOverlay)}>
+                  {index === 0 ? (
+                      <img src="/img/work/work-xesnara.png" alt="xesnara" />
+                    ): (
                   <video muted loop autoPlay className={cx(s.workVideo, "gif")}>
                     <source
                       src={`/img/work/work-${item.src}.mp4`}
                       type="video/mp4"
                     />
                   </video>
+                  )}
                 </div>
                 {item.href && (
                   <a
@@ -102,9 +106,16 @@ export default function Work({ isLoaded }: { isLoaded: boolean }) {
                   <p className={as.itemBodyMore}>{`${item.more}`}</p>
                 )}
                 <div className={as.roundElList}>
-                  <div className={as.eachRoundEl}>{item.tech}</div>
-                  <div className={as.eachRoundEl}>HTML/CSS</div>
-                  <div className={as.eachRoundEl}>JavaScript</div>
+                  {(Array.isArray(item.tech) ? item.tech : [item.tech]).map(
+                    (tech, techIndex) => (
+                      <div
+                        key={`${tech}-${techIndex}`}
+                        className={as.eachRoundEl}
+                      >
+                        {tech}
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             </motion.div>
