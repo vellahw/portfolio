@@ -172,6 +172,7 @@ export const gridItemBody = css({
 
 export const itemBodyMore = css({
   whiteSpace: "pre-line",
+  lineHeight: "1.8",
 
   sm: {
     fontSize: "14px",

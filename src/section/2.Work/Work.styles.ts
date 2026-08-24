@@ -54,9 +54,10 @@ export const workSectionTitleTxt = css({
 export const workThumbnail = css({
   pos: "relative",
   width: "100%",
-  height: "100%",
+  aspectRatio: "16 / 9",
+  flexShrink: 0,
   overflow: "hidden",
-  display: "inline-block",
+  display: "block",
 });
 
 export const workVideoContainer = css({
@@ -64,6 +65,14 @@ export const workVideoContainer = css({
   overflow: "hidden",
   width: "100%",
   height: "100%",
+
+  "& img, & video": {
+    display: "block",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
+  },
 });
 
 export const workVideo = css({
