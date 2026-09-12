@@ -173,6 +173,7 @@ export const gridItemBody = css({
 export const itemBodyMore = css({
   whiteSpace: "pre-line",
   lineHeight: "1.8",
+  paddingBottom: "1.5rem",
 
   sm: {
     fontSize: "14px",
@@ -203,26 +204,27 @@ export const eachRoundEl = css({
   fontWeight: 500,
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
-  // bg: "#dbdbdbff",
+  flexWrap: "wrap",
+  justifyContent: "flex-start",
   bg: "#E8E8E5",
   color: "text",
   border: "1px solid",
   borderColor: "border",
   whiteSpace: "nowrap",
+  padding: ".5rem 2rem",
 
   sm: {
-    p: "0 2rem",
     fontSize: "13px !",
-    height: "4.4rem",
     gap: "1rem",
   },
   md: {
-    p: "0 1.7rem",
     fontSize: "1.5rem !",
-    height: "3.8rem",
     gap: ".5rem",
   },
+
+  '& span': {
+    lineHeight: "1.5",
+  }
 });
 
 // 최상단으로 이동
