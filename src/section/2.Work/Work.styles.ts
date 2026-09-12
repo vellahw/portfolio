@@ -87,6 +87,16 @@ export const workGoBtn = css({
   outlineColor: "#0a090f52",
 });
 
+export const workContent = css({
+  display: "flex",
+  flex: 1,
+  flexDirection: "column",
+
+  "& > div:last-child": {
+    marginTop: "auto",
+  },
+});
+
 export const number = css({
   fontWeight: 500,
   pl: "1.2rem",

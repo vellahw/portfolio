@@ -92,7 +92,7 @@ export default function Work({ isLoaded }: { isLoaded: boolean }) {
                   </a>
                 )}
               </div>
-              <div>
+              <div className={s.workContent}>
                 <div className={as.gridItemTitleContainer}>
                   <div className="wrap">
                     <h1 className={as.itemProjectName}>{item.name}</h1>
