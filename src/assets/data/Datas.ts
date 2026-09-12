@@ -15,7 +15,6 @@ export const worksData = [
   {
     name: "비비여성의원",
     tech: ["그누보드(PHP)", "JavaScript"],
-    href: "https://bbclinic-kr.com/",
     src: "bbkr",
     more: "로그인, 회원가입 기능 추가 및 수정",
   },
@@ -35,7 +34,6 @@ export const worksData = [
   {
     name: "BBC OMOTESANDO",
     tech: ["워드프레스(PHP)", "JavaScript"],
-    href: "https://bbc-omote.com/",
     src: "bbom",
     more: "워드프레스 기반 게시판 및 페이징 기능 제작",
   },
@@ -48,7 +46,6 @@ export const worksData = [
   {
     name: "청담오케이 여성클리닉",
     tech: ["그누보드(PHP)", "JavaScript"],
-    href: "https://okayobgy.com/",
     src: "okay",
   },
   {
