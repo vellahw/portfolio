@@ -51,7 +51,7 @@ export default function Modal({ onClose, slideName, slideCount }: ModalProps) {
               <img
                 src={`/img/project/project-${slideName}${index + 1}.png`}
                 alt="프로젝트 이미지"
-                className={css({ m: "0 auto" })}
+                className={css({ m: "0 auto"})}
               />
             </SwiperSlide>
           ))}
