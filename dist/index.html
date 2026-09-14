@@ -15,6 +15,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="page-loader" id="page-loader" role="status" hidden><span class="blue-mark" aria-hidden="true">✳</span><span id="loading-percent" aria-label="페이지 로딩 진행률">0%</span></div>
+<script>
+  const pageLoader = document.getElementById('page-loader');
+  const loadingPercent = document.getElementById('loading-percent');
+  pageLoader.hidden = false;
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = [...document.querySelectorAll('img[src]:not([loading="lazy"])')];
+    let loaded = 0;
+    const update = () => loadingPercent.textContent = `${Math.round(++loaded / images.length * 95)}%`;
+    images.forEach(image => {
+      if (image.complete) update();
+      else {
+        image.addEventListener('load', update, {once:true});
+        image.addEventListener('error', update, {once:true});
+      }
+    });
+  }, {once:true});
+  window.addEventListener('load', () => {
+    loadingPercent.textContent = '100%';
+    setTimeout(() => pageLoader.remove(), 200);
+  }, {once:true});
+</script>
 <a class="skip" href="#profile">본문으로 건너뛰기</a>
 <header class="header">
 <div class="header-inner">

@@ -61,3 +61,18 @@ vm.runInNewContext(motionSource,{...context,document:sequenceDocument,NodeFilter
 assert.ok(heroDelays.every(delay=>delay>=heroTitles[1].text.length*45+120),'Hero details must follow both typing animations');
 assert.ok(!html.includes('class="hero-link"'));assert.equal((html.match(/class="ticker-group"/g)||[]).length,2);
 console.log('OK: hero typing first, delayed details, seamless ticker groups.');
+const loader = {hidden:true,remove(){this.removed=true}}, loaderEvents = {}, percent = {}, imageEvents = {};
+let closeLoader;
+vm.runInNewContext(html.match(/<script>([\s\S]*?)<\/script>/)[1], {
+  document:{getElementById:id=>id==='page-loader'?loader:percent,
+    querySelectorAll:()=>[{complete:true},{complete:false,addEventListener:(name,handler)=>imageEvents[name]=handler}],
+    addEventListener:(name,handler)=>loaderEvents[name]=handler},
+  window:{addEventListener:(name,handler,options)=>{assert.ok(options.once);loaderEvents[name]=handler}},
+  setTimeout:handler=>closeLoader=handler
+});
+assert.equal(loader.hidden,false);
+loaderEvents.DOMContentLoaded();assert.equal(percent.textContent,'48%');
+imageEvents.error();assert.equal(percent.textContent,'95%');
+loaderEvents.load();assert.equal(percent.textContent,'100%');assert.ok(!loader.removed);
+closeLoader();assert.ok(loader.removed);
+console.log('OK: cached/failed image progress, 100% on load, loading screen dismissal.');

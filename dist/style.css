@@ -75,6 +75,11 @@ dialog[open]{animation:gallery-enter .28s cubic-bezier(.22,1,.36,1)}
 .project-roles h4{font-size:1rem;font-weight:600;margin:0 0 .5rem}
 .project-roles ul,.project-roles li{font-size:1rem}
 .resume{position:relative}
+.page-loader{position:fixed;inset:0;z-index:200;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.page-loader #loading-percent{font-family:"Chakra Petch",sans-serif;font-size:1rem;font-variant-numeric:tabular-nums}
+.page-loader[hidden]{display:none}
+.page-loader .blue-mark{position:static;font-size:6rem;animation-duration:1.5s}
+body:has(.page-loader:not([hidden])){overflow:hidden}
 .resume .blue-mark{
   bottom: unset;
   font-size: 8rem;
