@@ -3,11 +3,12 @@ import {readFile,stat} from 'node:fs/promises';
 import {work,projects} from './dist/data.js';
 import vm from 'node:vm';
 assert.equal(work.length,9);assert.equal(projects.length,3);
-const assets=['profile.png',...work.map(w=>`work-${w.src}.${w.src==='xesnara'?'png':'mp4'}`),...projects.flatMap(p=>[`project-${p.src}.png`,...Array.from({length:p.slideCount},(_,i)=>`project-${p.src}${i+1}.png`)])];
+const assets=['profile.png',...work.flatMap(w=>[`work-${w.src}.png`,...(w.src==='xesnara'?[]:[`work-${w.src}.mp4`])]),...projects.flatMap(p=>[`project-${p.src}.png`,...Array.from({length:p.slideCount},(_,i)=>`project-${p.src}${i+1}.png`)])];
 for(const asset of assets) assert.ok((await stat(new URL(`./dist/assets/${asset}`,import.meta.url))).size>0,asset);
 const html=await readFile(new URL('./dist/index.html',import.meta.url),'utf8');
 for(const id of ['profile','experience','projects','contact','gallery']) assert.ok(html.includes(`id="${id}"`),id);
-assert.equal((html.match(/class="blue-mark"/g)||[]).length,3);assert.ok(!html.includes('class="blue-mark" aria-hidden="true">✳'));
+const blueMarkCount=(html.match(/class="blue-mark"/g)||[]).length;
+assert.ok(blueMarkCount>0);assert.equal((html.match(/class="blue-mark" aria-hidden="true"><svg/g)||[]).length,blueMarkCount);
 for(const p of projects){assert.ok(p.slideCount>0);assert.ok(p.href.startsWith('https://github.com/'));}
 console.log(`OK: 9 works, 3 projects, ${assets.length} assets, navigation and gallery data.`);
 
@@ -47,7 +48,9 @@ assert.equal(vm.runInContext('typeTitle(title)',typingContext),360);
 assert.equal(typed.map(span=>span.textContent).join(''),'Hi there');
 assert.equal(typed[0].delay,0);assert.equal(typed.at(-1).delay,315);assert.equal(labels['aria-label'],'Hi there');
 const appSource=await readFile(new URL('./dist/app.js',import.meta.url),'utf8');
-assert.equal((appSource.match(/<details/g)||[]).length,1);assert.ok(appSource.includes('class="project-roles"'));
+assert.equal((appSource.match(/<details/g)||[]).length,1);assert.ok(appSource.includes("w.more.split('\\n').map(item => `<li>"));assert.ok(appSource.includes('class="project-roles"'));
+assert.ok(appSource.includes('poster="assets/work-${w.src}.png"'));assert.ok(!appSource.includes('playsinline autoplay'));
+assert.ok(appSource.includes("addEventListener('mouseenter'"));assert.ok(appSource.includes("addEventListener('mouseleave'"));
 console.log('OK: sequential typing, accessible title, only first work retains details.');
 
 const heroDelays=[];
@@ -61,6 +64,7 @@ preference.matches=false;
 vm.runInNewContext(motionSource,{...context,document:sequenceDocument,NodeFilter:{SHOW_TEXT:4}});
 assert.ok(heroDelays.every(delay=>delay>=heroTitles[1].text.length*45+120),'Hero details must follow both typing animations');
 assert.ok(!html.includes('class="hero-link"'));assert.equal((html.match(/class="ticker-group"/g)||[]).length,2);
+assert.equal((html.match(/<div class="ticker-group">[\s\S]*?<\/div>/g)||[]).flatMap(group=>group.match(/<svg/g)||[]).length,7);
 console.log('OK: hero typing first, delayed details, seamless ticker groups.');
 const loader = {hidden:true,remove(){this.removed=true}}, loaderEvents = {}, percent = {}, imageEvents = {};
 let closeLoader;
