@@ -7,6 +7,7 @@ const assets=['profile.png',...work.map(w=>`work-${w.src}.${w.src==='xesnara'?'p
 for(const asset of assets) assert.ok((await stat(new URL(`./dist/assets/${asset}`,import.meta.url))).size>0,asset);
 const html=await readFile(new URL('./dist/index.html',import.meta.url),'utf8');
 for(const id of ['profile','experience','projects','contact','gallery']) assert.ok(html.includes(`id="${id}"`),id);
+assert.equal((html.match(/class="blue-mark"/g)||[]).length,3);assert.ok(!html.includes('class="blue-mark" aria-hidden="true">✳'));
 for(const p of projects){assert.ok(p.slideCount>0);assert.ok(p.href.startsWith('https://github.com/'));}
 console.log(`OK: 9 works, 3 projects, ${assets.length} assets, navigation and gallery data.`);
 

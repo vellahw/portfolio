@@ -27,6 +27,7 @@
 .hero h1 em{display:inline-block}
 .portrait{translate:0 var(--hero-shift,0px)}
 .blue-mark{animation:blue-mark-spin 8s linear infinite}
+.blue-mark svg{display:block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:10;stroke-linecap:round}
 @keyframes blue-mark-spin{from{transform:rotate(13deg)}to{transform:rotate(373deg)}}
 .header:after{content:'';position:absolute;left:0;bottom:-2px;height:3px;width:100%;background:var(--accent);scale:var(--scroll-progress,0) 1;transform-origin:left;pointer-events:none}
 dialog[open]{animation:gallery-enter .28s cubic-bezier(.22,1,.36,1)}
