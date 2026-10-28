@@ -32,5 +32,17 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body { min-width: 320px; margin: 0; font-family: "Pretendard", sans-serif; color: #171717; background: #fff; -webkit-font-smoothing: antialiased; }
 a { text-decoration: none; }
 a:focus-visible { outline: 2px solid #171717; outline-offset: 4px; }
+.link-arrow { display: inline-flex; align-items: baseline; gap: .2em; }
+.link-arrow-label {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 250ms ease;
+}
+.link-arrow-icon { transition: transform 250ms ease; }
+.link-arrow:hover .link-arrow-label { background-size: 100% 1px; }
+.link-arrow:hover .link-arrow-icon { transform: translate(2px, -2px); }
+.link-arrow-up:hover .link-arrow-icon { transform: translateY(-2px); }
 ::selection { color: #fff; background: #555; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
