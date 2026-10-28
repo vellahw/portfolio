@@ -9,14 +9,14 @@ const projectTech = ["JavaScript", "PHP", "그누보드", "WordPress", "React", 
 function App() {
   return (
     <>
-      <header className="sticky top-0 z-20 mx-auto flex h-16 w-[calc(100%-2.5rem)] max-w-[720px] items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur">
-        <a className="text-md font-semibold tracking-[-0.06em]" href="#top" aria-label="장한원 포트폴리오 처음으로">
+      <header className="sticky top-0 z-20 mx-auto flex h-16 w-[calc(100%-2.5rem)] max-w-[720px] items-center justify-between border-b border-neutral-100 bg-white/95 backdrop-blur">
+        <a className="text-lg font-semibold tracking-[-0.04em]" href="#top" aria-label="장한원 포트폴리오 처음으로">
           iamhanwon
         </a>
-        <nav aria-label="주요 메뉴" className="flex gap-5 text-xs text-neutral-600 sm:gap-7 sm:text-sm">
-          <a className="hover:text-black" href="#projects">프로젝트</a>
-          <a className="hover:text-black" href="#experience">경력</a>
-          <a className="hover:text-black" href="#education">학력·자격</a>
+        <nav aria-label="주요 메뉴" className="flex gap-5 font-bold tracking-[-0.04em] sm:gap-7 sm:text-sm md:text-lg">
+          <a className="hover:text-neutral-500" href="#projects">Project</a>
+          <a className="hover:text-neutral-500" href="#experience">Career</a>
+          <a className="hover:text-neutral-500" href="#education">Education</a>
         </nav>
       </header>
 
@@ -27,7 +27,7 @@ function App() {
               <h1 id="hero-title" className="text-[clamp(2.2rem,8vw,4.2rem)] font-extrabold leading-[1.3] tracking-[-0.075em]">
                 안녕하세요,<br />
                 <span><RotatingWord />를 좋아하는</span><br />
-                개발자 장한원입니다<span className="text-[#596780]">.</span>
+                개발자 장한원입니다<span className="text-neutral-400">.</span>
               </h1>
             </div>
             <img className="pointer-events-none absolute right-0 z-0 w-28 -translate-y-1/2 object-contain sm:w-40 sm:top-[72px] md:w-56 md:top-1/2 " src={portrait} alt="캐릭터 일러스트" />
@@ -40,36 +40,50 @@ function App() {
 
           <div className="mt-9 grid justify-items-start gap-y-3 text-md ">
             <div className="flex gap-6">
-              <a className="link-arrow text-[#596780] font-semibold" href="https://github.com/vellahw" target="_blank" rel="noreferrer"><span className="link-arrow-label">Github</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
-              <a className="link-arrow text-[#596780] font-semibold" href="https://tavi.tistory.com/" target="_blank" rel="noreferrer"><span className="link-arrow-label">Blog</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
-              <a className="link-arrow text-[#596780] font-semibold" href="https://my.surfit.io/w/1415583333" target="_blank" rel="noreferrer"><span className="link-arrow-label">Resume</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
+              <a className="link-arrow font-semibold" href="https://github.com/vellahw" target="_blank" rel="noreferrer"><span className="link-arrow-label">Github</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
+              <a className="link-arrow font-semibold" href="https://tavi.tistory.com/" target="_blank" rel="noreferrer"><span className="link-arrow-label">Blog</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
+              <a className="link-arrow font-semibold" href="https://my.surfit.io/w/1415583333" target="_blank" rel="noreferrer"><span className="link-arrow-label">Resume</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>
 
-        <section id="projects" className="scroll-mt-20 border-b border-neutral-200 py-16 sm:py-20" aria-labelledby="projects-title">
+        <section id="projects" className="scroll-mt-20 border-b border-neutral-100 py-16 sm:py-20" aria-labelledby="projects-title">
           <SectionHeading index="01" title="Project" id="projects-title"/>
-          <div className="divide-y divide-neutral-200">
+          <div className="divide-y divide-neutral-100">
             {projectData.map((project) => (
               <article className="py-7" key={project.thumbSrc}>
-                <div className="grid grid-cols-[2.5rem_1fr_auto] gap-3 sm:grid-cols-[5rem_1fr_auto] sm:gap-4">
+                <div className="grid grid-cols-[2.5rem_1fr] gap-3 sm:grid-cols-[5rem_1fr] sm:gap-4">
                   <span className="pt-1 text-xs tabular-nums text-neutral-500">{project.year}</span>
                   <div>
-                    <h3 className="font-bold text-2xl">{project.name}</h3>
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <h3 className="font-bold text-2xl">{project.name}</h3>
+                      {project.liveHref && <a className="link-arrow text-sm text-neutral-600" href={project.liveHref} target="_blank" rel="noreferrer"><span className="link-arrow-label">sadaribooks.com</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>}
+                    </div>
                     <p className="mt-1 text-sm text-neutral-500">{project.what}</p>
                   </div>
-                  <a className="link-arrow justify-self-end text-sm text-neutral-600" href={project.href} target="_blank" rel="noreferrer" aria-label={`${project.name} GitHub 저장소 열기`}><span className="link-arrow-label">GitHub</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
                 </div>
-                <ul className="ml-[4.25rem] mt-4 list-disc space-y-1 pl-4 text-md leading-6 text-neutral-600 sm:ml-24">{project.des.split("\n").map((line) => <li key={line}>{line.replace(/^-\s*/, "")}</li>)}</ul>
-                <div className="ml-[4.25rem] mt-5 grid gap-5 sm:ml-24 sm:grid-column-[1fr_auto]">
+                <div className="ml-[4.25rem] mt-5 space-y-2 text-base leading-7 sm:ml-24">
+                  {project.des.map((line) => <p key={line}>{line}</p>)}
+                </div>
+                <div className="ml-[4.25rem] mt-6 space-y-6 sm:ml-24">
+                  {project.team && <div>
+                    <h4 className="mb-2 text-base font-semibold">개발 인원</h4>
+                    <p className="text-base leading-6">{project.team}</p>
+                  </div>}
                   <div>
-                    <h4 className="mb-2 text-md">담당 역할</h4>
-                    <ul className="space-y-1 text-md leading-5">{project.role.map((role) => <li key={role}>{role}</li>)}
-                    </ul>
+                    <h4 className="mb-2 text-base font-semibold">맡은 역할</h4>
+                    <ul className="list-disc space-y-1 pl-4 text-base leading-6">{project.role.map((role) => <li key={role}>{role}</li>)}</ul>
                   </div>
+                  {project.features && <div>
+                    <h4 className="mb-2 text-base font-semibold">기능 구현</h4>
+                    <ul className="list-disc space-y-2 pl-4 text-base leading-7 ">{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+                  </div>}
                   <div>
-                    <h4 className="mb-2 text-md">기술</h4>
+                    <h4 className="mb-2 text-base font-semibold">개발 환경</h4>
                     <TagList items={project.tech} />
+                    <div className="mt-4 flex flex-wrap gap-5 text-sm text-neutral-600">
+                      <a className="link-arrow" href={project.href} target="_blank" rel="noreferrer" aria-label={`${project.name} GitHub 저장소 열기`}><span className="link-arrow-label">GitHub</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -77,9 +91,9 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="scroll-mt-20 border-b border-neutral-200 py-16 sm:py-20" aria-labelledby="experience-title">
+        <section id="experience" className="scroll-mt-20 border-b border-neutral-100 py-16 sm:py-20" aria-labelledby="experience-title">
           <SectionHeading index="02" title="Career" id="experience-title" note="2023 — 2026" />
-          <div className="divide-y divide-neutral-200">
+          <div className="divide-y divide-neutral-100">
             <Experience period="2026.06 — 2026.08" company="(주)한국심리교육원" role="프론트엔드 개발 · 제스나라">
               <p className="mb-5 text-sm leading-7 text-neutral-600">마음·행복, 부부, 성에너지 등 지식 콘텐츠를 제공하는 플랫폼에서 Nuxt.js와 TypeScript로 다국어 콘텐츠, 구독 결제, 사용자 인증을 개발했습니다. <a className="link-arrow" href="https://www.xesnara.com/" target="_blank" rel="noreferrer"><span className="link-arrow-label">xesnara.com</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a></p>
               <ExperienceGroup title="다국어 콘텐츠 비교 학습">
@@ -119,18 +133,18 @@ function App() {
           </div>
         </section>
 
-        <section id="education" className="scroll-mt-20 border-b border-neutral-200 py-16 sm:py-20" aria-labelledby="education-title">
+        <section id="education" className="scroll-mt-20 border-b border-neutral-100 py-16 sm:py-20" aria-labelledby="education-title">
           <SectionHeading index="03" title="Education & Certification" id="education-title" />
           <div className="space-y-6">
             <div>
               <h3 className="mb-2 text-sm font-semibold">학력 · 교육</h3>
-              <ul className="divide-y divide-neutral-100 border-t border-neutral-200 text-base">
+              <ul className="divide-y divide-neutral-100 border-t border-neutral-100 text-base">
                 <Fact period="2024.03 — 재학 중" name="한국방송통신대학교" detail="컴퓨터과학과" />
                 <Fact period="2023.05 — 2023.07" name="한국에이아이블록체인융합원" detail="블록체인 기반 기술 사업화 전문 인력 양성 과정" />
                 <Fact period="2022.07 — 2023.03" name="이젠컴퓨터아카데미" detail="AWS 클라우드 기반 Java 개발자 과정" />
               </ul>
             </div>
-            <div className="border-t border-neutral-200 pt-3 text-sm">
+            <div className="border-t border-neutral-100 pt-3 text-sm">
               <h3 className="font-semibold">자격</h3>
               <p className="mt-1 text-neutral-600">정보처리기능사</p>
             </div>
@@ -167,7 +181,7 @@ function RotatingWord() {
     return () => window.clearTimeout(timer);
   }, [deleting, index, value]);
 
-  return <span className="text-[#596780]" aria-label={words[index]}>{value}<span className="ml-0.5 inline-block h-[.9em] w-px translate-y-1 bg-neutral-500 animate-pulse" aria-hidden="true" /></span>;
+  return <span className="text-neutral-400" aria-label={words[index]}>{value}<span className="ml-0.5 inline-block h-[.9em] w-px translate-y-1 bg-neutral-500 animate-pulse" aria-hidden="true" /></span>;
 }
 
 function SectionHeading({ index, title, id, note }: { index: string; title: string; id: string; note?: string }) {
@@ -187,7 +201,7 @@ function ExperienceGroup({ title, children }: { title: string; children: ReactNo
 }
 
 function TagList({ items }: { items: string[] }) {
-  return <ul className="mt-4 flex flex-wrap gap-1.5">{items.map((item) => <li className="rounded-sm border border-neutral-200 px-2 py-0.5 text-sm text-neutral-600" key={item}>{item}</li>)}</ul>;
+  return <ul className="mt-4 flex flex-wrap gap-1.5">{items.map((item) => <li className="rounded-sm border border-neutral-100 px-2 py-0.5 text-sm text-neutral-600" key={item}>{item}</li>)}</ul>;
 }
 
 export default App;
