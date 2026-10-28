@@ -5,22 +5,18 @@
   "type": "module",
   "homepage": "https://iamhanwon.netlify.app/",
   "scripts": {
-    "dev": "panda watch & vite",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "prepare": "panda codegen"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "gsap": "^3.14.1",
-    "motion": "^12.26.2",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "swiper": "^12.1.2"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@pandacss/dev": "^1.7.0",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
@@ -29,7 +25,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
-    "pandacss-animate": "^1.1.0",
+    "tailwindcss": "^4.3.3",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"

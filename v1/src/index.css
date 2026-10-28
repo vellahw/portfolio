@@ -1,1 +1,36 @@
-@layer reset, base, tokens, recipes, utilities;
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../public/fonts/Pretendard-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../public/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../public/fonts/Pretendard-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Pretendard", sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { min-width: 320px; margin: 0; font-family: "Pretendard", sans-serif; color: #171717; background: #fff; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
+a:focus-visible { outline: 2px solid #171717; outline-offset: 4px; }
+::selection { color: #fff; background: #555; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

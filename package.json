@@ -1,15 +1,14 @@
 {
-    "name":"hanwon-retro-portfolio",
-    "version":"1.0.0",
-    "private":true,
-    "type":"module",
-    "scripts":{
-        "dev":"node server.mjs",
-        "start":"node server.mjs",
-        "build":"npm test",
-        "test":"node check.mjs"
+    "name": "hanwon-retro-portfolio",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "npm --prefix v1 run dev",
+        "start": "npm --prefix v1 run preview",
+        "build": "npm --prefix v1 run build"
     },
-    "engines":{
-        "node":">=18"
+    "engines": {
+        "node": ">=18"
     }
 }
