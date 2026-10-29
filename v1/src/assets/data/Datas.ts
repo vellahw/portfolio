@@ -65,7 +65,6 @@ export const worksData = [
 type Project = {
   name: string;
   thumbSrc: string;
-  what: string;
   des: string[];
   team?: string;
   role: string[];
@@ -81,7 +80,6 @@ export const projectData: Project[] = [
   {
     name: "SADARI 사다리",
     thumbSrc: "sadari",
-    what: "독서 기록·소셜 활동·독서모임 웹 서비스",
     des: [
       "개인의 독서 기록을 소셜 활동과 독서모임으로 확장한 웹 서비스입니다.",
       "React·TypeScript 기반 프론트엔드와 Spring Boot·MyBatis 백엔드를 함께 개발했으며, 복잡한 모임 운영 정책과 사용자 상태 변화를 안정적으로 처리하는 데 집중했습니다.",
@@ -111,7 +109,6 @@ export const projectData: Project[] = [
   {   
     name: "GATHER 게더",
     thumbSrc: "gather",
-    what: "커뮤니티 리팩토링 프로젝트",
     des: [
       "기존의 커뮤니티 프로젝트를 기반으로 UI와 코드 구조를 전반적으로 개선한 리팩토링 프로젝트입니다.",
       "반복 로직을 공통 함수로 분리해 코드 중복을 줄이고 재사용성을 높였으며, 프론트엔드 영역은 순수 JavaScript로 개발했습니다.",
@@ -137,7 +134,6 @@ export const projectData: Project[] = [
   {
     name: "BLEND 블랜드",
     thumbSrc: "blend",
-    what: "블록체인 기반 통합 마일리지 서비스",
     des: [
       "교육과정 내 7개 팀 중 대상을 수상한 소상공인 카페용 블록체인 기반 마일리지 플랫폼입니다.",
       "KAS API를 연동해 블록체인 스마트 컨트랙트 기능을 서비스에 적용하고 기획·디자인·개발 간 협업 프로세스를 경험했습니다.",
@@ -147,5 +143,79 @@ export const projectData: Project[] = [
     href: "https://github.com/vellahw/BLEND",
     year: "2023",
     slideCount: 5,
+  },
+];
+
+type Experience = {
+  period: string;
+  company: string;
+  role: string;
+  description?: string;
+  website?: { href: string; label: string };
+  groups: { title: string; items: string[] }[];
+  projects?: { name: string; href?: string; src: string }[];
+  tech?: string[];
+};
+
+export const experienceData: Experience[] = [
+  {
+    period: "2026.06 — 2026.08",
+    company: "(주)한국심리교육원",
+    role: "프론트엔드 개발 · 제스나라",
+    description: "마음·행복, 부부, 성에너지 등 지식 콘텐츠를 제공하는 플랫폼에서 Nuxt.js와 TypeScript로 다국어 콘텐츠, 구독 결제, 사용자 인증을 개발했습니다.",
+    website: { href: "https://www.xesnara.com/", label: "xesnara.com" },
+    groups: [
+      {
+        title: "다국어 콘텐츠 비교 학습",
+        items: [
+          "한국어 원문과 선택 언어 번역본을 좌우 패널에 제공하고, 패널별 상태 모델로 언어·API 응답 불일치 문제를 해결했습니다.",
+          "언어별 문장 길이와 HTML 구조 차이를 고려해 태그를 보존하며 본문을 안정적으로 분할하고, 보기 모드 전환 시 언어 상태를 자연스럽게 복원했습니다.",
+        ],
+      },
+      {
+        title: "NICEPAY · Payletter 구독 결제",
+        items: [
+          "PG별 요청과 결과 조회를 분리하고 성공·실패·대기 상태를 공통 모델로 통합해 하나의 체크아웃 흐름을 구축했습니다.",
+          "오류 응답을 사용자 관점의 실패 유형으로 정리하고, 재시도 가능 여부와 고객센터 안내를 제공했습니다.",
+        ],
+      },
+      {
+        title: "이메일 · Google 통합 인증",
+        items: [
+          "중복 가입, 재가입 제한, 인증 만료를 구분해 회원가입과 인증 메일 재발송 흐름을 구현하고 검증 정책을 공통화했습니다.",
+          "기기별 활성 세션을 감지해 사용자가 확인한 뒤 기존 세션을 전환하는 중복 로그인 흐름을 구현했습니다.",
+        ],
+      },
+    ],
+    tech: ["Nuxt.js", "TypeScript", "i18n", "NICEPAY", "Payletter"],
+  },
+  {
+    period: "2024.04 — 2026.01",
+    company: "주식회사 엔셀텍바이오랩",
+    role: "프론트엔드 개발",
+    description: "국내외 병·의원 홈페이지 리뉴얼에서 반응형·적응형 UI와 동적 인터랙션, 사용자 기능 개발 및 운영 유지보수를 주도했습니다.",
+    groups: [
+      {
+        title: "주요 개발 경험",
+        items: [
+          "예약·상담 전환이 중요한 페이지의 UI와 CTA 배치를 구성·개선하고, SEO 작업으로 Lighthouse 점수를 90~100점대로 높였습니다.",
+          "로그인·회원가입·소셜 로그인·페이징 기능을 개발하고, 그누보드·WordPress CMS 수정과 운영 이슈 대응을 맡았습니다.",
+          "React·TypeScript 기반 컴포넌트 개발에도 참여했습니다.",
+        ],
+      },
+    ],
+    projects: worksData.filter((work) => work.src !== "xesnara"),
+    tech: ["JavaScript", "PHP", "그누보드", "WordPress", "React", "TypeScript"],
+  },
+  {
+    period: "2023.08 — 2023.09",
+    company: "해커스홀딩스",
+    role: "프론트엔드 개발 (인턴)",
+    groups: [
+      {
+        title: "주요 개발 경험",
+        items: ["React 기반 랜딩 페이지 구현", "Next.js 마이그레이션 과정 참여"],
+      },
+    ],
   },
 ];
