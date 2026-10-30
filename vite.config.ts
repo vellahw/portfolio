@@ -6,5 +6,5 @@ export default defineConfig({
   base: "/",
   publicDir: false,
   plugins: [tailwindcss(), react()],
-  build: { outDir: "../dist", emptyOutDir: true },
+  build: { outDir: "dist", emptyOutDir: true },
 })
