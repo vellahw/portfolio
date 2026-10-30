@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import portrait from "./assets/hero-illustration.png";
 import sadariThum from "./assets/project-sadari.png";
+import resumePdf from "./assets/resume.pdf";
 import { experienceData, projectData } from "./assets/data/Datas";
 
 const words = ["Frontend", "UI/UX", "Java"];
@@ -46,7 +47,7 @@ function App() {
               <a className="link-arrow font-semibold" href="https://tavi.tistory.com/" target="_blank" rel="noreferrer">
                 <span className="link-arrow-label">Blog</span><span className="link-arrow-icon" aria-hidden="true">↗</span>
               </a>
-              <a className="link-arrow font-semibold" href="https://my.surfit.io/w/1415583333" target="_blank" rel="noreferrer">
+              <a className="link-arrow font-semibold" href={resumePdf} target="_blank" rel="noreferrer">
                 <span className="link-arrow-label">Resume</span><span className="link-arrow-icon" aria-hidden="true">↗</span>
               </a>
             </div>
