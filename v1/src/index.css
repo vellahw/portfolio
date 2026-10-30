@@ -52,5 +52,5 @@ a:focus-visible { outline: 2px solid #171717; outline-offset: 4px; }
 #experience .experience-projects .link-arrow-label { background-size: 0 1px; }
 #experience .experience-projects .link-arrow:hover .link-arrow-label { background-size: 100% 1px; }
 .list-disc > li::marker { color: #CDDC39; font-size: .65em; }
-::selection { color: #fff; background: #555; }
+::selection { background: #e6f651; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
