@@ -1,11 +1,14 @@
 import { useEffect, useState, type ReactNode } from "react";
 import portrait from "./assets/hero-illustration.png";
-import sadariThum from "./assets/project-sadari.png";
 import resumePdf from "./assets/resume.pdf";
 import { experienceData, projectData } from "./assets/data/Datas";
 
 const words = ["Frontend", "UI/UX", "Java"];
-const projectGitHubInHeader = new Set(["sadari", "gather"]);
+const projectImages = import.meta.glob("./assets/project-*.png", { eager: true, import: "default", query: "?url" }) as Record<string, string>;
+
+function getProjectImage(project: string, thumbSrc?: string) {
+  return projectImages[`./assets/project-${project}${thumbSrc ? `-${thumbSrc}` : ""}.png`];
+}
 
 function App() {
   return (
@@ -72,9 +75,9 @@ function App() {
                             </a>
                         }
                       </div>
-                      {projectGitHubInHeader.has(project.thumbSrc) && <ProjectGitHubLink href={project.href} name={project.name} />}
+                      <ProjectGitHubLink href={project.href} name={project.name} />
                     </div>
-                    {project.thumbSrc === "sadari" && <img className="mt-6 block h-auto w-full border border-neutral-100" src={sadariThum} width="664" height="324" alt="SADARI 독서 플랫폼 주요 화면" />}
+                    {project.thumbSrc === "sadari" && <img className="mt-6 block h-auto w-full" src={getProjectImage(project.thumbSrc)} width="664" height="324" alt="SADARI 독서 플랫폼 주요 화면" />}
                   </div>
                 </div>
                 <div className="ml-[4.25rem] mt-5 space-y-2 text-lg leading-7 sm:ml-24">
@@ -93,9 +96,21 @@ function App() {
                     <h4 className="mb-2 text-lg font-bold  text-neutral-700">맡은 역할</h4>
                     <ul className="list-disc space-y-1 pl-4 text-lg leading-6">{project.role.map((role) => <li key={role}>{role}</li>)}</ul>
                   </div>
+                  {/* 기능 설명 */}
                   {project.sections?.map((section) => <div key={section.title}>
                     <h4 className="mb-2 text-lg font-bold text-neutral-700">{section.title}</h4>
-                    <ul className="list-disc space-y-2 pl-4 text-lg leading-7">{section.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                    <ul className="list-disc space-y-2 pl-4 text-lg leading-7">
+                      {section.items.map((item) => <li className={typeof item === "string" ? "leading-8" : "list-none"} key={typeof item === "string" ? item : item.thumbSrc}>
+                      {typeof item === "string"
+                        ? item
+                        :
+                        <div className="mb-4">
+                          <h5 className="mb-3 font-bold text-xl text-neutral-900">{item.title}</h5>
+                          <img className="mb-3 block h-auto border border-neutral-100 rounded-md" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={500}/>
+                          <ul className="list-disc text-[#171717]"><li className="leading-8">{item.des}</li></ul>
+                        </div>
+                      }
+                    </li>)}</ul>
                   </div>)}
                   {project.features && <div>
                     <h4 className="mb-2 text-lg font-bold  text-neutral-700">기능 구현</h4>
@@ -104,9 +119,6 @@ function App() {
                   <div>
                     <h4 className="mb-2 text-lg font-bold  text-neutral-700">개발 환경</h4>
                     <TagList items={project.tech} />
-                    {!projectGitHubInHeader.has(project.thumbSrc) && <div className="mt-4 flex flex-wrap gap-5 text-sm text-neutral-600">
-                      <ProjectGitHubLink href={project.href} name={project.name} />
-                    </div>}
                   </div>
                 </div>
               </article>
@@ -121,7 +133,7 @@ function App() {
               <Experience key={experience.company} period={experience.period} company={experience.company} role={experience.role}>
                 {experience.description && <ExperienceDescription description={experience.description} website={experience.website} />}
                 {experience.groups.map((group) => <ExperienceGroup key={group.title} title={group.title}>{group.items.map((item) => <li key={item}>{item}</li>)}</ExperienceGroup>)}
-                {experience.projects && <div className="mt-5 border-t border-neutral-100 pt-4">
+                {experience.projects && <div className="mt-5 mb-6 border-t border-neutral-100 pt-4">
                   <h4 className="mb-2 text-lg font-bold text-neutral-700">주요 프로젝트</h4>
                   <ul className="flex flex-wrap gap-x-4 gap-y-2 text-md">
                     {experience.projects.map((project) => <li key={project.src}>{project.href ? <a className="link-arrow" href={project.href} target="_blank" rel="noreferrer"><span className="link-arrow-label">{project.name}</span><span className="link-arrow-icon" aria-hidden="true">↗</span></a> : <span>{project.name}</span>}</li>)}
@@ -214,7 +226,7 @@ function ExperienceDescription({ description, website }: { description: string; 
 }
 
 function TagList({ items }: { items: string[] }) {
-  return <ul className="mt-4 flex flex-wrap gap-1.5">{items.map((item) => <li className="rounded-sm border border-neutral-200 px-2 py-0.5 text-sm text-neutral-900" key={item}>{item}</li>)}</ul>;
+  return <ul className="mt-4 flex flex-wrap gap-2">{items.map((item) => <li className="bg-neutral-100 py-0.5 px-2 rounded-sm text-md" key={item}>{item}</li>)}</ul>;
 }
 
 function GitHubIcon() {

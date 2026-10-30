@@ -51,6 +51,23 @@ a:focus-visible { outline: 2px solid #171717; outline-offset: 4px; }
 #projects .link-arrow-label, #experience .link-arrow-label { background-size: 100% 1px; }
 #experience .experience-projects .link-arrow-label { background-size: 0 1px; }
 #experience .experience-projects .link-arrow:hover .link-arrow-label { background-size: 100% 1px; }
-.list-disc > li::marker { color: #CDDC39; font-size: .65em; }
+.list-disc > li:not(.list-none), .tag-list > li + li { position: relative; list-style: none; }
+.list-disc > li:not(.list-none)::before, .tag-list > li + li::before {
+  content: "";
+  position: absolute;
+  top: .5lh;
+  width: .3rem;
+  height: .3rem;
+  border-radius: 9999px;
+  background: #CDDC39;
+}
+.list-disc > li:not(.list-none)::before {
+  left: -.75rem;
+  transform: translateY(-50%);
+}
+.tag-list > li + li::before {
+  left: -.5rem;
+  transform: translate(-50%, -50%);
+}
 ::selection { background: #e6f651; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
