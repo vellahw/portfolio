@@ -66,8 +66,10 @@ type Project = {
   name: string;
   thumbSrc: string;
   des: string[];
+  period?: string;
   team?: string;
   role: string[];
+  sections?: { title: string; items: string[] }[];
   tech: string[];
   features?: string[];
   href: string;
@@ -77,12 +79,13 @@ type Project = {
 };
 
 export const projectData: Project[] = [
+  /* 기존 SADARI 프로젝트 데이터
   {
     name: "SADARI 사다리",
     thumbSrc: "sadari",
     des: [
       "개인의 독서 기록을 소셜 활동과 독서모임으로 확장한 웹 서비스입니다.",
-      "React·TypeScript 기반 프론트엔드와 Spring Boot·MyBatis 백엔드를 함께 개발했으며, 복잡한 모임 운영 정책과 사용자 상태 변화를 안정적으로 처리하는 데 집중했습니다.",
+      "가입부터 운영·종료까지 이어지는 복잡한 모임 정책을 상태 변화와 동시성 문제로 나누어 분석하고, React·TypeScript 프론트엔드와 Spring Boot·MyBatis 백엔드 전반에서 일관되게 동작하도록 구현했습니다.",
     ],
     team: "2명 (백엔드 개발자 1명, 프론트엔드 개발자 1명)",
     role: [
@@ -92,16 +95,50 @@ export const projectData: Project[] = [
     ],
     tech: ["React", "TypeScript", "Java", "Spring Boot", "Spring Security", "JWT", "Redis", "MySQL", "MyBatis", "AWS EC2", "AWS RDS"],
     features: [
-      "공개·승인제 모임의 가입 신청, 승인·거절, 초대, 자진 탈퇴, 강제 퇴장 및 재가입 제한 기능 구현",
-      "모임 도서 추천·투표, 독서 회차 관리, 조기 마감, 목표 달성 결과 및 이전 독서 기록 조회 기능 구현",
-      "모임장 부재 시 후보자·유권자 명부를 고정하고 비밀투표, 동률 결선, 기간 연장 및 운영 중지까지 이어지는 승계 절차 구현",
-      "DB 행 잠금과 중복 방지 제약을 적용해 스케줄러 중복 실행과 동시 투표 상황에서도 선거 결과가 한 번만 확정되도록 처리",
-      "계층형 댓글·답글, 사용자 언급, 수정·삭제, 좋아요 및 알림이 연결된 소셜 상호작용 구현",
-      "TanStack Query 캐시를 활용해 좋아요를 즉시 반영하고 요청 실패 시 이전 상태로 복구한 뒤 서버 응답으로 최종 동기화",
-      "독후감과 댓글을 하나의 신고 흐름으로 처리하고 대상 유형, 작성자 권한 및 중복 신고를 서버에서 검증",
-      "Kakao OAuth·JWT 인증 API와 전역 로그인 상태, 인증 보호 라우팅을 연결하여 비로그인 사용자의 제한 화면 접근 차단",
+      "공개·승인제마다 달라지는 가입 흐름을 신청·승인·거절·초대·탈퇴·강제 퇴장 상태로 세분화하고, 재가입 제한까지 하나의 규칙으로 연결했습니다.",
+      "독서 회차가 조기 마감되거나 목표를 달성하는 과정에서 기록이 어긋나지 않도록 추천·투표·회차 상태를 함께 추적하고, 완료 결과와 이전 기록을 이어서 조회하도록 설계했습니다.",
+      "모임장 부재 시 운영이 멈추는 문제를 해결하기 위해 후보자·유권자 명부를 고정하고, 비밀투표·동률 결선·기간 연장·운영 중지로 이어지는 승계 절차를 구현했습니다.",
+      "스케줄러와 사용자의 투표 요청이 동시에 선거를 확정할 수 있는 지점을 추적해 DB 행 잠금과 중복 방지 제약을 적용하고, 결과가 한 번만 확정되도록 처리했습니다.",
+      "댓글·답글의 계층 관계와 수정·삭제 이후의 맥락이 유지되도록 데이터 흐름을 정리하고, 사용자 언급·좋아요·알림을 하나의 상호작용으로 연결했습니다.",
+      "좋아요 응답을 기다리는 동안 UI가 늦게 반응하는 문제를 TanStack Query의 낙관적 업데이트로 해결하고, 실패 시 캐시를 복구한 뒤 서버 응답으로 최종 동기화했습니다.",
+      "독후감과 댓글마다 신고 로직이 중복되는 문제를 공통 흐름으로 통합하고, 대상 유형·작성자 권한·중복 신고 여부를 서버에서 검증했습니다.",
+      "새로고침과 보호 페이지 이동에서 인증 상태가 엇갈리지 않도록 Kakao OAuth·JWT API, 전역 로그인 상태, 보호 라우팅의 흐름을 맞춰 비로그인 접근을 차단했습니다.",
     ],
     href: "https://github.com/vellahw/SADARI.git",
+    liveHref: "https://sadaribooks.com/",
+    year: "2026",
+    slideCount: 6,
+  },
+  */
+  {
+    name: "SADARI 사다리",
+    thumbSrc: "sadari",
+    des: [
+      "독서 기록·목표·소셜 활동과 독서 모임을 연결한 React PWA 기반 독서 플랫폼입니다.",
+      "React 프론트엔드와 Spring Boot 백엔드를 함께 개발하며 복잡한 모임 정책, 데이터 정합성, 동시성, 인증 상태처럼 실제 서비스에서 발생하는 문제를 해결하는 데 집중했습니다.",
+    ],
+    team: "2명 (백엔드 개발자 1명, 프론트엔드 개발자 1명)",
+    role: [
+      "독서 모임 영역의 프론트엔드·백엔드 개발 담당",
+      "모임 상태와 사용자 권한에 따른 서버 정책 및 화면 흐름 설계",
+      "가입부터 운영·종료까지 이어지는 사용자 경험과 상태 피드백 개선",
+    ],
+    sections: [
+      {
+        title: "핵심 문제 해결",
+        items: [
+          "공개형·승인형 모임의 가입 방식을 즉시 가입과 심사 기반 가입으로 분리하고 가입 신청·승인·거절·초대·자진 탈퇴·강제 퇴장 상태를 회원 관계와 처리 이력으로 관리했습니다. 또한 거절 후 재신청 유예기간과 강제 퇴장 후 재가입 차단 정책을 가입 검증 로직에 통합하고 행 잠금을 적용해 동시 요청에도 정원과 회원 상태의 정합성이 유지되도록 구현했습니다.",
+          "독서 회차가 조기 마감되거나 목표를 달성하는 과정에서 기록이 어긋나지 않도록 추천·투표·회차 상태를 함께 추적하고, 완료 결과와 이전 기록을 이어서 조회하도록 설계했습니다.",
+          "모임장 부재 시 운영이 멈추는 문제를 해결하기 위해 후보자·유권자 명부를 고정하고, 비밀투표·동률 결선·기간 연장·운영 중지로 이어지는 승계 절차를 구현했습니다.",
+          "스케줄러와 사용자의 투표 요청이 동시에 선거를 확정할 수 있는 지점을 추적해 DB 행 잠금과 중복 방지 제약을 적용하고, 결과가 한 번만 확정되도록 처리했습니다.",
+          "부모 댓글 참조를 이용해 댓글과 답글의 2단계 계층을 구성하고 논리 삭제와 버전 해시 기반 수정 충돌 검사를 적용해 수정·삭제 이후에도 대화 맥락이 유지되도록 했습니다. ",
+          "좋아요 응답을 기다리는 동안 UI가 늦게 반응하는 문제를 TanStack Query의 낙관적 업데이트로 해결하고 실패 시 캐시를 복구한 뒤 서버 응답으로 최종 동기화했습니다.",
+          "카카오 OAuth 기반의 최초 로그인·자동 회원가입 흐름을 구현하고 JWT Access/Refresh Token 발급과 HttpOnly 쿠키 기반 인증으로 개선했습니다. 토큰 만료 시 제한적으로 재발급한 뒤 인증 상태를 재확인하도록 구성했으며 React Query와 보호 라우팅을 연계하여 새로고침 및 페이지 이동에서도 일관된 로그인 상태를 유지했습니다.",
+        ],
+      }
+    ],
+    tech: ["React", "TypeScript", "Java", "Spring Boot", "MySQL", "MyBatis", "Redis", "AWS"],
+    href: "https://github.com/vellahw/SADARI",
     liveHref: "https://sadaribooks.com/",
     year: "2026",
     slideCount: 6,
@@ -111,7 +148,7 @@ export const projectData: Project[] = [
     thumbSrc: "gather",
     des: [
       "기존의 커뮤니티 프로젝트를 기반으로 UI와 코드 구조를 전반적으로 개선한 리팩토링 프로젝트입니다.",
-      "반복 로직을 공통 함수로 분리해 코드 중복을 줄이고 재사용성을 높였으며, 프론트엔드 영역은 순수 JavaScript로 개발했습니다.",
+      "페이지마다 흩어진 반복 로직과 복잡하게 얽힌 UI 상태를 추적해 공통 함수와 명확한 전환 흐름으로 정리했으며, 프론트엔드 영역은 순수 JavaScript로 개발했습니다.",
     ],
     team: "2명 (백엔드 개발자 1명, 프론트엔드 개발자 1명)",
     role: [
@@ -121,29 +158,29 @@ export const projectData: Project[] = [
     ],
     tech: ["JavaScript", "Java", "JSP", "Spring Framework", "Oracle", "MyBatis"],
     features: [
-      "FormData를 활용한 파일·데이터 통합 처리 구조 구현",
-      "동적 폼 전환 로직을 설계하여 입력 단계에 따른 UI 변화 구현",
-      "트리 구조 데이터 기반의 계층형 UI 구현",
-      "텍스트 에디터(Summernote)와 알림 라이브러리(SweetAlert2) 적용 및 커스텀",
-      "이미지 슬라이드 애니메이션 구현",
+      "파일과 일반 데이터의 요청 로직이 나뉘어 중복되는 문제를 파악하고, FormData로 두 데이터를 한 번에 전달하는 구조로 통합했습니다.",
+      "입력 단계마다 조건문이 늘어나는 폼을 단계별 상태와 전환 규칙으로 정리해, 사용자 입력에 따라 필요한 UI만 바뀌도록 구현했습니다.",
+      "깊이가 달라지는 데이터를 고정된 화면 구조로 표현하기 어려워 부모·자식 관계를 따라가는 트리 구조를 기반으로 계층형 UI를 구성했습니다.",
+      "기본 UI가 서비스 흐름과 맞지 않는 지점을 확인해 Summernote와 SweetAlert2의 화면과 동작을 프로젝트에 맞게 커스텀했습니다.",
+      "여러 이미지의 현재 위치와 전환 시점을 상태로 관리해 흐름이 끊기지 않는 슬라이드 애니메이션을 구현했습니다.",
     ],
     href: "https://github.com/vellahw/gather",
     year: "2024",
     slideCount: 10,
   },
-  {
-    name: "BLEND 블랜드",
-    thumbSrc: "blend",
-    des: [
-      "교육과정 내 7개 팀 중 대상을 수상한 소상공인 카페용 블록체인 기반 마일리지 플랫폼입니다.",
-      "KAS API를 연동해 블록체인 스마트 컨트랙트 기능을 서비스에 적용하고 기획·디자인·개발 간 협업 프로세스를 경험했습니다.",
-    ],
-    role: ["메뉴, 마이페이지, 마일리지 현황, 지갑 현황 구현", "UX/UI 구현"],
-    tech: ["React", "JavasScript", "node.js", "mySQL"],
-    href: "https://github.com/vellahw/BLEND",
-    year: "2023",
-    slideCount: 5,
-  },
+  // {
+  //   name: "BLEND 블랜드",
+  //   thumbSrc: "blend",
+  //   des: [
+  //     "교육과정 내 7개 팀 중 대상을 수상한 소상공인 카페용 블록체인 기반 마일리지 플랫폼입니다.",
+  //     "블록체인 기능을 실제 마일리지 사용 흐름에 연결하기 위해 KAS API와 스마트 컨트랙트의 동작을 파악하고, 메뉴·마이페이지·마일리지·지갑 상태를 사용자가 이해할 수 있는 UI로 구현했습니다.",
+  //   ],
+  //   role: ["메뉴, 마이페이지, 마일리지 현황, 지갑 현황 구현", "UX/UI 구현"],
+  //   tech: ["React", "JavasScript", "node.js", "mySQL"],
+  //   href: "https://github.com/vellahw/BLEND",
+  //   year: "2023",
+  //   slideCount: 5,
+  // },
 ];
 
 type Experience = {
@@ -161,9 +198,9 @@ export const experienceData: Experience[] = [
   {
     period: "2026.06 — 2026.08",
     company: "(주)한국심리교육원",
-    role: "프론트엔드 개발 · 제스나라",
-    description: "마음·행복, 부부, 성에너지 등 지식 콘텐츠를 제공하는 플랫폼에서 Nuxt.js와 TypeScript로 다국어 콘텐츠, 구독 결제, 사용자 인증을 개발했습니다.",
-    website: { href: "https://www.xesnara.com/", label: "xesnara.com" },
+    role: "프론트엔드 개발",
+    description: "제스나라는 마음·행복, 부부, 성에너지 등 다양한 주제의 지식 콘텐츠를 다루는 플랫폼 서비스입니다. Nuxt.js, TypeScript 기반 환경에서 다국어 콘텐츠, 결제, 사용자 인증 파트를 담당하여 개발했습니다.",
+    website: { href: "https://www.xesnara.com/", label: "제스나라" },
     groups: [
       {
         title: "다국어 콘텐츠 비교 학습",
@@ -187,7 +224,7 @@ export const experienceData: Experience[] = [
         ],
       },
     ],
-    tech: ["Nuxt.js", "TypeScript", "i18n", "NICEPAY", "Payletter"],
+    tech: ["Nuxt.js", "TypeScript"],
   },
   {
     period: "2024.04 — 2026.01",
@@ -205,7 +242,7 @@ export const experienceData: Experience[] = [
       },
     ],
     projects: worksData.filter((work) => work.src !== "xesnara"),
-    tech: ["JavaScript", "PHP", "그누보드", "WordPress", "React", "TypeScript"],
+    tech: ["JavaScript", "PHP", "그누보드", "WordPress"],
   },
   {
     period: "2023.08 — 2023.09",
@@ -213,7 +250,7 @@ export const experienceData: Experience[] = [
     role: "프론트엔드 개발 (인턴)",
     groups: [
       {
-        title: "주요 개발 경험",
+        title: "",
         items: ["React 기반 랜딩 페이지 구현", "Next.js 마이그레이션 과정 참여"],
       },
     ],
