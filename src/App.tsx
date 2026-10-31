@@ -57,7 +57,7 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="scroll-mt-20 border-b border-neutral-100 py-16 sm:py-20" aria-labelledby="projects-title">
+        <section id="projects" className="scroll-mt-20 py-16 sm:py-20" aria-labelledby="projects-title">
           <SectionHeading title="개인 프로젝트" id="projects-title"/>
           <div className="divide-y divide-neutral-100">
             {projectData.map((project) => (
@@ -126,7 +126,7 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="scroll-mt-20 border-b border-neutral-100 py-16 sm:py-20" aria-labelledby="experience-title">
+        <section id="experience" className="scroll-mt-20 py-16 sm:py-20" aria-labelledby="experience-title">
           <SectionHeading title="커리어" id="experience-title" note="2023 — 2026" />
           <div className="divide-y divide-neutral-100">
             {experienceData.map((experience) => (
@@ -145,7 +145,7 @@ function App() {
           </div>
         </section>
 
-        <section id="education" className="scroll-mt-20 border-b border-neutral-100 py-16 sm:py-20" aria-labelledby="education-title">
+        <section id="education" className="scroll-mt-20 py-16 sm:py-20" aria-labelledby="education-title">
           <SectionHeading title="활동" id="education-title" />
           <div className="space-y-8">
             <div>
