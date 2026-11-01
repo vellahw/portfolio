@@ -13,7 +13,7 @@ function ProjectsSection() {
     <PageSection id="projects" title="개인 프로젝트">
     <div className="divide-y divide-neutral-100">
       {projectData.map((project) => <article className="py-7" key={project.thumbSrc}>
-        <div className="grid grid-column-[1fr] gap-3 sm:grid-cols-[5rem_1fr] sm:gap-4">
+        <div className="grid grid-column-[1fr] gap-3 sm:gap-4">
           <span className="pt-1 text-sm tabular-nums text-neutral-500">{project.year}</span>
           <div>
             <div className="flex items-center justify-between gap-4">
@@ -27,11 +27,11 @@ function ProjectsSection() {
           </div>
         </div>
 
-        <div className="ml-0 mt-5 space-y-2 text-lg leading-7 sm:ml-24">
+        <div className="ml-0 mt-5 space-y-2 text-lg leading-7">
           {project.des.map((line) => <p key={line}>{line}</p>)}
         </div>
 
-        <div className="ml-0 mt-6 space-y-6 sm:ml-24">
+        <div className="ml-0 mt-6 space-y-6">
           {project.period &&
               <ProjectBlock title="개발 기간">
                   <p className="text-lg leading-6">{project.period}</p>
