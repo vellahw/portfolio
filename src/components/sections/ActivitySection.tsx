@@ -4,7 +4,7 @@ function ActivitySection() {
   return <PageSection id="education" title="활동">
     <div className="space-y-8">
       <div>
-        <h3 className="mb-2 text-lg font-bold text-neutral-700">학력 · 교육 · 경험</h3>
+        <h3 className="text-lg font-bold text-neutral-700">학력 · 교육 · 경험</h3>
         <ul className="divide-y divide-neutral-100 text-lg">
           <Fact period="2024.03 — 재학 중" name="한국방송통신대학교" detail="컴퓨터과학과" />
           <Fact period="2023.05 — 2023.07" name="한국에이아이블록체인융합원" detail="블록체인 기반 기술 사업화 전문 인력 양성 과정" />

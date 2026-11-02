@@ -23,7 +23,7 @@ function ProjectsSection() {
               </div>
               <ProjectGitHubLink href={project.href} name={project.name} />
             </div>
-            {project.thumbSrc === "sadari" && <img className="mt-6 block h-auto w-full" src={getProjectImage(project.thumbSrc)} width="664" height="324" alt="SADARI 독서 플랫폼 주요 화면" />}
+            {project.thumbSrc && <img className="mt-6 block h-auto w-full" src={getProjectImage(project.thumbSrc)} width="664" height="324" alt="프로젝트 주요 화면" />}
           </div>
         </div>
 
@@ -52,7 +52,7 @@ function ProjectsSection() {
               {section.items.map((item) => <li className={typeof item === "string" ? "leading-8" : "list-none"} key={typeof item === "string" ? item : item.thumbSrc}>
                 {typeof item === "string" ? item : <div className="mb-4">
                   <h5 className="mb-3 text-xl font-bold text-neutral-900">{item.title}</h5>
-                  <img className="mb-3 block h-auto rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={500} />
+                  <img className="mb-3 block h-auto rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={550} />
                   <ul className="list-disc text-[#171717]"><li className="leading-8">{item.des}</li></ul>
                 </div>}
               </li>)}
