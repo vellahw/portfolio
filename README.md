@@ -1,17 +1,7 @@
 # 2026 포트폴리오
+🔎 https://iamhanwon.netlify.app/
 
-React, TypeScript, Vite, Tailwind CSS로 구현한 포트폴리오입니다.
 
-## 실행
+React, TypeScript, Tailwind CSS로 구현한 포트폴리오입니다.
 
-```powershell
-npm ci
-npm run dev
-```
-
-## 빌드
-
-```powershell
-npm run build
-npm start
-```
+<img width="967" height="707" alt="image" src="https://github.com/user-attachments/assets/f50b220a-09ed-4af4-bf99-30531aada92f" />
