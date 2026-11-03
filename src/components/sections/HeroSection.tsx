@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import portrait from "../../assets/hero-illustration.png";
-import resumePdf from "../../assets/resume.pdf";
 import { ArrowLink } from "../shared";
 
 const words = ["Frontend", "UI/UX", "Java"];
@@ -27,7 +26,7 @@ function HeroSection() {
     <div className="mt-9 flex gap-6 text-md">
       <ArrowLink className="font-semibold" href="https://github.com/vellahw" label="Github" />
       <ArrowLink className="font-semibold" href="https://tavi.tistory.com/" label="Blog" />
-      <ArrowLink className="font-semibold" href={resumePdf} label="Resume" />
+      {/*<ArrowLink className="font-semibold" href={resumePdf} label="Resume" />*/}
     </div>
   </section>;
 }
