@@ -9,7 +9,6 @@ function ActivitySection() {
           <Fact period="2024.03 — 재학 중" name="한국방송통신대학교" detail="컴퓨터과학과" />
           <Fact period="2023.05 — 2023.07" name="한국에이아이블록체인융합원" detail="블록체인 기반 기술 사업화 전문 인력 양성 과정" />
           <Fact period="2022.07 — 2023.03" name="이젠컴퓨터아카데미" detail="AWS 클라우드 기반 Java 개발자 과정" />
-          <Fact period="2016.09 — 2021.05" name="[비개발 경력] 의류 디자이너 근무" detail="" />
         </ul>
       </div>
       <div className="pt-6">
