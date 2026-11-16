@@ -42,6 +42,7 @@ function ProjectsSection() {
                   <p className="text-lg leading-6">{project.team}</p>
               </ProjectBlock>
           }
+          <ProjectBlock title="개발 환경"><TagList items={project.tech} /></ProjectBlock>
           <ProjectBlock title="맡은 역할">
             <ul className="list-disc space-y-1 pl-4 text-lg leading-6">{project.role.map((role) => <li
               key={role}>{role}</li>)}</ul>
@@ -62,7 +63,6 @@ function ProjectsSection() {
           {project.features && <ProjectBlock title="기능 구현">
             <ul className="list-disc space-y-2 pl-4 text-lg leading-7">{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
           </ProjectBlock>}
-          <ProjectBlock title="개발 환경"><TagList items={project.tech} /></ProjectBlock>
         </div>
       </article>)}
     </div>
