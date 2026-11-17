@@ -88,7 +88,7 @@ export const projectData: Project[] = [
       "독서 기록과 목표 관리, 소셜 활동, 독서 모임을 연결한 React PWA 기반 독서 플랫폼입니다.",
       "React·TypeScript 기반 프론트엔드와 Java·Spring Boot 기반 백엔드를 함께 개발하며 여러 사용자의 활동이 연결되는 과정에서 발생할 수 있는 상태와 예외 상황을 다뤘습니다.",
     ],
-    team: "2명 (백엔드 개발자 1명, 프론트엔드 개발자 1명)",
+    team: "2명",
     role: [
       "독서 모임 기능 풀스택 개발",
       "댓글·좋아요·OAuth 인증 구현",
