@@ -2,10 +2,8 @@ import type { ReactNode } from "react";
 import { projectData } from "../../assets/data/Datas";
 import { ArrowLink, PageSection, TagList } from "../shared";
 
-const projectImages = import.meta.glob("../../assets/project-*.png", { eager: true, import: "default", query: "?url" }) as Record<string, string>;
-
 function getProjectImage(project: string, thumbSrc?: string) {
-  return projectImages[`../../assets/project-${project}${thumbSrc ? `-${thumbSrc}` : ""}.png`];
+  return `/project-${project}${thumbSrc ? `-${thumbSrc}` : ""}.png`;
 }
 
 function ProjectsSection() {

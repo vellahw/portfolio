@@ -1,5 +1,4 @@
 // import { useEffect, useState } from "react";
-import portrait from "../../assets/hero-illustration.png";
 import { ArrowLink } from "../shared";
 
 // const words = ["사용자의 흐름을 고민하는", "배우고 직접 만들어가는", "서비스의 흐름을 함께 고민하는"];
@@ -10,11 +9,10 @@ function HeroSection() {
       <div className="relative z-10">
         <h1 id="hero-title" className="text-[clamp(2.2rem,8vw,3.8rem)] font-black leading-[1.3] tracking-[-0.075em]">
           안녕하세요,<br />
-          {/*<span><RotatingWord /></span><br />*/}
           개발자 장한원입니다<span className="text-[#CDDC39]">.</span>
         </h1>
       </div>
-      <img className="pointer-events-none absolute right-0 top-[52px] z-0 w-28 -translate-y-1/2 object-contain sm:w-40 md:top-1/2 md:w-46" src={portrait} alt="캐릭터 일러스트" />
+      <img className="pointer-events-none absolute right-0 top-[52px] z-0 w-28 -translate-y-1/2 object-contain sm:w-40 md:top-1/2 md:w-46" src="/hero-illustration.png" alt="캐릭터 일러스트" />
     </div>
 
     <div className="relative z-10 space-y-3 text-xl font-medium">
@@ -29,26 +27,5 @@ function HeroSection() {
     </div>
   </section>;
 }
-
-// function RotatingWord() {
-//   const [index, setIndex] = useState(0);
-//   const [value, setValue] = useState("");
-//   const [deleting, setDeleting] = useState(false);
-//
-//   useEffect(() => {
-//     const word = words[index];
-//     const pause = !deleting && value === word ? 1100 : (deleting && value === "" ? 250 : (deleting ? 55 : 85));
-//     const timer = window.setTimeout(() => {
-//       if (!deleting && value === word) setDeleting(true);
-//       else if (deleting && value === "") {
-//         setDeleting(false);
-//         setIndex((current) => (current + 1) % words.length);
-//       } else setValue((current) => deleting ? current.slice(0, -1) : word.slice(0, current.length + 1));
-//     }, pause);
-//     return () => window.clearTimeout(timer);
-//   }, [deleting, index, value]);
-//
-//   return <span className="text-neutral-400" aria-label={words[index]}>{value}<span className="ml-0.5 inline-block h-[.9em] w-px translate-y-1 animate-pulse bg-neutral-500" aria-hidden="true" /></span>;
-// }
 
 export default HeroSection;

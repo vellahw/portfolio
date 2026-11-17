@@ -18,9 +18,55 @@
     <meta property="og:image:type" content="image/png" />
     <meta name="description" content="사용자의 흐름을 이해하고 더 나은 웹 경험을 만드는 개발자 장한원입니다." />
     <title>개발자 장한원</title>
+    <style>
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background: #fff;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 240ms ease, visibility 240ms ease;
+      }
+
+      #initial-loader.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      #initial-loader img {
+        width: 112px;
+        height: 112px;
+        object-fit: contain;
+        animation: initial-loader-spin 1.2s linear infinite;
+      }
+
+      @keyframes initial-loader-spin {
+        to { transform: rotate(360deg); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #initial-loader { transition-duration: 0ms; }
+        #initial-loader img { animation-duration: 4s; }
+      }
+    </style>
   </head>
   <body>
+    <div id="initial-loader" role="status" aria-label="페이지를 불러오는 중">
+      <img src="/hero-illustration.png" alt="" />
+    </div>
     <div id="root"></div>
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.getElementById("initial-loader");
+        if (!loader) return;
+        loader.classList.add("is-hidden");
+        loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+      }, { once: true });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
