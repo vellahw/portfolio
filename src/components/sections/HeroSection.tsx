@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import portrait from "../../assets/hero-illustration.png";
 import { ArrowLink } from "../shared";
 
-const words = ["사용자의 흐름을 고민하는", "배우고 직접 만들어가는", "서비스의 흐름을 함께 고민하는"];
+// const words = ["사용자의 흐름을 고민하는", "배우고 직접 만들어가는", "서비스의 흐름을 함께 고민하는"];
 
 function HeroSection() {
   return <section className="relative items-center py-16 sm:py-20" aria-labelledby="hero-title">
@@ -30,25 +30,25 @@ function HeroSection() {
   </section>;
 }
 
-function RotatingWord() {
-  const [index, setIndex] = useState(0);
-  const [value, setValue] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const word = words[index];
-    const pause = !deleting && value === word ? 1100 : (deleting && value === "" ? 250 : (deleting ? 55 : 85));
-    const timer = window.setTimeout(() => {
-      if (!deleting && value === word) setDeleting(true);
-      else if (deleting && value === "") {
-        setDeleting(false);
-        setIndex((current) => (current + 1) % words.length);
-      } else setValue((current) => deleting ? current.slice(0, -1) : word.slice(0, current.length + 1));
-    }, pause);
-    return () => window.clearTimeout(timer);
-  }, [deleting, index, value]);
-
-  return <span className="text-neutral-400" aria-label={words[index]}>{value}<span className="ml-0.5 inline-block h-[.9em] w-px translate-y-1 animate-pulse bg-neutral-500" aria-hidden="true" /></span>;
-}
+// function RotatingWord() {
+//   const [index, setIndex] = useState(0);
+//   const [value, setValue] = useState("");
+//   const [deleting, setDeleting] = useState(false);
+//
+//   useEffect(() => {
+//     const word = words[index];
+//     const pause = !deleting && value === word ? 1100 : (deleting && value === "" ? 250 : (deleting ? 55 : 85));
+//     const timer = window.setTimeout(() => {
+//       if (!deleting && value === word) setDeleting(true);
+//       else if (deleting && value === "") {
+//         setDeleting(false);
+//         setIndex((current) => (current + 1) % words.length);
+//       } else setValue((current) => deleting ? current.slice(0, -1) : word.slice(0, current.length + 1));
+//     }, pause);
+//     return () => window.clearTimeout(timer);
+//   }, [deleting, index, value]);
+//
+//   return <span className="text-neutral-400" aria-label={words[index]}>{value}<span className="ml-0.5 inline-block h-[.9em] w-px translate-y-1 animate-pulse bg-neutral-500" aria-hidden="true" /></span>;
+// }
 
 export default HeroSection;
