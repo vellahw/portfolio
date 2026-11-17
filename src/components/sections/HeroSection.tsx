@@ -20,7 +20,7 @@ function HeroSection() {
     <div className="relative z-10 space-y-3 text-xl font-medium">
       <p>사용자가 고민하지 않아도 자연스럽게 이용할 수 있는 웹을 지향합니다.</p>
       <p>새로운 기술을 직접 구현하며 익히고 어려운 문제는 동료와 소통하며 해결까지 이어갑니다.</p>
-      <p>Java와 Spring 기반의 개인 프로젝트를 통해 역량을 넓히며 주도적으로 배우고 끝까지 실행합니다.</p>
+      <p>프론트엔드 경험을 바탕으로 Java와 Spring Boot 기반의 개인 프로젝트를 통해 개발 범위를 넓히고 있습니다.</p>
     </div>
 
     <div className="mt-9 flex gap-6 text-md">
