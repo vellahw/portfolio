@@ -77,13 +77,7 @@ function ProjectsSection() {
                         </div>
                       </dl>
                       {item.thumbSrc &&
-                          <details className="py-4">
-                            <summary className="link-arrow link-arrow-down list-none cursor-pointer text-sm font-semibold text-neutral-600 focus-visible:outline-2 focus-visible:outline-offset-4 [&::-webkit-details-marker]:hidden">
-                              <span>관련 화면 보기</span>
-                              <span className="link-arrow-icon" aria-hidden="true">↓</span>
-                            </summary>
-                            <img className="mt-4 block h-auto w-full rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={550} loading="lazy" />
-                          </details>
+                          <img className="mb-4 block h-auto w-full rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={550} loading="lazy" />
                       }
                     </li>
                   ))}

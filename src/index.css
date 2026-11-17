@@ -44,7 +44,6 @@ a:focus-visible { outline: 2px solid #171717; outline-offset: 4px; }
 .link-arrow:hover .link-arrow-label { background-size: 100% 1px; }
 .link-arrow:hover .link-arrow-icon { transform: translate(2px, -2px); }
 .link-arrow-up:hover .link-arrow-icon { transform: translateY(-2px); }
-.link-arrow-down:hover .link-arrow-icon { transform: translateY(2px); }
 #projects a, #experience a { color: #171717; }
 #projects .github-link { transition: color 180ms ease; }
 #projects .github-link:hover { color: var(--color-neutral-500); }
