@@ -12,59 +12,91 @@ function ProjectsSection() {
   return (
     <PageSection id="projects" title="개인 프로젝트">
     <div className="divide-y divide-neutral-100">
-      {projectData.map((project) => <article className="py-7" key={project.thumbSrc}>
-        <div className="grid grid-column-[1fr] gap-3 sm:gap-4">
-          <span className="pt-1 text-sm tabular-nums text-neutral-500">{project.year}</span>
-          <div>
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
-                <h3 className="text-3xl font-bold">{project.name}</h3>
-                {project.liveHref && <ArrowLink className="featured-link text-lg" href={project.liveHref} label="sadaribooks.com" />}
+      {projectData.map((project) => (
+        <article className="py-7" key={project.thumbSrc}>
+          <div className="grid grid-column-[1fr] gap-3 sm:gap-4">
+            <span className="pt-1 text-sm tabular-nums text-neutral-500">{project.year}</span>
+            <div>
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
+                  <h3 className="text-3xl font-bold">{project.name}</h3>
+                  {project.liveHref && <ArrowLink className="featured-link text-lg" href={project.liveHref} label="sadaribooks.com" />}
+                </div>
+                <ProjectGitHubLink href={project.href} name={project.name} />
               </div>
-              <ProjectGitHubLink href={project.href} name={project.name} />
+              {project.thumbSrc
+                && <img className="mt-6 block h-auto w-full" src={getProjectImage(project.thumbSrc)} width="664" height="324" alt="프로젝트 주요 화면" />
+              }
             </div>
-            {project.thumbSrc && <img className="mt-6 block h-auto w-full" src={getProjectImage(project.thumbSrc)} width="664" height="324" alt="프로젝트 주요 화면" />}
           </div>
-        </div>
 
-        <div className="ml-0 mt-5 space-y-2 text-lg leading-7">
-          {project.des.map((line) => <p key={line}>{line}</p>)}
-        </div>
+          <div className="ml-0 mt-5 space-y-2 text-lg leading-7">
+            {project.des.map((line) => <p key={line}>{line}</p>)}
+          </div>
 
-        <div className="ml-0 mt-6 space-y-6">
-          {project.period &&
-              <ProjectBlock title="개발 기간">
-                  <p className="text-lg leading-6">{project.period}</p>
-              </ProjectBlock>
-          }<>
-          {project.team &&
-              <ProjectBlock title="개발 인원">
-                  <p className="text-lg leading-6">{project.team}</p>
-              </ProjectBlock>
-          }
-          <ProjectBlock title="개발 환경"><TagList items={project.tech} /></ProjectBlock>
-          <ProjectBlock title="맡은 역할">
-            <ul className="list-disc space-y-1 pl-4 text-lg leading-6">{project.role.map((role) => <li
-              key={role}>{role}</li>)}</ul>
-          </ProjectBlock>
-        </>
-          {project.sections?.map((section) => <ProjectBlock title={section.title} key={section.title}>
-            <ul className="list-disc space-y-2 pl-4 text-lg leading-7">
-              {section.items.map((item) => <li className={typeof item === "string" ? "leading-8" : "list-none"} key={typeof item === "string" ? item : item.thumbSrc}>
-                {typeof item === "string" ? item : <div className="mb-4">
-                  <h5 className="mb-3 text-xl font-bold text-neutral-900">{item.title}</h5>
-                  <img className="mb-3 block h-auto rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={550} />
-                  <ul className="list-disc text-[#171717]"><li className="leading-8">{item.des}</li></ul>
-                </div>}
-              </li>)}
-            </ul>
-          </ProjectBlock>)}
+          <div className="ml-0 mt-8 space-y-8">
+            {project.period &&
+                <ProjectBlock title="개발 기간">
+                    <p className="text-lg leading-6">{project.period}</p>
+                </ProjectBlock>
+            }
+            {project.team &&
+                <ProjectBlock title="개발 인원">
+                    <p className="text-lg leading-6">{project.team}</p>
+                </ProjectBlock>
+            }
+            <ProjectBlock title="개발 환경"><TagList items={project.tech} /></ProjectBlock>
+            <ProjectBlock title="맡은 역할">
+              <ul className="list-disc space-y-1 pl-4 text-lg leading-7">{project.role.map((role) => <li
+                key={role}>{role}</li>)}</ul>
+            </ProjectBlock>
 
-          {project.features && <ProjectBlock title="기능 구현">
-            <ul className="list-disc space-y-2 pl-4 text-lg leading-7">{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
-          </ProjectBlock>}
-        </div>
-      </article>)}
+            {project.sections?.map((section) => (
+              <ProjectBlock title={section.title} key={section.title}>
+                <ol className="mt-4 space-y-6 divide-y divide-neutral-100">
+                  {section.items.map((item, index) => (
+                    <li className="overflow-hidden" key={item.title}>
+                      <div className="flex items-start gap-3">
+                        <span className="pt-0.5 text-base font-semibold  text-neutral-500" aria-hidden="true">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <h5 className="text-[26px] font-bold leading-7 text-neutral-900">{item.title}</h5>
+                      </div>
+                      <dl className="space-y-5 py-5 text-base leading-7 sm:text-lg sm:leading-8">
+                        <div className="grid gap-1 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4">
+                          <dt className="text-sm font-bold text-neutral-700 sm:pt-1">문제</dt>
+                          <dd>{item.problem}</dd>
+                        </div>
+                        <div className="grid gap-1 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4">
+                          <dt className="text-sm font-bold text-neutral-700 sm:pt-1">해결</dt>
+                          <dd>{item.solution}</dd>
+                        </div>
+                        <div className="grid gap-1 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4">
+                          <dt className="text-sm font-bold text-[#CDDC39] sm:pt-1">결과</dt>
+                          <dd>{item.result}</dd>
+                        </div>
+                      </dl>
+                      {item.thumbSrc &&
+                          <details className="py-4">
+                            <summary className="link-arrow link-arrow-down list-none cursor-pointer text-sm font-semibold text-neutral-600 focus-visible:outline-2 focus-visible:outline-offset-4 [&::-webkit-details-marker]:hidden">
+                              <span>관련 화면 보기</span>
+                              <span className="link-arrow-icon" aria-hidden="true">↓</span>
+                            </summary>
+                            <img className="mt-4 block h-auto w-full rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={550} loading="lazy" />
+                          </details>
+                      }
+                    </li>
+                  ))}
+                </ol>
+              </ProjectBlock>)
+            )}
+
+            {project.features && <ProjectBlock title="기능 구현">
+              <ul className="list-disc space-y-2 pl-4 text-lg leading-7">{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+            </ProjectBlock>}
+          </div>
+        </article>)
+      )}
     </div>
   </PageSection>
   );
