@@ -10,12 +10,11 @@ function HeroSection() {
       <div className="relative z-10">
         <h1 id="hero-title" className="text-[clamp(2.2rem,8vw,3.8rem)] font-black leading-[1.3] tracking-[-0.075em]">
           안녕하세요,<br />
-          배우고 직접 만들어가는<br />
           {/*<span><RotatingWord /></span><br />*/}
           개발자 장한원입니다<span className="text-neutral-400">.</span>
         </h1>
       </div>
-      <img className="pointer-events-none absolute right-0 top-[72px] z-0 w-28 -translate-y-1/2 object-contain sm:w-40 md:top-1/2 md:w-56" src={portrait} alt="캐릭터 일러스트" />
+      <img className="pointer-events-none absolute right-0 top-[52px] z-0 w-28 -translate-y-1/2 object-contain sm:w-40 md:top-1/2 md:w-46" src={portrait} alt="캐릭터 일러스트" />
     </div>
 
     <div className="relative z-10 space-y-3 text-xl font-medium">
@@ -27,7 +26,6 @@ function HeroSection() {
     <div className="mt-9 flex gap-6 text-md">
       <ArrowLink className="font-semibold" href="https://github.com/vellahw" label="Github" />
       <ArrowLink className="font-semibold" href="https://tavi.tistory.com/" label="Blog" />
-      {/*<ArrowLink className="font-semibold" href={resumePdf} label="Resume" />*/}
     </div>
   </section>;
 }
