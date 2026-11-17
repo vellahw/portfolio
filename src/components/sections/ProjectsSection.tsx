@@ -54,30 +54,31 @@ function ProjectsSection() {
             {project.sections?.map((section) => (
               <ProjectBlock title={section.title} key={section.title}>
                 <ol className="mt-4 space-y-6 divide-y divide-neutral-100">
-                  {section.items.map((item, index) => (
+                  {section.items.map((item) => (
                     <li className="overflow-hidden" key={item.title}>
                       <div className="flex items-start gap-3">
-                        <span className="pt-0.5 text-base font-semibold  text-neutral-500" aria-hidden="true">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
+                        {/*<span className="pt-0.5 text-base font-semibold  text-neutral-500" aria-hidden="true">*/}
+                        {/*  {String(index + 1).padStart(2, "0")}*/}
+                        {/*</span>*/}
+                        <span className="text-[#CDDC39] text-[12px] pt-1">●</span>
                         <h5 className="text-[26px] font-bold leading-7 text-neutral-900">{item.title}</h5>
                       </div>
                       <dl className="space-y-5 py-5 text-base leading-7 sm:text-lg sm:leading-8">
                         <div className="grid gap-1 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4">
-                          <dt className="text-sm font-bold text-neutral-700 sm:pt-1">문제</dt>
-                          <dd>{item.problem}</dd>
+                          <dt className="text-sm font-semibold text-neutral-500 sm:pt-1">문제</dt>
+                          <dd className="text-neutral-900">{item.problem}</dd>
                         </div>
                         <div className="grid gap-1 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4">
-                          <dt className="text-sm font-bold text-neutral-700 sm:pt-1">해결</dt>
-                          <dd>{item.solution}</dd>
+                          <dt className="text-sm font-semibold text-neutral-500 sm:pt-1">해결</dt>
+                          <dd className="text-neutral-900">{item.solution}</dd>
                         </div>
                         <div className="grid gap-1 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-4">
-                          <dt className="text-sm font-bold text-[#CDDC39] sm:pt-1">결과</dt>
-                          <dd>{item.result}</dd>
+                          <dt className="text-sm font-semibold text-neutral-500 sm:pt-1">결과</dt>
+                          <dd className="text-neutral-900">{item.result}</dd>
                         </div>
                       </dl>
                       {item.thumbSrc &&
-                          <img className="mb-4 block h-auto w-full rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} width={550} loading="lazy" />
+                          <img className="mb-4 block h-auto w-full rounded-md border border-neutral-100" src={getProjectImage(project.thumbSrc, item.thumbSrc)} alt={`${item.title} 화면`} loading="lazy" />
                       }
                     </li>
                   ))}
