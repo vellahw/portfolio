@@ -11,7 +11,7 @@ function HeroSection() {
         <h1 id="hero-title" className="text-[clamp(2.2rem,8vw,3.8rem)] font-black leading-[1.3] tracking-[-0.075em]">
           안녕하세요,<br />
           {/*<span><RotatingWord /></span><br />*/}
-          개발자 장한원입니다<span className="text-neutral-400">.</span>
+          개발자 장한원입니다<span className="text-[#CDDC39]">.</span>
         </h1>
       </div>
       <img className="pointer-events-none absolute right-0 top-[52px] z-0 w-28 -translate-y-1/2 object-contain sm:w-40 md:top-1/2 md:w-46" src={portrait} alt="캐릭터 일러스트" />
